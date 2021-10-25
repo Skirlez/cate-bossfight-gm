@@ -1,0 +1,1 @@
+global.timer += 1 / 60
