@@ -6,3 +6,5 @@ window_set_fullscreen(true)
 
 global.timer = 0
 global.hp = 20
+
+hptrack = 0
