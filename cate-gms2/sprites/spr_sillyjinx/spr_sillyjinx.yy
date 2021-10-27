@@ -32,9 +32,9 @@
       ],"parent":{"name":"spr_sillyjinx","path":"sprites/spr_sillyjinx/spr_sillyjinx.yy",},"resourceVersion":"1.0","name":"670da78a-7a57-4574-96a1-f44e898b296e","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": null,
+    "spriteId": {"name":"spr_sillyjinx","path":"sprites/spr_sillyjinx/spr_sillyjinx.yy",},
     "timeUnits": 1,
-    "playback": 0,
+    "playback": 1,
     "playbackSpeed": 60.0,
     "playbackSpeedType": 0,
     "autoRecord": true,

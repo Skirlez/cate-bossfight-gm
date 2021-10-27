@@ -47,6 +47,8 @@ if hp > 0 {
 }
 else {
 	if deathsound == false {
+		instance_destroy(obj_sillyjinx)
+		instance_destroy(obj_sillyjinxlaser)
 		sprite_index = spr_jinx2dead
 		audio_play_sound(snd_boom_cloud, 10, false)
 		audio_play_sound(snd_squeaky_toy, 10, false)
@@ -66,7 +68,7 @@ else {
 
 	deathtimer -= 1
 	
-	if image_alpha <= 0
+	if image_alpha <= 0 
 		instance_destroy(id)
 }
 

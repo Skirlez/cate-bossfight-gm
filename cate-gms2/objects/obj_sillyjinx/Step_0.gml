@@ -8,7 +8,7 @@ if timer <= 0 {
 	
 
 if timer == 166 {
-	if choose(0, 1) == 0 {
+	if irandom_range(0, 2) == 0 {
 		if choose(0, 1) == 0 
 			y = irandom_range(20, 300)	
 		else
