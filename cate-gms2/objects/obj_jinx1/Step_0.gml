@@ -1,7 +1,10 @@
 if hp > 0 {
 	x = 320 + dsin(global.timer * 200) * 150 
 	y = 160 + dcos(global.timer * 180) * 110 + (dsin(global.timer * 2000) * bounce)
-
+	
+	
+	if image_alpha < 1
+		image_alpha += 0.02
 
 	if clicked() and bounce == 0 {
 		audio_play_sound(snd_big_boing, 10, false)
@@ -44,6 +47,10 @@ if hp > 0 {
 		actiontime -= 1
 	else
 		actiontime = 7
+		
+		
+		
+		
 }
 else {
 	if deathsound == false {
@@ -51,9 +58,10 @@ else {
 		deathsound = true
 		obj_manager.hptrack = 0
 	}
-	image_alpha -= 0.02
-	image_xscale += 0.005
-	image_yscale += 0.005
+	image_speed = 0
+	image_alpha -= 0.015
+	image_xscale += 0.004
+	image_yscale += 0.004
 	
 	if image_alpha <= 0
 		instance_destroy(id)

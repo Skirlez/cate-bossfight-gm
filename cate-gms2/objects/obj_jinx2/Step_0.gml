@@ -1,7 +1,9 @@
 if hp > 0 {
 	x = 320 + dsin(global.timer * 220) * 150 
 	y = 160 + dcos(global.timer * 200) * 110 + (dsin(global.timer * 2000) * bounce)
-
+	
+	if image_alpha < 1
+		image_alpha += 0.02
 
 	if clicked() and bounce == 0 {
 		audio_play_sound(snd_big_boing_reversed, 10, false)

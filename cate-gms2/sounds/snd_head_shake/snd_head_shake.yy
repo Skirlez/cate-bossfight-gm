@@ -1,5 +1,5 @@
 {
-  "compression": 1,
+  "compression": 0,
   "volume": 1.0,
   "preload": false,
   "bitRate": 128,
@@ -10,14 +10,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "snd_bombfall.wav",
-  "duration": 0.086689,
+  "soundFile": "snd_head_shake.wav",
+  "duration": 0.908163,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
-  "name": "snd_bombfall",
+  "name": "snd_head_shake",
   "tags": [],
   "resourceType": "GMSound",
 }

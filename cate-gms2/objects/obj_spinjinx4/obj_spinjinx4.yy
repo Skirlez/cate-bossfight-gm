@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_jinx3",
-    "path": "sprites/spr_jinx3/spr_jinx3.yy",
+    "name": "spr_jinx2",
+    "path": "sprites/spr_jinx2/spr_jinx2.yy",
   },
   "solid": false,
   "visible": true,
@@ -23,7 +23,6 @@
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":81,"eventType":9,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -32,7 +31,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_jinx3",
+  "name": "obj_spinjinx4",
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -1,8 +1,10 @@
 image_speed = 1
+image_xscale = 0.1
+image_yscale = 0.1
+image_alpha = 0
 bounce = 0
 attacking = 0
 depth = -9999
 hp = 10
 actiontime = 7
 deathsound = false
-obj_manager.hptrack = 1

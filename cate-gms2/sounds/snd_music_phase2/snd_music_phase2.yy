@@ -10,14 +10,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "snd_bombfall.wav",
-  "duration": 0.086689,
+  "soundFile": "snd_music_phase2.mp3",
+  "duration": 40.48979,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
-  "name": "snd_bombfall",
+  "name": "snd_music_phase2",
   "tags": [],
   "resourceType": "GMSound",
 }

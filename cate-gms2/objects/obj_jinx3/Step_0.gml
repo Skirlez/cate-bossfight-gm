@@ -14,6 +14,7 @@ if clicked() {
 		obj_bus.image_speed = 1
 		if choose(0, 1) == 1 {
 			obj_bus.image_blend = c_lime
+			audio_play_sound(snd_head_shake, 10, false)
 			global.hp += 1
 		}
 	}
