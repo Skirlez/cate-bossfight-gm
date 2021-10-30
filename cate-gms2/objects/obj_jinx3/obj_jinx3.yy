@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_jinx3",
-    "path": "sprites/spr_jinx3/spr_jinx3.yy",
+    "name": "spr_jinx34",
+    "path": "sprites/spr_jinx34/spr_jinx34.yy",
   },
   "solid": false,
   "visible": true,
