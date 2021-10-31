@@ -10,9 +10,10 @@ else { // hardcoded instance id!!! cringe!!!
 
 
 if clicked() {
-	if intro == false {
+	if intro == false and global.attackcooldown == 0 {
 		obj_jinx4.switchguitar *= -1
 		obj_jinx4.hp -= 1
+		global.attackcooldown = 61	
 	}
 	
 	
@@ -39,7 +40,7 @@ if sizetimer <= 160 and sizetimer > 80 {
 	image_yscale += 0.0002
 }
 
-if sizetimer <= 80 {
+if sizetimer < 80 {
 	image_xscale -= 0.0002
 	image_yscale -= 0.0002
 }
@@ -49,4 +50,3 @@ if sizetimer == 0
 	
 sizetimer -= 1
 
-show_debug_message(image_xscale)
