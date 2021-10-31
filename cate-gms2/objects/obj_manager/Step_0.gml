@@ -19,6 +19,7 @@ if phase == 1 and !audio_is_playing(snd_music_phase1) {
 	currentjinx = 1
 	background_color = c_white
 	instance_destroy(obj_spinjinx123)
+	instance_destroy(obj_guitar)
 	instance_destroy(obj_spinjinx4)
 	layer_background_blend(background, c_white)
 	phase = 2	
@@ -65,12 +66,19 @@ switch (currentjinx) {
 			instance_create_depth(320, 160, -10000, obj_jinx3)
 			whitecolor = 256
 		}
-	
+		
+		if !instance_exists(obj_jinx3) and whitecolor == 256 {
+			currentjinx = 4
+			instance_create_depth(320, 160, -10000, obj_jinx4)
+		}
+		
+		break;
 }
 
 
 
-
+if global.attackcooldown > 0
+	global.attackcooldown -= 1
 
 if global.hp <= 0 {
 	audio_stop_all()

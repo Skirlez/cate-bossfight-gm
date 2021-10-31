@@ -5,12 +5,13 @@ if hp > 0 {
 	if image_alpha < 1
 		image_alpha += 0.02
 
-	if clicked() and bounce == 0 {
+	if clicked() and global.attackcooldown == 0 {
 		audio_play_sound(snd_big_boing_reversed, 10, false)
 		audio_play_sound(snd_attack_hit, 10, false)
 		audio_play_sound(snd_bigcut, 10, false)
 		bounce = 40
 		hp -= 1
+		global.attackcooldown = 61
 	}
 
 	if bounce != 0

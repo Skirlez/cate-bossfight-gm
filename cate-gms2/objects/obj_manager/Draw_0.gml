@@ -21,7 +21,7 @@ else {
 if currentjinx != 0 {
 	object = asset_get_index("obj_jinx" + string(currentjinx))
 	
-	if instance_exists(object) {
+	if instance_exists(object) and global.attackcooldown > 0 {
 		draw_sprite(spr_varframe, 0, 320, 50)
 		draw_text(320, 50, object.hp)
 	}

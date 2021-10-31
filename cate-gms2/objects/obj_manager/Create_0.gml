@@ -7,6 +7,7 @@ window_set_fullscreen(true)
 global.timer = 0
 global.hp = 20
 global.distance = 250
+global.attackcooldown = 0
 screenalpha = 0
 depth = -10002
 
