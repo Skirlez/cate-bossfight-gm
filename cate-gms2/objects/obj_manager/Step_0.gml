@@ -15,8 +15,8 @@ if !audio_is_playing(snd_music_phase1) and phase == 0
 
 if phase == 1 and !audio_is_playing(snd_music_phase1) {
 	audio_play_sound(snd_music_phase2, 10, false)
-	instance_create_depth(320, 160, -10000, obj_jinx1)
-	currentjinx = 1
+	instance_create_depth(320, 160, -10000, obj_jinx5)
+	currentjinx = 5
 	background_color = c_white
 	instance_destroy(obj_spinjinx123)
 	instance_destroy(obj_guitar)
