@@ -14,3 +14,4 @@ starttimer = 60
 switchguitar = -1
 px = 0
 py = 0
+deathtimer = 0

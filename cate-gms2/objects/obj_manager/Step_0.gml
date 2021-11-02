@@ -5,7 +5,7 @@ global.timer += 1 / 60
 if global.distance > 110
 	global.distance -= 0.5
 	
-if global.timer > 15.28 and global.distance > 0
+if global.timer > 15 and global.distance > 0
 	global.distance -= 0.5
 	
 	
@@ -73,7 +73,21 @@ switch (currentjinx) {
 		}
 		
 		break;
-}
+		
+	case 4:
+		if !instance_exists(obj_jinx4)  {
+			currentjinx = 5
+			whitecolor = 255
+		}
+		
+		break;	
+	case 5:
+		if whitecolor > 0 {
+			layer_background_blend(background, make_color_rgb(whitecolor, whitecolor, whitecolor))
+			whitecolor -= 5
+		}
+		break;
+}	
 
 
 
@@ -85,3 +99,5 @@ if global.hp <= 0 {
 	room_goto(death)
 }
 	
+if keyboard_check(ord("E")) 
+	instance_create_depth(320, 160, -10002, obj_note)	
