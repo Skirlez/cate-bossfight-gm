@@ -10,14 +10,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "snd_bigcut.wav",
-  "duration": 2.364535,
+  "soundFile": "snd_bass_beatbox.wav",
+  "duration": 0.304646,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
-  "name": "snd_bigcut",
+  "name": "snd_bass_beatbox",
   "tags": [],
   "resourceType": "GMSound",
 }

@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_jinx2",
-    "path": "sprites/spr_jinx2/spr_jinx2.yy",
+    "name": "spr_jinx5",
+    "path": "sprites/spr_jinx5/spr_jinx5.yy",
   },
   "solid": false,
   "visible": true,
@@ -31,7 +31,7 @@
     "path": "folders/Objects/spinjinx.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_spinjinx4",
+  "name": "obj_spinjinx5",
   "tags": [],
   "resourceType": "GMObject",
 }

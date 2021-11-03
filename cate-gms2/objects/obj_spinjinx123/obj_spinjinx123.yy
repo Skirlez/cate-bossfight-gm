@@ -30,8 +30,8 @@
   ],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "spinjinx",
+    "path": "folders/Objects/spinjinx.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_spinjinx123",

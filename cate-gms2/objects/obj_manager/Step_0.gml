@@ -21,6 +21,7 @@ if phase == 1 and !audio_is_playing(snd_music_phase1) {
 	instance_destroy(obj_spinjinx123)
 	instance_destroy(obj_guitar)
 	instance_destroy(obj_spinjinx4)
+	instance_destroy(obj_spinjinx5)
 	layer_background_blend(background, c_white)
 	phase = 2	
 	
@@ -44,7 +45,7 @@ switch (currentjinx) {
 			whitecolor -= 5
 		}
 		else if whitecolor != -100 {
-			instance_create_depth(320, 160, -10000, obj_jinx2)
+			instance_create_depth(320, 160, -9999, obj_jinx2)
 			whitecolor = -100
 		}
 	
@@ -63,13 +64,13 @@ switch (currentjinx) {
 			whitecolor += 5
 		}
 		else if whitecolor != 256 {
-			instance_create_depth(320, 160, -10000, obj_jinx3)
+			instance_create_depth(320, 160, -9999, obj_jinx3)
 			whitecolor = 256
 		}
 		
 		if !instance_exists(obj_jinx3) and whitecolor == 256 {
 			currentjinx = 4
-			instance_create_depth(320, 160, -10000, obj_jinx4)
+			instance_create_depth(320, 160, -9999, obj_jinx4)
 		}
 		
 		break;
@@ -86,8 +87,21 @@ switch (currentjinx) {
 			layer_background_blend(background, make_color_rgb(whitecolor, whitecolor, whitecolor))
 			whitecolor -= 5
 		}
+		
+		if !instance_exists(obj_jinx5)  
+			currentjinx = 6
 		break;
-}	
+		
+	case 6:
+		if whitecolor < 255 {
+			if whitecolor == 0
+				instance_create_depth(320, 160, -9999, obj_jinx6)
+				
+			layer_background_blend(background, make_color_rgb(whitecolor, whitecolor, whitecolor))
+			whitecolor += 5
+		}
+		break;
+}
 
 
 

@@ -1,5 +1,5 @@
 {
-  "compression": 1,
+  "compression": 0,
   "volume": 1.0,
   "preload": false,
   "bitRate": 128,
@@ -10,14 +10,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "snd_bigcut.wav",
-  "duration": 2.364535,
+  "soundFile": "snd_cymbal_crash.wav",
+  "duration": 0.304646,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
-  "name": "snd_bigcut",
+  "name": "snd_cymbal_crash",
   "tags": [],
   "resourceType": "GMSound",
 }

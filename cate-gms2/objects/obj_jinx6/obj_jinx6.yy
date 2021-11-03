@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_jinx2",
-    "path": "sprites/spr_jinx2/spr_jinx2.yy",
+    "name": "spr_jinx6",
+    "path": "sprites/spr_jinx6/spr_jinx6.yy",
   },
   "solid": false,
   "visible": true,
@@ -21,17 +21,16 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "spinjinx",
-    "path": "folders/Objects/spinjinx.yy",
+    "name": "Objects",
+    "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_spinjinx4",
+  "name": "obj_jinx6",
   "tags": [],
   "resourceType": "GMObject",
 }
