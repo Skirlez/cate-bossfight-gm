@@ -11,6 +11,9 @@ if clicked() and global.attackcooldown == 0 {
 
 }
 
+if hp <= 0
+	room_goto(ending)
+
 if attacktimer == 180
 	audio_play_sound(snd_impact, 10, false)
 	
@@ -18,7 +21,6 @@ if attacktimer >= 240 and attacktimer < 256 and attacktimer % 2 == 0 {
 	i = instance_create_depth(x, y, -10000, obj_jinx6attack)
 	i.spin = (attacktimer - 240) / 2
 	count += 1
-	show_debug_message(count)
 }
 
 

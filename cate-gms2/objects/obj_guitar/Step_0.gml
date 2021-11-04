@@ -87,8 +87,8 @@ if intro == true or obj_jinx4.hp > 0  {
 	}
 }
 else {
-	image_xscale += 0.075
-	image_yscale += 0.075
+	image_xscale += 0.01
+	image_yscale += 0.01
 	image_alpha -= 0.01
 	if image_alpha == 0
 		instance_destroy(id)

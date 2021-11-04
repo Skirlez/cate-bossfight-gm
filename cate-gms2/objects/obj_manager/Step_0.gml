@@ -90,6 +90,7 @@ if room == mainroom {
 		
 		case 4:
 			if !instance_exists(obj_jinx4)  {
+				instance_create_depth(320, 160, -9999, obj_jinx5)
 				currentjinx = 5
 				whitecolor = 255
 			}
@@ -101,8 +102,11 @@ if room == mainroom {
 				whitecolor -= 5
 			}
 		
-			if !instance_exists(obj_jinx5)  
+			if !instance_exists(obj_jinx5)  {
 				currentjinx = 6
+
+			}
+			
 			break;
 		
 		case 6:
