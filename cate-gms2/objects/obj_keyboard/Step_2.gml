@@ -1,4 +1,4 @@
-x = obj_jinx3.x
+x = obj_jinx3.x - 5
 y = obj_jinx3.y + 10 - offset
 
 
@@ -34,7 +34,7 @@ switch (timer) {
 		break;
 		
 	case 1:
-		image_xscale = 0.06
+		image_xscale = 0.08
 		break;
 	
 	

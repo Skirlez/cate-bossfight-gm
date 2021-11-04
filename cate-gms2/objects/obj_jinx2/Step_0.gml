@@ -1,6 +1,6 @@
 if hp > 0 {
 	x = 320 + dsin(global.timer * 220) * 150 
-	y = 160 + dcos(global.timer * 200) * 110 + (dsin(global.timer * 2000) * bounce)
+	y = 160 + dcos(global.timer * 200) * 110 + dsin(global.timer * 2000) * bounce
 	
 	if image_alpha < 1
 		image_alpha += 0.02
@@ -9,13 +9,16 @@ if hp > 0 {
 		audio_play_sound(snd_big_boing_reversed, 10, false)
 		audio_play_sound(snd_attack_hit, 10, false)
 		audio_play_sound(snd_bigcut, 10, false)
-		bounce = 40
+		bounce = 1
 		hp -= 1
 		global.attackcooldown = 61
 	}
 
-	if bounce != 0
-		bounce -= 1
+	if bounce < 40 and bounce != 0
+		bounce += 1
+		
+	if bounce == 40
+		bounce = 0
 	
 	
 	if actiontime == 1 {

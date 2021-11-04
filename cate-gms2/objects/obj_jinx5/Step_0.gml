@@ -85,9 +85,12 @@ else {
 		image_index = 0
 		image_angle = 0
 	}
-	if deathtimer < 312 and deathtimer > 30 
+	if deathtimer < 312 and deathtimer > 30 {
 		image_angle += deathtimer / 10
+		image_speed = 1
+	}
 	else if deathtimer > 312 {
+		image_speed = 0
 		image_alpha -= 0.015
 		image_xscale += 0.004
 		image_yscale += 0.004

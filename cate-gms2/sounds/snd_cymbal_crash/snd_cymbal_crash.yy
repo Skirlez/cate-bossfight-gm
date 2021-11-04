@@ -1,5 +1,5 @@
 {
-  "compression": 0,
+  "compression": 1,
   "volume": 1.0,
   "preload": false,
   "bitRate": 128,
@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_cymbal_crash.wav",
-  "duration": 0.304646,
+  "duration": 1.440813,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
