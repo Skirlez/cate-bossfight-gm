@@ -38,6 +38,7 @@ if room == mainroom {
 		instance_destroy(obj_spinjinx4)
 		instance_destroy(obj_spinjinx5)
 		instance_destroy(obj_spinjinx6)
+		instance_destroy(obj_note)
 		layer_background_blend(background, c_white)
 		phase = 2	
 	

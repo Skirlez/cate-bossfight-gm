@@ -6,6 +6,19 @@ if intro == false {
 else { // hardcoded instance id!!! cringe!!!
 	x = inst_2D28C6F5.x - 2 
 	y = inst_2D28C6F5.y + 12
+	
+	if move == true {
+		if notettimer > 0
+			notettimer -= 1
+		else {
+			repeat(choose(1, 2)){
+				i = instance_create_depth(x, y, -10000, obj_note)	
+				i.harmless = true
+			}
+			notettimer = 90
+		}
+		
+	}
 }
 
 

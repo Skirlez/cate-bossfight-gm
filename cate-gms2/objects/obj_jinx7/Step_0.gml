@@ -114,7 +114,7 @@ switch (decideattack) {
 		if timer == 50 
 			audio_play_sound(snd_impact, 10, false)
 		
-		if timer >= 50 and timer <= 90 and timer % 10 == 0 {
+		if timer >= 50 and timer <= 80 and timer % 10 == 0 {
 			i = instance_create_depth(x, y, -10000, obj_jinx6attack)	
 			i.spin = beginsixpart
 			i.object = id

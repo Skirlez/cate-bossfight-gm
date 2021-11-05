@@ -6,3 +6,4 @@ image_xscale = 0.03
 image_yscale = 0.03
 depth = -10001
 move_towards_point(x + dcos(dir) * 30, y - dsin(dir) * 30, 3)
+harmless = false
