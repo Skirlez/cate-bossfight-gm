@@ -9,6 +9,6 @@ if image_alpha > 0  {
 
 
 if timer == 430 {
-	instance_create_depth(x, y, -9999, obj_pluck)	
-	instance_destroy(id)
+	audio_play_sound(snd_pluck, 10, false)
+	room_goto(bonuscat)
 }

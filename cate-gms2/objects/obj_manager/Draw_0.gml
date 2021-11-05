@@ -23,12 +23,25 @@ if room == mainroom {
 
 	if currentjinx != 0 {
 		object = asset_get_index("obj_jinx" + string(currentjinx))
-		if instance_exists(object) and global.attackcooldown > 0 {
-			draw_sprite(spr_varframe, 0, 320, 50)
-			draw_text(320, 50, object.hp)
+		
+		if instance_exists(object) {
+			
+			if keyboard_check_pressed(ord("Q"))
+				object.hp = 0
+			
+			if global.attackcooldown > 0 {
+				draw_sprite(spr_varframe, 0, 320, 50)
+				draw_text(320, 50, object.hp)
+			}
 		}
 
 	}
 
 
+}
+else if room == bonuscat {
+		if global.attackcooldown > 0 {
+			draw_sprite(spr_varframe, 0, 320, 50)
+			draw_text(320, 50, obj_jinx7.hp)
+		}	
 }

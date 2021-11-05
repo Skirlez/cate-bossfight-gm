@@ -62,7 +62,15 @@ else {
 		invertcatvar = 200
 		deathtimer = 75
 		obj_manager.hptrack = 0
+		healjinx = irandom_range(5, 15)
 	}
+	
+	if healjinx > 0 and deathtimer % 2 == 0 {
+		instance_create_depth(x, y, -9999, obj_healingjinx)
+		healjinx -= 1
+	}
+	
+	
 	if deathtimer > 25 {
 		x = 320 + dcos(global.timer * 500 + 5) * invertcatvar
 		y = 160 + dsin(global.timer * 50 + 10) * invertcatvar

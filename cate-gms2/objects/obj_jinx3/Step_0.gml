@@ -32,7 +32,7 @@ if clicked() { // very accurate
 		audio_play_sound(snd_car_horn, 10, false)	
 		obj_bus.image_speed = 1
 		if choose(0, 1) == 1 {
-			obj_bus.image_blend = c_lime
+			obj_bus.image_blend = make_color_rgb(0, 255, 0)
 			audio_play_sound(snd_head_shake, 10, false)
 			global.hp += 1
 		}

@@ -10,14 +10,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "snd_music_phase4.ogg",
-  "duration": 135.235916,
+  "soundFile": "snd_b_sax.wav",
+  "duration": 0.433333,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
-  "name": "snd_music_phase4",
+  "name": "snd_b_sax",
   "tags": [],
   "resourceType": "GMSound",
 }

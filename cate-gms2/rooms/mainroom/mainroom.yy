@@ -14,7 +14,6 @@
   ],
   "layers": [
     {"instances":[
-        {"properties":[],"isDnd":false,"objectId":{"name":"obj_mousebox","path":"objects/obj_mousebox/obj_mousebox.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":0.0,"y":16.0,"resourceVersion":"1.0","name":"inst_6C9530F","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_bus","path":"objects/obj_bus/obj_bus.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":0.6666667,"scaleY":0.51111114,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":0.0,"y":0.0,"resourceVersion":"1.0","name":"inst_5F7A3B21","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_spinjinx4","path":"objects/obj_spinjinx4/obj_spinjinx4.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":0.1,"scaleY":0.1,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":256.0,"y":48.0,"resourceVersion":"1.0","name":"inst_2120A6B4","tags":[],"resourceType":"GMRInstance",},
         {"properties":[
@@ -36,7 +35,6 @@
   "creationCodeFile": "",
   "inheritCode": false,
   "instanceCreationOrder": [
-    {"name":"inst_6C9530F","path":"rooms/mainroom/mainroom.yy",},
     {"name":"inst_5F7A3B21","path":"rooms/mainroom/mainroom.yy",},
     {"name":"inst_2120A6B4","path":"rooms/mainroom/mainroom.yy",},
     {"name":"inst_2D28C6F5","path":"rooms/mainroom/mainroom.yy",},

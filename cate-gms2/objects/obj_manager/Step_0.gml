@@ -1,5 +1,8 @@
 global.timer += 1 / 60
 
+if global.attackcooldown > 0
+	global.attackcooldown -= 1
+
 if room == mainroom {
 	
 	
@@ -122,9 +125,6 @@ if room == mainroom {
 
 
 
-	if global.attackcooldown > 0
-		global.attackcooldown -= 1
-
 	if global.hp <= 0 {
 		audio_stop_all()
 		room_goto(death)
@@ -133,4 +133,40 @@ if room == mainroom {
 	if keyboard_check(ord("E")) {
 		room_goto(ending)
 	}	
+}
+
+else if room == bonuscat {
+	
+	scripttimer += 1
+	if phase == 0 {
+		if scripttimer == 240 {
+			audio_play_sound(snd_pluck_reversed, 10, false)	
+			instance_destroy(obj_pluck)
+		}
+	
+		if scripttimer > 300 and whitecolor > 0 {
+			layer_background_blend(background, make_color_rgb(whitecolor, whitecolor, whitecolor))
+			whitecolor -= 5
+		}
+	
+		if scripttimer == 360
+			audio_play_sound(snd_entrance, 10, false)
+			
+		if scripttimer == 478 
+			layer_background_blend(background, c_white)
+		
+		if scripttimer == 482 {
+			layer_background_blend(background, c_black)
+			instance_create_depth(320, 160, -9999, obj_jinx7)
+		}
+		
+	
+		
+		if scripttimer == 540 {
+			audio_play_sound(snd_finale, 10, true)
+			obj_jinx7.go = true
+			phase = 1	
+		}
+	}
+	
 }

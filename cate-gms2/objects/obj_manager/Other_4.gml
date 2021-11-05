@@ -12,3 +12,12 @@ if room == mainroom {
 	whitecolor = 255
 	currentjinx = 0	
 }
+
+if room == bonuscat {
+	global.timer = 0
+	scripttimer = 481
+	phase = 0
+	backgroundlayer = layer_get_id("Background")
+	background = layer_background_get_id(backgroundlayer)
+	whitecolor = 255
+}

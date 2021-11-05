@@ -4,6 +4,7 @@ x = 320 + dsin(global.timer * 50 + 5 * 60) * global.distance
 
 if clicked() {
 	spintimer = 60
+	image_angle = 0
 	audio_play_sound(snd_aliencreek, 10, false)
 }
 
