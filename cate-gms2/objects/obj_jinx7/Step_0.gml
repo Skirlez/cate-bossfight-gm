@@ -50,21 +50,26 @@ else
 switch (decideattack) {
 	case 0:
 		// this sucks
-		if timer == 0
+		if timer == 0 {
 			audio_play_sound(snd_lasercharge, 10, false)
+	
+		}
 			
 		else if timer == 120 or timer == 180 or timer == 240 {
 			audio_play_sound(snd_bombfall, 10, false)
 			ang_x = mouse_x
 			ang_y = mouse_y
+			instance_create_depth(x, y, -10000, obj_laserdot)
 		}
 		else if timer == 140 or timer == 200 or timer == 260 {
 			audio_play_sound(snd_lasergo, 10, false)
+			instance_destroy(obj_laserdot)
 			i = instance_create_depth(x, y, -10000, obj_shootlaser)	
 			i.image_angle = point_direction(x, y, ang_x, ang_y)
 		}
 		
 		if timer == 280 {
+			
 			timer = -60
 			decideattack = irandom_range(0, 4)
 		}
@@ -113,7 +118,7 @@ switch (decideattack) {
 			i = instance_create_depth(x, y, -10000, obj_jinx6attack)	
 			i.spin = beginsixpart
 			i.object = id
-			
+			i.mercy = true
 			beginsixpart += 2
 		}
 			
@@ -149,16 +154,16 @@ switch (decideattack) {
 	if timer == 100
 		audio_play_sound(snd_a_piano, 10, false)
 
-	if timer >= 120 and timer % 20 == 0 and timer < 220 {
+	if timer >= 120 and timer % 30 == 0 and timer < 250 {
 		instance_create_depth(-640, 320 - jinxlaser, -10000, obj_sillyjinxlaser)
 		audio_stop_sound(snd_boom_cloud2)
 		audio_play_sound(snd_drum_boing, 10, false)
 		audio_play_sound(snd_boom_cloud2, 10, false)
 		
-		jinxlaser += 72
+		jinxlaser += 75
 	}
 	
-	if timer == 200 {
+	if timer == 250 {
 		timer = -60
 		jinxlaser = 0	
 		decideattack = irandom_range(0, 3)
