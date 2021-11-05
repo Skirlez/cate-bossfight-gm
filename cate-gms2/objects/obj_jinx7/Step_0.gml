@@ -19,6 +19,8 @@ if clicked() and global.attackcooldown == 0 {
 	image_xscale = 0.1
 	spintarget = -0.1
 	global.attackcooldown = 61
+	if irandom_range(0, 9) == 9
+		instance_create_depth(320, 160, -9999, obj_healingjinx)
 	hp -= 1
 	
 }
@@ -45,8 +47,59 @@ if spintimer > 0 {
 else 
 	image_xscale = 0.1
 	
-	
-if timer == 120 {
-	decideattack = irandom_range(0, 0)
+switch (decideattack) {
+	case 0:
+		// this sucks
+		if timer == 120
+			audio_play_sound(snd_lasercharge, 10, false)
+			
+		else if timer == 240 or timer == 300 or timer == 360 {
+			audio_play_sound(snd_bombfall, 10, false)
+			ang_x = mouse_x
+			ang_y = mouse_y
+		}
+		else if timer == 260 or timer == 320 or timer == 380 {
+			audio_play_sound(snd_lasergo, 10, false)
+			i = instance_create_depth(x, y, -10000, obj_shootlaser)	
+			i.image_angle = point_direction(x, y, ang_x, ang_y)
+		}
+		
+		else if timer == 400
+			timer = 0
+
+			
+		break;
+	case 1:
+		if timer == 120
+			audio_play_sound(snd_higher_pitch_alert, 10, false)
+			
+		if timer > 120 and timer % 30 == 0 and timer < 300 {
+			instance_create_depth(x, y, -10000, obj_jinx7attack1)	
+			audio_play_sound(snd_low_boing, 10, false)	
+		}
+		
+		if timer == 300 
+			timer = 0
+			
+		break;
+		
+	case 2:
+		if timer == 120 
+			audio_play_sound(snd_alert, 10, false)
+		
+		
+		if timer > 160 and timer < 240 {
+			i = instance_create_depth(x, y, -10001, obj_note)
+			i.sprite_index = spr_brightnote	
+			audio_play_sound(snd_elecguitar, 10, false)
+		}
+		if timer == 240
+			timer = 0
+		break;
 }
 
+
+if hp <= 0 or keyboard_check_pressed(ord("Q")) {
+	instance_create_depth(x, y, -9999, obj_bonusend)
+	room_goto(bonusend)
+}

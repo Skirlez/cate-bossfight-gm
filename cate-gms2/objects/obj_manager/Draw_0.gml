@@ -40,6 +40,9 @@ if room == mainroom {
 
 }
 else if room == bonuscat {
+		draw_sprite(spr_varframe, 0, 320, 300)
+		draw_text(320, 300, global.hp)
+		
 		if global.attackcooldown > 0 {
 			draw_sprite(spr_varframe, 0, 320, 50)
 			draw_text(320, 50, obj_jinx7.hp)

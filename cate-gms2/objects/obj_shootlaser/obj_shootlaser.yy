@@ -1,12 +1,12 @@
 {
   "spriteId": {
-    "name": "spr_jinx7",
-    "path": "sprites/spr_jinx7/spr_jinx7.yy",
+    "name": "spr_bonuslaser",
+    "path": "sprites/spr_bonuslaser/spr_bonuslaser.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
-  "persistent": true,
+  "persistent": false,
   "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
@@ -31,7 +31,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_bonusend",
+  "name": "obj_shootlaser",
   "tags": [],
   "resourceType": "GMObject",
 }

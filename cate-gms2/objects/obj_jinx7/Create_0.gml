@@ -4,5 +4,5 @@ image_yscale = 0.1
 go = false
 spintimer = 0
 spintarget = -0.1
-hp = 40
-decideattack = 0
+hp = 30
+decideattack = 2
