@@ -11,7 +11,7 @@ if go == true {
 timer += 1
 
 
-if clicked() and global.attackcooldown == 0 {
+if clicked() and global.attackcooldown == 0 and go = true {
 	audio_play_sound(snd_punchstrong, 10, false)
 	audio_play_sound(snd_saber3, 10, false)
 	audio_play_sound(snd_attack_hit, 10, false)
@@ -19,7 +19,7 @@ if clicked() and global.attackcooldown == 0 {
 	image_xscale = 0.1
 	spintarget = -0.1
 	global.attackcooldown = 61
-	if irandom_range(0, 9) == 9
+	if irandom_range(0, 8) == 8
 		instance_create_depth(320, 160, -9999, obj_healingjinx)
 	hp -= 1
 	
@@ -50,23 +50,23 @@ else
 switch (decideattack) {
 	case 0:
 		// this sucks
-		if timer == 120
+		if timer == 0
 			audio_play_sound(snd_lasercharge, 10, false)
 			
-		else if timer == 240 or timer == 300 or timer == 360 {
+		else if timer == 120 or timer == 180 or timer == 240 {
 			audio_play_sound(snd_bombfall, 10, false)
 			ang_x = mouse_x
 			ang_y = mouse_y
 		}
-		else if timer == 260 or timer == 320 or timer == 380 {
+		else if timer == 140 or timer == 200 or timer == 260 {
 			audio_play_sound(snd_lasergo, 10, false)
 			i = instance_create_depth(x, y, -10000, obj_shootlaser)	
 			i.image_angle = point_direction(x, y, ang_x, ang_y)
 		}
 		
-		else if timer == 400 {
+		if timer == 280 {
 			timer = -60
-			decideattack = irandom_range(0, 3)
+			decideattack = irandom_range(0, 4)
 		}
 
 			
@@ -75,14 +75,14 @@ switch (decideattack) {
 		if timer == 120
 			audio_play_sound(snd_higher_pitch_alert, 10, false)
 			
-		if timer > 120 and timer % 30 == 0 and timer < 300 {
+		if timer > 120 and timer % 20 == 0 and timer < 300 {
 			instance_create_depth(x, y, -10000, obj_jinx7attack1)	
 			audio_play_sound(snd_low_boing, 10, false)	
 		}
 		
 		if timer == 300 {
 			timer = -60
-			decideattack = irandom_range(0, 3)
+			decideattack = irandom_range(0, 4)
 		}
 			
 		break;
@@ -100,40 +100,70 @@ switch (decideattack) {
 		
 		if timer == 300 {
 			timer = -60
-			decideattack = irandom_range(0, 3)
+			decideattack = irandom_range(0, 4)
 		}
 		
 		break;
 		
 	case 3:
-		if timer == 50
+		if timer == 50 
 			audio_play_sound(snd_impact, 10, false)
+		
+		if timer >= 50 and timer <= 90 and timer % 10 == 0 {
+			i = instance_create_depth(x, y, -10000, obj_jinx6attack)	
+			i.spin = beginsixpart
+			i.object = id
+			
+			beginsixpart += 2
+		}
+			
+
 	
 		if timer >= 120 and timer < 128 and timer % 2 == 0 {
 			i = instance_create_depth(x, y, -10000, obj_jinx6attack)
 			i.spin = (timer - 120)
 			i.object = id
 		}
-		if timer = 130 {
+		
+		if timer == 130 {
 			obj_jinx6attack.go = true
 			audio_play_sound(snd_scytheburst, 10, false)
 		}
 		
-		if timer == 140 {
+		else if timer == 140 {
 			if repeatattack > 0 {
 				repeatattack -= 1
 				timer = 119
 			}
 			else {
-				
 				timer = -60
-				decideattack = irandom_range(0, 3)
+				decideattack = irandom_range(0, 4)
 				repeatattack = 3	
 			}
 				
 			
 		}
 		break;
+		
+	case 4:
+	if timer == 100
+		audio_play_sound(snd_a_piano, 10, false)
+
+	if timer >= 120 and timer % 20 == 0 and timer < 220 {
+		instance_create_depth(-640, 320 - jinxlaser, -10000, obj_sillyjinxlaser)
+		audio_stop_sound(snd_boom_cloud2)
+		audio_play_sound(snd_drum_boing, 10, false)
+		audio_play_sound(snd_boom_cloud2, 10, false)
+		
+		jinxlaser += 72
+	}
+	
+	if timer == 200 {
+		timer = -60
+		jinxlaser = 0	
+		decideattack = irandom_range(0, 3)
+	}
+	break;
 }
 
 

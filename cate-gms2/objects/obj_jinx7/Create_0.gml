@@ -1,9 +1,11 @@
-timer = 0
+timer = -60
 image_xscale = 0.1
 image_yscale = 0.1
 go = false
 spintimer = 0
 spintarget = -0.1
 hp = 35
-decideattack = irandom_range(0, 3)
+decideattack = 3
 repeatattack = 3
+jinxlaser = 0
+beginsixpart = 1

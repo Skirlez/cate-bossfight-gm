@@ -16,7 +16,7 @@ if room == mainroom {
 			obj_spinjinx4.image_speed = 0.5
 			obj_spinjinx5.image_speed = 0.5
 			obj_spinjinx6.image_speed = 1
-			obj_guitar.randomfire = true
+			obj_guitar.move = true
 		}	
 		
 		if global.timer > 15 and global.distance > 0
@@ -138,17 +138,21 @@ if room == mainroom {
 else if room == bonuscat {
 	
 	scripttimer += 1
+	
+	if quickentrance == true {
+		audio_play_sound(snd_finale, 10, true)
+		instance_create_depth(320, 160, -9999, obj_jinx7)
+		obj_jinx7.go = true
+		instance_destroy(obj_pluck)
+		layer_background_blend(background, c_black)
+		scripttimer = 451
+		phase = 1
+		quickentrance = false
+			
+	}
 	if phase == 0 {
 		
-		if quickentrance == true {
-			audio_play_sound(snd_finale, 10, true)
-			instance_create_depth(320, 160, -9999, obj_jinx7)
-			obj_jinx7.go = true
-			instance_destroy(obj_pluck)
-			layer_background_blend(background, c_black)
-			phase = 1
-			scripttimer = 451
-		}
+
 		
 		if scripttimer == 240 {
 			audio_play_sound(snd_pluck_reversed, 10, false)	
@@ -176,7 +180,7 @@ else if room == bonuscat {
 		if scripttimer == 540 {
 			audio_play_sound(snd_finale, 10, true)
 			obj_jinx7.go = true
-			phase = 1	
+			phase = 1 // thought I would have more phases
 		}
 		
 	}

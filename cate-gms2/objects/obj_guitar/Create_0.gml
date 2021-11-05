@@ -4,7 +4,7 @@ randomfire = false
 angletimer = 0
 sizetimer = 160
 notecooldown = 0
-
+move = false
 attacktimer = 0
 notes = irandom_range(40, 120)
 bonuswait = 0

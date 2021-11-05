@@ -4,7 +4,7 @@
     "path": "sprites/spr_jinx7/spr_jinx7.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "spriteMaskId": null,
   "persistent": true,
   "parentObjectId": null,

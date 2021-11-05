@@ -50,7 +50,7 @@ if hp > 0 {
 			audio_play_sound(snd_cymbal_crash, 10, false)	
 			clickcooldown = false
 			sprite_index = spr_jinx5
-			image_speed = 0.5
+			image_speed = 0.25
 			image_index = 0
 			timer = 0
 		}
