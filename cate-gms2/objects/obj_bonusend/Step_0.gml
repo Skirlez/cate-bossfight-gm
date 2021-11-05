@@ -27,3 +27,8 @@ if sizetimer == 0
 }
 	
 timer += 1
+
+if timer == 1000 {
+	instance_create_depth(0, 0, -9999, obj_trueend)	
+	audio_play_sound(snd_head_shake, 10, false)
+}

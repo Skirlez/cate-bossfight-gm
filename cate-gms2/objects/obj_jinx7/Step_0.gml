@@ -64,8 +64,10 @@ switch (decideattack) {
 			i.image_angle = point_direction(x, y, ang_x, ang_y)
 		}
 		
-		else if timer == 400
-			timer = 0
+		else if timer == 400 {
+			timer = -60
+			decideattack = irandom_range(0, 3)
+		}
 
 			
 		break;
@@ -78,8 +80,10 @@ switch (decideattack) {
 			audio_play_sound(snd_low_boing, 10, false)	
 		}
 		
-		if timer == 300 
-			timer = 0
+		if timer == 300 {
+			timer = -60
+			decideattack = irandom_range(0, 3)
+		}
 			
 		break;
 		
@@ -88,13 +92,47 @@ switch (decideattack) {
 			audio_play_sound(snd_alert, 10, false)
 		
 		
-		if timer > 160 and timer < 240 {
+		if timer > 160 and timer < 300 {
 			i = instance_create_depth(x, y, -10001, obj_note)
 			i.sprite_index = spr_brightnote	
 			audio_play_sound(snd_elecguitar, 10, false)
 		}
-		if timer == 240
-			timer = 0
+		
+		if timer == 300 {
+			timer = -60
+			decideattack = irandom_range(0, 3)
+		}
+		
+		break;
+		
+	case 3:
+		if timer == 50
+			audio_play_sound(snd_impact, 10, false)
+	
+		if timer >= 120 and timer < 128 and timer % 2 == 0 {
+			i = instance_create_depth(x, y, -10000, obj_jinx6attack)
+			i.spin = (timer - 120)
+			i.object = id
+		}
+		if timer = 130 {
+			obj_jinx6attack.go = true
+			audio_play_sound(snd_scytheburst, 10, false)
+		}
+		
+		if timer == 140 {
+			if repeatattack > 0 {
+				repeatattack -= 1
+				timer = 119
+			}
+			else {
+				
+				timer = -60
+				decideattack = irandom_range(0, 3)
+				repeatattack = 3	
+			}
+				
+			
+		}
 		break;
 }
 

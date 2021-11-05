@@ -9,5 +9,6 @@ depth = -10002
 screenalpha = 0
 global.timer = 0
 global.attackcooldown = 0
-
+quickentrance = false
+whitescreen = 0
 scripttimer = 0

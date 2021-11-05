@@ -40,11 +40,21 @@ if room == mainroom {
 
 }
 else if room == bonuscat {
-		draw_sprite(spr_varframe, 0, 320, 300)
-		draw_text(320, 300, global.hp)
+		if scripttimer > 481 {
+			draw_sprite(spr_varframe, 0, 320, 300)
+			draw_text(320, 300, global.hp)
+		}
 		
 		if global.attackcooldown > 0 {
 			draw_sprite(spr_varframe, 0, 320, 50)
 			draw_text(320, 50, obj_jinx7.hp)
 		}	
+}
+
+if whitescreen > 0 {
+	draw_set_color(c_white)
+	draw_set_alpha(whitescreen)
+	draw_rectangle(0, 0, 640, 360, false)	
+	whitescreen -= 0.01
+	draw_set_alpha(1)
 }

@@ -1,6 +1,6 @@
 if go == false {
-	x = dcos((global.timer * 300) + (spin * 45)) * 40 + obj_jinx6.x
-	y = dsin((global.timer * 300) + (spin * 45)) * 40 + obj_jinx6.y
+	x = dcos((global.timer * 300) + (spin * 45)) * 40 + object.x
+	y = dsin((global.timer * 300) + (spin * 45)) * 40 + object.y
 }
 
 else {

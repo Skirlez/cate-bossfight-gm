@@ -139,6 +139,17 @@ else if room == bonuscat {
 	
 	scripttimer += 1
 	if phase == 0 {
+		
+		if quickentrance == true {
+			audio_play_sound(snd_finale, 10, true)
+			instance_create_depth(320, 160, -9999, obj_jinx7)
+			obj_jinx7.go = true
+			instance_destroy(obj_pluck)
+			layer_background_blend(background, c_black)
+			phase = 1
+			scripttimer = 451
+		}
+		
 		if scripttimer == 240 {
 			audio_play_sound(snd_pluck_reversed, 10, false)	
 			instance_destroy(obj_pluck)
@@ -167,6 +178,12 @@ else if room == bonuscat {
 			obj_jinx7.go = true
 			phase = 1	
 		}
+		
+	}
+	
+	if global.hp <= 0 {
+		audio_stop_all()
+		room_goto(bonusdeath)
 	}
 	
 }

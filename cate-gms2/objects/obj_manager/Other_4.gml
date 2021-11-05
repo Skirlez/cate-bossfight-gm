@@ -16,7 +16,7 @@ if room == mainroom {
 if room == bonuscat {
 	global.timer = 0
 	global.hp = 10
-	scripttimer = 481
+	scripttimer = 0
 	phase = 0
 	backgroundlayer = layer_get_id("Background")
 	background = layer_background_get_id(backgroundlayer)
