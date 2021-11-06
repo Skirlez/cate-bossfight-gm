@@ -26,8 +26,8 @@ if room == mainroom {
 		
 		if instance_exists(object) {
 			
-			if keyboard_check_pressed(ord("Q"))
-				object.hp = 0
+			//if keyboard_check_pressed(ord("Q"))
+			//	object.hp = 0
 			
 			if global.attackcooldown > 0 {
 				draw_sprite(spr_varframe, 0, 320, 50)

@@ -172,7 +172,7 @@ switch (decideattack) {
 }
 
 
-if hp <= 0 or keyboard_check_pressed(ord("Q")) {
+if hp <= 0 {
 	instance_create_depth(x, y, -9999, obj_bonusend)
 	room_goto(bonusend)
 }
