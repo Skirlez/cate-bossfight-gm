@@ -1,1 +1,1 @@
-room_goto(title)
+game_restart()
