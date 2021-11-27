@@ -1,1 +1,1 @@
-room_goto(ending)
+room_goto(mainroom)
