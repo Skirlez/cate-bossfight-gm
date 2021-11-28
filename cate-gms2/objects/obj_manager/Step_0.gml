@@ -173,7 +173,7 @@ else if room == bonuscat {
 		
 		if scripttimer == 482 {
 			layer_background_blend(background, c_black)
-			instance_create_depth(320, 160, -9999, obj_jinx7)
+			instance_create_depth(320, 50, -9999, obj_jinx7)
 		}
 		
 	

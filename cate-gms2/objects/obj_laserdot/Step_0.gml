@@ -5,4 +5,3 @@ if instance_exists(obj_jinx7) {
 else 
 	instance_destroy(id)	
 
-image_angle = point_direction(x, y, look_x, look_y)

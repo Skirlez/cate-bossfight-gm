@@ -1,10 +1,17 @@
+// all of this sucks and is rushed I do not care shut up
+
+
+
+
 
 if timer % 5 == 0
 	image_blend = make_color_rgb(irandom_range(0, 255), irandom_range(0, 255), irandom_range(0, 255))
 	
 if go == true {
+	
 	x = 320 + dsin(global.timer * 200) * 200
 	y = 160 + dcos(global.timer * 180) * 110
+	
 }
 
 
@@ -57,21 +64,20 @@ switch (decideattack) {
 			
 		else if timer == 120 or timer == 180 or timer == 240 {
 			audio_play_sound(snd_bombfall, 10, false)
-			ang_x = mouse_x
-			ang_y = mouse_y
+			laserangle = point_direction(x, y, mouse_x, mouse_y)
 			instance_create_depth(x, y, -10000, obj_laserdot)
 		}
 		else if timer == 140 or timer == 200 or timer == 260 {
 			audio_play_sound(snd_lasergo, 10, false)
 			instance_destroy(obj_laserdot)
 			i = instance_create_depth(x, y, -10000, obj_shootlaser)	
-			i.image_angle = point_direction(x, y, ang_x, ang_y)
+			i.image_angle = laserangle
 		}
 		
 		if timer == 280 {
 			
 			timer = -60
-			decideattack = irandom_range(0, 4)
+			decideattack = irandom_range(0, 5)
 		}
 
 			
@@ -87,7 +93,7 @@ switch (decideattack) {
 		
 		if timer == 300 {
 			timer = -60
-			decideattack = irandom_range(0, 4)
+			decideattack = irandom_range(0, 5)
 		}
 			
 		break;
@@ -97,7 +103,18 @@ switch (decideattack) {
 			audio_play_sound(snd_alert, 10, false)
 		
 		
-		if timer > 160 and timer < 300 {
+		if timer > 160 and timer < 190 {
+			i = instance_create_depth(x, y, -10001, obj_note)
+			i.sprite_index = spr_brightnote	
+			audio_play_sound(snd_elecguitar, 10, false)
+		}
+		
+		if timer == 210 {
+			instance_create_depth(x, y, -10000, obj_jinx7attack1)	
+			audio_play_sound(snd_low_boing, 10, false)
+		}
+		
+		if timer > 230 and timer < 280 {
 			i = instance_create_depth(x, y, -10001, obj_note)
 			i.sprite_index = spr_brightnote	
 			audio_play_sound(snd_elecguitar, 10, false)
@@ -105,7 +122,7 @@ switch (decideattack) {
 		
 		if timer == 300 {
 			timer = -60
-			decideattack = irandom_range(0, 4)
+			decideattack = irandom_range(0, 5)
 		}
 		
 		break;
@@ -142,7 +159,7 @@ switch (decideattack) {
 			}
 			else {
 				timer = -60
-				decideattack = irandom_range(0, 4)
+				decideattack = irandom_range(0, 5)
 				repeatattack = 3	
 			}
 				
@@ -151,23 +168,62 @@ switch (decideattack) {
 		break;
 		
 	case 4:
-	if timer == 100
-		audio_play_sound(snd_a_piano, 10, false)
-
-	if timer >= 120 and timer % 30 == 0 and timer < 250 {
-		instance_create_depth(-640, 320 - jinxlaser, -10000, obj_sillyjinxlaser)
-		audio_stop_sound(snd_boom_cloud2)
-		audio_play_sound(snd_drum_boing, 10, false)
-		audio_play_sound(snd_boom_cloud2, 10, false)
+		if timer >= 40 and timer % 10 == 0 and timer <= 80 { 
+			instance_create_depth(580, 300 - warnboxheight, -10001, obj_warnbox)
+			warnboxheight += 75
+		}
 		
-		jinxlaser += 75
-	}
+		
+		if timer == 100 {
+			audio_play_sound(snd_a_piano, 10, false)
+			warnboxheight = 0
+		}
+		
+		if timer == 120
+			instance_destroy(obj_warnbox)
+			
+		if timer >= 120 and timer % 30 == 0 and timer < 250 {
+			instance_create_depth(-640, 320 - jinxlaser, -10000, obj_sillyjinxlaser)
+			audio_stop_sound(snd_boom_cloud2)
+			audio_play_sound(snd_drum_boing, 10, false)
+			audio_play_sound(snd_boom_cloud2, 10, false)
+		
+			jinxlaser += 75
+		}
 	
-	if timer == 250 {
-		timer = -60
-		jinxlaser = 0	
-		decideattack = irandom_range(0, 3)
-	}
+		if timer == 250 {
+			timer = -60
+			jinxlaser = 0	
+			decideattack = irandom_range(0, 5)
+		}
+		break;
+		
+	case 5:
+		if timer == 100
+			audio_play_sound(snd_gunshot, 10, false)
+			
+		if timer > 100 and timer <= 120 {
+			image_yscale -= 0.005
+		}
+		
+		if timer > 120 and timer < 180
+			global.timer -= 1 / 60
+		
+		if timer == 160
+			instance_create_depth(x, y, depth, obj_jinx7attack2)
+		
+		if timer == 180
+			audio_play_sound(snd_sparkles, 10, false)
+		
+		if timer > 180
+			image_yscale += 0.005
+			
+		if timer == 210 {
+			image_yscale = 0.1
+			timer = -60
+			decideattack = irandom_range(0, 5)
+		}
+	
 	break;
 }
 

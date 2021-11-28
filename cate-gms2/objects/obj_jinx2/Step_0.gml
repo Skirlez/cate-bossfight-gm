@@ -22,7 +22,7 @@ if hp > 0 {
 	
 	
 	if actiontime == 1 {
-		if attacking == 0 and irandom_range(0, 4) == 3 {
+		if attacking == 0 and irandom_range(0, 6) == 0 {
 			attacking = 45
 			audio_play_sound(snd_higher_pitch_alert, 10, false)
 			sprite_index = spr_jinx2attack	
