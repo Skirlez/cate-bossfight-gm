@@ -56,6 +56,7 @@ if hp > 0 {
 else {
 	if deathsound == false {
 		audio_play_sound(snd_boom_cloud, 10, false)
+		obj_hurt.phase = 1
 		deathsound = true
 		obj_manager.hptrack = 0
 	}

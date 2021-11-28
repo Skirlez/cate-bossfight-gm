@@ -11,8 +11,10 @@ if clicked() and global.attackcooldown == 0 {
 
 }
 
-if hp <= 0
+if hp <= 0 {
+	obj_hurt.phase = 1
 	room_goto(ending)
+}
 
 if attacktimer == 180
 	audio_play_sound(snd_impact, 10, false)

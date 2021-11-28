@@ -20,6 +20,7 @@ else {
 	if deathtimer == 0 {
 		x = 320
 		y = 160
+		obj_hurt.phase = 1
 		audio_play_sound(snd_whatdog, 10, false)
 		audio_play_sound(snd_vinethud, 10, false)
 	}

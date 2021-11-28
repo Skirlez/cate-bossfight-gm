@@ -61,7 +61,7 @@ if hp > 0 {
 
 
 	if clicked() and global.attackcooldown == 0 and clickcooldown = false { 
-		spintimer = 60
+		spintimer = 0
 		image_angle = 0	
 		global.attackcooldown = 61
 		audio_play_sound(snd_aliencreek, 10, false)
@@ -70,9 +70,9 @@ if hp > 0 {
 		hp -= 1
 	}
 
-	if spintimer > 0 {
+	if spintimer <= 60 {
 		image_angle += animcurve_channel_evaluate(spincurvechannel, spintimer / 60) * 30
-		spintimer -= 1
+		spintimer += 1
 	}
 
 	else
@@ -80,6 +80,7 @@ if hp > 0 {
 }
 else {
 	if deathtimer == 0 {
+		obj_hurt.phase = 1
 		audio_play_sound(snd_jinx5death, 10, false)
 		image_speed = 0
 		image_index = 0

@@ -59,6 +59,7 @@ else {
 		audio_play_sound(snd_boom_cloud, 10, false)
 		audio_play_sound(snd_squeaky_toy, 10, false)
 		deathsound = true
+		obj_hurt.phase = 1
 		invertcatvar = 200
 		deathtimer = 75
 		obj_manager.hptrack = 0

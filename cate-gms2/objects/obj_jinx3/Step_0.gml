@@ -7,6 +7,7 @@ else {
 	if deathtimer == 180 {
 		instance_destroy(obj_keyboard)
 		audio_play_sound(snd_glass_breaking, 10, false)
+		obj_hurt.phase = 1
 	}
 	
 	if deathtimer < 60
