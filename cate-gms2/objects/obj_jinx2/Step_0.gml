@@ -1,6 +1,6 @@
 if hp > 0 {
 	x = 320 + dsin(global.timer * 220) * 150 
-	y = 160 + dcos(global.timer * 200) * 110 + dsin(global.timer * 2000) * bounce
+	y = 180 + dcos(global.timer * 200) * 110 + dsin(global.timer * 2000) * bounce
 	
 	if image_alpha < 1
 		image_alpha += 0.02
@@ -74,7 +74,7 @@ else {
 	
 	if deathtimer > 25 {
 		x = 320 + dcos(global.timer * 500 + 5) * invertcatvar
-		y = 160 + dsin(global.timer * 50 + 10) * invertcatvar
+		y = 180 + dsin(global.timer * 50 + 10) * invertcatvar
 		invertcatvar -= 4
 	}
 	else 

@@ -1,4 +1,4 @@
-y = 160 + dcos(global.timer * 50 + 4 * 60) * global.distance + dsin(global.timer * 2000) * bounce
+y = 180 + dcos(global.timer * 50 + 4 * 60) * global.distance + dsin(global.timer * 2000) * bounce
 x = 320 + dsin(global.timer * 50 + 4 * 60) * global.distance 
 
 if clicked() and global.timer <= 15 {

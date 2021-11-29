@@ -4,7 +4,7 @@ audio_play_sound(snd_audio_appearance, 10, false)
 image_xscale = 0.1
 image_yscale = 0.1
 x = 320
-y = 160
+y = 180
 depth = -9999
 instance_create_depth(x, y, -10000, obj_guitar)
 

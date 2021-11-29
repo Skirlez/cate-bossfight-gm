@@ -31,7 +31,7 @@ if room == mainroom {
 	if phase == 1 and !audio_is_playing(snd_music_phase1) or phase == 0 and keyboard_check_pressed(vk_enter) {
 		audio_stop_sound(snd_music_phase1) 
 		audio_play_sound(snd_music_phase2, 10, false)
-		instance_create_depth(320, 160, -10000, obj_jinx1)
+		instance_create_depth(320, 180, -10000, obj_jinx1)
 		currentjinx = 1
 		background_color = c_white
 		instance_destroy(obj_spinjinx123)
@@ -63,7 +63,7 @@ if room == mainroom {
 				whitecolor -= 5
 			}
 			else if whitecolor != -100 {
-				instance_create_depth(320, 160, -9999, obj_jinx2)
+				instance_create_depth(320, 180, -9999, obj_jinx2)
 				whitecolor = -100
 			}
 	
@@ -82,20 +82,20 @@ if room == mainroom {
 				whitecolor += 5
 			}
 			else if whitecolor != 256 {
-				instance_create_depth(320, 160, -9999, obj_jinx3)
+				instance_create_depth(320, 180, -9999, obj_jinx3)
 				whitecolor = 256
 			}
 		
 			if !instance_exists(obj_jinx3) and whitecolor == 256 {
 				currentjinx = 4
-				instance_create_depth(320, 160, -9999, obj_jinx4)
+				instance_create_depth(320, 180, -9999, obj_jinx4)
 			}
 		
 			break;
 		
 		case 4:
 			if !instance_exists(obj_jinx4)  {
-				instance_create_depth(320, 160, -9999, obj_jinx5)
+				instance_create_depth(320, 180, -9999, obj_jinx5)
 				currentjinx = 5
 				whitecolor = 255
 			}
@@ -117,7 +117,7 @@ if room == mainroom {
 		case 6:
 			if whitecolor < 255 {
 				if whitecolor == 0
-					instance_create_depth(320, 160, -9999, obj_jinx6)
+					instance_create_depth(320, 180, -9999, obj_jinx6)
 				
 				layer_background_blend(background, make_color_rgb(whitecolor, whitecolor, whitecolor))
 				whitecolor += 5
@@ -143,7 +143,7 @@ else if room == bonuscat {
 	
 	if quickentrance == true {
 		audio_play_sound(snd_finale, 10, true)
-		instance_create_depth(320, 160, -9999, obj_jinx7)
+		instance_create_depth(320, 180, -9999, obj_jinx7)
 		obj_jinx7.go = true
 		instance_destroy(obj_pluck)
 		layer_background_blend(background, c_black)

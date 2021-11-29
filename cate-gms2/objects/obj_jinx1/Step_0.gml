@@ -1,6 +1,6 @@
 if hp > 0 {
 	x = 320 + dsin(global.timer * 200) * 150 
-	y = 160 + dcos(global.timer * 180) * 110 + dsin(global.timer * 2000) * bounce
+	y = 180 + dcos(global.timer * 180) * 110 + dsin(global.timer * 2000) * bounce
 	
 	
 	if image_alpha < 1

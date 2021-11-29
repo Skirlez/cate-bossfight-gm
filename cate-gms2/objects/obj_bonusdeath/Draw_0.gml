@@ -4,7 +4,7 @@ draw_set_color(c_white)
 if timer < 180
 	draw_self()
 else
-	draw_text(320, 160, "But it was funny.")
+	draw_text(320, 180, "But it was funny.")
 	
 	
 draw_set_alpha(whitescreen)

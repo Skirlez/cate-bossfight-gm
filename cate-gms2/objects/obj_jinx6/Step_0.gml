@@ -1,5 +1,5 @@
 x = 320 + dsin(global.timer * 50) * 110
-y = 160 + dcos(global.timer * 100) * 110
+y = 180 + dcos(global.timer * 100) * 110
 attacktimer += 1
 
 if clicked() and global.attackcooldown == 0 {

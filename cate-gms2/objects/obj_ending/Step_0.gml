@@ -3,7 +3,7 @@ py = py + ((dsin(global.timer * 500) * damn) - py) / 8
 
 
 x = px + 320
-y = py + 160
+y = py + 180
 
 
 if damn != 0

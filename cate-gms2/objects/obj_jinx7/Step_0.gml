@@ -19,7 +19,7 @@ if timer % 5 == 0
 if go == true {
 	
 	x = 320 + dsin(global.timer * 200) * 200
-	y = 160 + dcos(global.timer * 180) * 110
+	y = 180 + dcos(global.timer * 180) * 110
 	
 }
 
@@ -36,7 +36,7 @@ if clicked() and global.attackcooldown == 0 and go = true {
 	spintarget = -0.1
 	global.attackcooldown = 61
 	if irandom_range(0, 8) == 8
-		instance_create_depth(320, 160, -9999, obj_healingjinx)
+		instance_create_depth(320, 180, -9999, obj_healingjinx)
 	hp -= 1
 	
 }

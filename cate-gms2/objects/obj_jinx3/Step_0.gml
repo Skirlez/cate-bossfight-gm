@@ -1,6 +1,6 @@
 if hp > 0 {
 	x = 320 + dsin(global.timer * 70 + 60) * 110
-	y = 160 + dcos(global.timer * 50 + 60) * 110
+	y = 180 + dcos(global.timer * 50 + 60) * 110
 
 }
 else {

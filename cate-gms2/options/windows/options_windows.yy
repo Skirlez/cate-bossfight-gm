@@ -1,7 +1,7 @@
 {
   "option_windows_display_name": "Cate-GMS2",
   "option_windows_executable_name": "${project_name}.exe",
-  "option_windows_version": "1.3.0.0",
+  "option_windows_version": "1.4.0.0",
   "option_windows_company_info": "HELLO",
   "option_windows_product_info": "video game",
   "option_windows_copyright_info": "who",
