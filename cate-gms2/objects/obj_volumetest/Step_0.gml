@@ -7,15 +7,11 @@ if image_index == 1 {
 	if notettimer > 0
 		notettimer -= 1
 	else {
-		repeat(double) {
+		repeat(irandom_range(1, 3)) {
 			i = instance_create_depth(x, y, -10000, obj_note)	
 			i.harmless = true
 			i.sprite_index = spr_brightnote
 		}
-		if double == 1
-			double = 2
-		else
-			double = 1
 			
 		notettimer = 20
 	}

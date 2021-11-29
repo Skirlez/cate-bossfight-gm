@@ -28,7 +28,6 @@
     {"id":{"name":"snd_low_boing","path":"sounds/snd_low_boing/snd_low_boing.yy",},"order":4,},
     {"id":{"name":"spr_jinx6attack","path":"sprites/spr_jinx6attack/spr_jinx6attack.yy",},"order":23,},
     {"id":{"name":"obj_ending","path":"objects/obj_ending/obj_ending.yy",},"order":25,},
-    {"id":{"name":"spr_mousebox","path":"sprites/spr_mousebox/spr_mousebox.yy",},"order":10,},
     {"id":{"name":"snd_b_sax","path":"sounds/snd_b_sax/snd_b_sax.yy",},"order":44,},
     {"id":{"name":"snd_music_phase3","path":"sounds/snd_music_phase3/snd_music_phase3.yy",},"order":22,},
     {"id":{"name":"snd_revival","path":"sounds/snd_revival/snd_revival.yy",},"order":51,},

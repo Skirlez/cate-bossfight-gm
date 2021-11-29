@@ -10,7 +10,7 @@ spincurve = animcurve_get(ac_speen);
 spincurvechannel = spincurve.channels[0]
 
 
-spintimer = 0
+spintimer = 61
 jumpingVar = 0
 clickcooldown = false
 action = 0
