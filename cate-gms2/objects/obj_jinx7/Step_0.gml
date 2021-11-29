@@ -1,6 +1,15 @@
 // all of this sucks and is rushed I do not care shut up
 
-
+function fairirandom(a, b) {
+	
+	i = irandom_range(a, b)	
+	while i == prevattack
+		i = irandom_range(a, b)	
+		
+	prevattack = i
+	return i
+	
+}
 
 
 
@@ -77,7 +86,7 @@ switch (decideattack) {
 		if timer == 280 {
 			
 			timer = -60
-			decideattack = irandom_range(0, 5)
+			decideattack = fairirandom(0, 5)
 		}
 
 			
@@ -93,7 +102,7 @@ switch (decideattack) {
 		
 		if timer == 300 {
 			timer = -60
-			decideattack = irandom_range(0, 5)
+			decideattack = fairirandom(0, 5)
 		}
 			
 		break;
@@ -122,7 +131,7 @@ switch (decideattack) {
 		
 		if timer == 300 {
 			timer = -60
-			decideattack = irandom_range(0, 5)
+			decideattack = fairirandom(0, 5)
 		}
 		
 		break;
@@ -159,7 +168,7 @@ switch (decideattack) {
 			}
 			else {
 				timer = -60
-				decideattack = irandom_range(0, 5)
+				decideattack = fairirandom(0, 5)
 				repeatattack = 3	
 			}
 				
@@ -194,7 +203,7 @@ switch (decideattack) {
 		if timer == 250 {
 			timer = -60
 			jinxlaser = 0	
-			decideattack = irandom_range(0, 5)
+			decideattack = fairirandom(0, 5)
 		}
 		break;
 		
@@ -212,19 +221,19 @@ switch (decideattack) {
 		if timer == 160
 			instance_create_depth(x, y, depth, obj_jinx7attack2)
 		
-		if timer == 180
+		if timer == 220
 			audio_play_sound(snd_sparkles, 10, false)
 		
-		if timer > 180
+		if timer > 220
 			image_yscale += 0.005
 			
-		if timer == 210 {
+		if timer == 250 {
 			image_yscale = 0.1
 			timer = -60
-			decideattack = irandom_range(0, 5)
+			decideattack = fairirandom(0, 5)
 		}
 	
-	break;
+		break;
 }
 
 

@@ -8,3 +8,4 @@ attacktimer = 0
 notes = irandom_range(40, 120)
 bonuswait = 0
 notettimer = 10
+depth = -10000

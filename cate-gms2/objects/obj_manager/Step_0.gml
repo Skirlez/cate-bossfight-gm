@@ -28,7 +28,8 @@ if room == mainroom {
 			phase = 1
 	}
 	
-	if phase == 1 and !audio_is_playing(snd_music_phase1) {
+	if phase == 1 and !audio_is_playing(snd_music_phase1) or phase == 0 and keyboard_check_pressed(vk_enter) {
+		audio_stop_sound(snd_music_phase1) 
 		audio_play_sound(snd_music_phase2, 10, false)
 		instance_create_depth(320, 160, -10000, obj_jinx1)
 		currentjinx = 1

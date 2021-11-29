@@ -1,19 +1,27 @@
 
 if hp > 0 {
+	x = px + 320
+	y = py + 160
+	
 	if starttimer > 0 {
+		x = px + 320
+		y = py + 180
 		starttimer -= 1
-		image_alpha += 1 / 60
+		if starttimer >= 5
+			fx_set_parameter(layerfx, "g_DistortAngle", (power(starttimer - 5, 2)) / 3)
+			
+		layer_set_fx(distortlayer, layerfx)
+		
 	}	
 
-	else {
+	if starttimer == 0 {
 		px = px + ((270 * switchguitar - px) / 4)
 		py = dcos(global.timer * (555 / hp)) * 110
 	
 	}
 
 
-	x = px + 320
-	y = py + 160
+	
 }
 
 else {
