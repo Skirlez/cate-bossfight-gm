@@ -174,7 +174,7 @@ else if room == bonuscat {
 		
 		if scripttimer == 482 {
 			layer_background_blend(background, c_black)
-			instance_create_depth(320, 50, -9999, obj_jinx7)
+			instance_create_depth(320, 70, -9999, obj_jinx7)
 		}
 		
 	
@@ -182,7 +182,7 @@ else if room == bonuscat {
 		if scripttimer == 540 {
 			audio_play_sound(snd_finale, 10, true)
 			obj_jinx7.go = true
-			phase = 1 // thought I would have more phases
+			phase = 1 // thought I would have more phases smh
 		}
 		
 	}

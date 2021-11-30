@@ -2,8 +2,11 @@
 if intro == false {
 	x = obj_jinx4.x - 2
 	y = obj_jinx4.y + 12
+	if image_alpha < 1 and obj_jinx4.hp > 0
+		image_alpha += 0.05
 }
 else { // hardcoded instance id!!! cringe!!!
+	image_alpha = 1
 	x = inst_2D28C6F5.x - 2 
 	y = inst_2D28C6F5.y + 12
 	

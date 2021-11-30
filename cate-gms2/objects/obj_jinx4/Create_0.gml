@@ -6,6 +6,7 @@ image_yscale = 0.1
 x = 320
 y = 180
 depth = -9999
+image_alpha = 0
 instance_create_depth(x, y, -10000, obj_guitar)
 
 distortlayer = layer_get_id("Distort")

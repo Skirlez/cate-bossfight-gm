@@ -1,4 +1,4 @@
-x = obj_jinx3.x - 5
+x = obj_jinx3.x
 y = obj_jinx3.y + 10 - offset
 
 

@@ -1,5 +1,5 @@
 draw_set_font(font_fixedsys)
-draw_text(320, 30, "Cate-GMS2 1.4")
+draw_text(320, 30, "Cate-GMS2 1.3.1")
 draw_set_halign(fa_middle)
 draw_set_valign(fa_center)
 draw_text(320, 170, "Press Enter to play")

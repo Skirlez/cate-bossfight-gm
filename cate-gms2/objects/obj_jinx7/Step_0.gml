@@ -68,10 +68,13 @@ switch (decideattack) {
 		// this sucks
 		if timer == 0 {
 			audio_play_sound(snd_lasercharge, 10, false)
-	
+			i = instance_create_depth(x, y, -10000, obj_laserdot)
+			i.update = true
+			i.image_alpha = 0
 		}
 			
 		else if timer == 120 or timer == 180 or timer == 240 {
+			instance_destroy(obj_laserdot)
 			audio_play_sound(snd_bombfall, 10, false)
 			laserangle = point_direction(x, y, mouse_x, mouse_y)
 			instance_create_depth(x, y, -10000, obj_laserdot)
