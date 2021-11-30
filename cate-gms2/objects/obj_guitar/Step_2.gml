@@ -27,10 +27,9 @@ else { // hardcoded instance id!!! cringe!!!
 
 if intro == true or obj_jinx4.hp > 0  {
 	if clicked() and !audio_is_playing(snd_head_shake) {
-		if intro == false {
+		if intro == false and obj_jinx4.starttimer == 0 {
 			obj_jinx4.switchguitar *= -1
 			obj_jinx4.hp -= 1
-			
 			global.hp += 1
 			audio_play_sound(snd_head_shake, 10, false)
 			global.attackcooldown = 61	

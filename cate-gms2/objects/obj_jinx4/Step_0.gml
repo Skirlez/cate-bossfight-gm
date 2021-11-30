@@ -6,10 +6,12 @@ if hp > 0 {
 	if starttimer > 0 {
 		starttimer -= 1
 		image_alpha += 0.05
-		if starttimer >= 5
-			fx_set_parameter(layerfx, "g_DistortAngle", (power(starttimer - 5, 2)) / 3)
+		if starttimer >= 5 {
+			fx_set_parameter(global.layerfx, "g_DistortAngle", (power(starttimer - 5, 2)) / 3)
+
+		}
 			
-		layer_set_fx(distortlayer, layerfx)
+		layer_set_fx(global.distortlayer, global.layerfx)
 		
 	}	
 

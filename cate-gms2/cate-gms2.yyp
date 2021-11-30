@@ -31,6 +31,7 @@
     {"id":{"name":"snd_b_sax","path":"sounds/snd_b_sax/snd_b_sax.yy",},"order":44,},
     {"id":{"name":"snd_music_phase3","path":"sounds/snd_music_phase3/snd_music_phase3.yy",},"order":22,},
     {"id":{"name":"snd_revival","path":"sounds/snd_revival/snd_revival.yy",},"order":51,},
+    {"id":{"name":"spr_redsquare","path":"sprites/spr_redsquare/spr_redsquare.yy",},"order":36,},
     {"id":{"name":"spr_hurt","path":"sprites/spr_hurt/spr_hurt.yy",},"order":31,},
     {"id":{"name":"snd_heavyswing","path":"sounds/snd_heavyswing/snd_heavyswing.yy",},"order":18,},
     {"id":{"name":"obj_manager","path":"objects/obj_manager/obj_manager.yy",},"order":0,},

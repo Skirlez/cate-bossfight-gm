@@ -9,10 +9,8 @@ depth = -9999
 image_alpha = 0
 instance_create_depth(x, y, -10000, obj_guitar)
 
-distortlayer = layer_get_id("Distort")
-layerfx = layer_get_fx(distortlayer)
-fx_set_parameter(layerfx, "g_DistortAngle", 120)
-layer_set_fx(distortlayer, layerfx)
+fx_set_parameter(global.layerfx, "g_DistortAngle", 120)
+layer_set_fx(global.distortlayer, global.layerfx)
 
 starttimer = 65
 switchguitar = -1

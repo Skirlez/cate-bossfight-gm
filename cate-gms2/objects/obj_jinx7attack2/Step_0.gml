@@ -1,4 +1,4 @@
-if image_alpha > 0.25
+if image_alpha > 0.15
 	instance_create_depth(x, y, -10001, obj_triangle)
 
 

@@ -15,3 +15,7 @@ global.attackcooldown = 0
 quickentrance = false
 whitescreen = 0
 scripttimer = 0
+paused = false
+pausemx = 320
+pausemy = 180
+canunpause = true
