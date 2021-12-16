@@ -65,7 +65,7 @@ else {
 	
 	draw_set_color(c_black)
 	draw_text(320, 30, "The game is paused!")
-	draw_text(320, 70, "Press Shift to quit the game.")
+	draw_text(320, 70, "Press Shift restart the game.")
 	draw_sprite(spr_redsquare, 0, pausemx, pausemy)
 	if mouse_x < pausemx + 5 and mouse_x > pausemx - 5 and mouse_y < pausemy + 5 and mouse_y > pausemy - 5 {
 		draw_set_color(c_lime)
@@ -78,8 +78,7 @@ else {
 		canunpause = false	
 	}
 
-	if keyboard_check_pressed(vk_shift) {
-		instance_activate_all()
-		game_end()
-	}	
+	if keyboard_check_pressed(vk_shift) 
+		game_restart()
+	
 }
