@@ -10,7 +10,8 @@ if hp > 0 {
 		audio_play_sound(snd_bigcut, 10, false)
 		hp -= 1
 	}
-	
+	if spintimer <= 60
+		image_angle += animcurve_channel_evaluate(spincurvechannel, spintimer / 60) * 30 * global.fm
 	repeat(global.execute) {
 	
 		if timer == 0 {
@@ -75,7 +76,6 @@ if hp > 0 {
 		if spintimer <= 60 {
 			if spintimer % 3 == 0
 				image_index = irandom_range(0, 3)
-			image_angle += animcurve_channel_evaluate(spincurvechannel, spintimer / 60) * 30
 			spintimer += 1
 		}
 		else

@@ -8,12 +8,13 @@ if clicked() and global.timer <= 15 {
 	audio_play_sound(snd_aliencreek, 10, false)
 }
 
+if spintimer <= 60
+	image_angle += animcurve_channel_evaluate(spincurvechannel, spintimer / 60) * 30 * global.fm
+
 repeat (global.execute) {
 
-	if spintimer <= 60 {
-		image_angle += animcurve_channel_evaluate(spincurvechannel, spintimer / 60) * 30
+	if spintimer <= 60 
 		spintimer += 1
-	}
 	else
 		image_angle = 0
 }

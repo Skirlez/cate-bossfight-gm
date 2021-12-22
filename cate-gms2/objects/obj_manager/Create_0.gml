@@ -6,7 +6,12 @@ draw_set_valign(fa_middle)
 surface_resize(application_surface, global.screenWidth, global.screenHeight)
 window_set_fullscreen(true)
 
-global.fps = 120
+if !variable_global_exists("fps")
+	global.fps = 120
+	
+if !variable_global_exists("crosshair")
+	global.crosshair = false
+	
 global.fm = 0.5 // framerate multiplier
 depth = -10002
 sprite_set_offset(spr_keyboard, 480, 360)
