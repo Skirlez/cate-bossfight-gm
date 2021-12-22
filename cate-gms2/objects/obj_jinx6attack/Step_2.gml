@@ -9,10 +9,10 @@ else {
 		calcdir = true
 		mercy = false
 	}
-	move_towards_point(x + dcos(dir) * 50, y + dsin(dir) * 50, 10)
-	image_xscale += 0.02
-	image_yscale += 0.02
-	image_alpha -= 0.02
+	move_towards_point(x + dcos(dir) * 50, y + dsin(dir) * 50, 10 * global.fm)
+	image_xscale += 0.02 * global.fm
+	image_yscale += 0.02 * global.fm
+	image_alpha -= 0.02 * global.fm
 }
 
 

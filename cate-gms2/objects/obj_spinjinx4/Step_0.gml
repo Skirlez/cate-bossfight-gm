@@ -7,8 +7,10 @@ if clicked() and global.timer <= 15 {
 }
 	
 	
-if bounce < 40 and bounce != 0
-	bounce += 1
+repeat (global.execute) {
+	if bounce < 40 and bounce != 0
+		bounce += 1
 		
-if bounce == 40
-	bounce = 0
+	if bounce == 40
+		bounce = 0
+}

@@ -1,5 +1,5 @@
 if timer > 30
-	image_alpha -= 0.02
+	image_alpha -= 0.02 * global.fm
 
 
 if image_alpha <= 0

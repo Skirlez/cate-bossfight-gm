@@ -3,21 +3,22 @@ if hp > 0 {
 	y = 180 + dcos(global.timer * 50 + 60) * 110
 
 }
-else {
-	if deathtimer == 180 {
-		instance_destroy(obj_keyboard)
-		audio_play_sound(snd_glass_breaking, 10, false)
-		obj_hurt.phase = 1
-	}
+else repeat(global.execute) {
 	
-	if deathtimer < 60
-		image_alpha -= 1 / 60
+		if deathtimer == 180 {
+			instance_destroy(obj_keyboard)
+			audio_play_sound(snd_glass_breaking, 10, false)
+			obj_hurt.phase = 1
+		}
+	
+		if deathtimer < 60
+			image_alpha -= 1 / 60
 		
 		
-	if deathtimer <= 0
-		instance_destroy(id)
+		if deathtimer <= 0
+			instance_destroy(id)
 	
-	deathtimer -= 1
+		deathtimer -= 1
 	
 }
 

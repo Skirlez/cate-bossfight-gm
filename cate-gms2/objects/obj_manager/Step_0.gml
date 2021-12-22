@@ -18,10 +18,14 @@ if (room == mainroom or room == bonuscat) and keyboard_check_pressed(vk_escape) 
 
 
 if paused == false {
-	global.timer += 1 / 60
-
+	room_speed = global.fps
+	global.fm = 60 / global.fps
+	global.timer += 1 / global.fps
+	
 	if global.attackcooldown > 0
-		global.attackcooldown -= 1
+		global.attackcooldown -= 1 * global.fm
+	else
+		global.attackcooldown = 0
 
 
 
@@ -32,7 +36,7 @@ if paused == false {
 	
 		if phase == 0 {
 			if global.distance > 110
-				global.distance -= 0.5
+				global.distance -= 0.5 * global.fm
 
 			if global.timer > 10.25 {
 				obj_spinjinx123.image_speed = 0.5
@@ -43,7 +47,7 @@ if paused == false {
 			}	
 		
 			if global.timer > 15 and global.distance > 0
-				global.distance -= 0.5
+				global.distance -= 0.5 * global.fm
 	
 
 	
@@ -73,80 +77,81 @@ if paused == false {
 			phase = 3	
 		}
 
-
-		switch (currentjinx) {
-			case 1:	
-				if obj_jinx1.image_alpha < 0.5 and obj_jinx1.image_speed == 0
-					currentjinx = 2	
-				break;
+		repeat(global.execute)
+			switch (currentjinx) {
+				case 1:	
+					if obj_jinx1.image_alpha < 0.5 and obj_jinx1.image_speed == 0
+						currentjinx = 2	
+					break;
 		
-			case 2:
-				if whitecolor > 0 {
-					layer_background_blend(background, make_color_rgb(whitecolor, whitecolor, whitecolor))
-					whitecolor -= 5
-				}
-				else if whitecolor != -100 {
-					instance_create_depth(320, 180, -9999, obj_jinx2)
-					whitecolor = -100
-				}
+				case 2:
+					if whitecolor > 0 {
+						whitecolor -= 5
+						layer_background_blend(background, make_color_rgb(whitecolor, whitecolor, whitecolor))
+					}
+					else if whitecolor != -100 {
+						instance_create_depth(320, 180, -9999, obj_jinx2)
+						whitecolor = -100
+					}
 	
 		
-				if instance_exists(obj_jinx2) and obj_jinx2.deathsound == true {
-					currentjinx = 3
-					whitecolor = 0	
-				}
+					if instance_exists(obj_jinx2) and obj_jinx2.deathsound == true {
+						currentjinx = 3
+						whitecolor = 0	
+					}
 		
-				break;
+					break;
 		
-			case 3:
+				case 3:
 	
-				if whitecolor < 255 {
-					layer_background_blend(background, make_color_rgb(whitecolor, whitecolor, whitecolor))
-					whitecolor += 5
-				}
-				else if whitecolor != 256 {
-					instance_create_depth(320, 180, -9999, obj_jinx3)
-					whitecolor = 256
-				}
+					if whitecolor < 255 {
+						whitecolor += 5
+						layer_background_blend(background, make_color_rgb(whitecolor, whitecolor, whitecolor))
+					}
+					else if whitecolor != 256 {
+						instance_create_depth(320, 180, -9999, obj_jinx3)
+						whitecolor = 256
+					}
 		
-				if !instance_exists(obj_jinx3) and whitecolor == 256 {
-					currentjinx = 4
-					instance_create_depth(320, 180, -9999, obj_jinx4)
-				}
+					if !instance_exists(obj_jinx3) and whitecolor == 256 {
+						currentjinx = 4
+						instance_create_depth(320, 180, -9999, obj_jinx4)
+					}
 		
-				break;
+					break;
 		
-			case 4:
-				if !instance_exists(obj_jinx4)  {
-					instance_create_depth(320, 180, -9999, obj_jinx5)
-					currentjinx = 5
-					whitecolor = 255
-				}
+				case 4:
+					if !instance_exists(obj_jinx4)  {
+						instance_create_depth(320, 180, -9999, obj_jinx5)
+						currentjinx = 5
+						whitecolor = 255
+					}
 		
-				break;	
-			case 5:
-				if whitecolor > 0 {
-					layer_background_blend(background, make_color_rgb(whitecolor, whitecolor, whitecolor))
-					whitecolor -= 5
-				}
+					break;	
+				case 5:
+					if whitecolor > 0 {
+						whitecolor -= 5
+						layer_background_blend(background, make_color_rgb(whitecolor, whitecolor, whitecolor))	
+					}
 		
-				if !instance_exists(obj_jinx5)  {
-					currentjinx = 6
+					if !instance_exists(obj_jinx5)  {
+						currentjinx = 6
 
-				}
+					}
 			
-				break;
+					break;
 		
-			case 6:
-				if whitecolor < 255 {
-					if whitecolor == 0
-						instance_create_depth(320, 180, -9999, obj_jinx6)
-				
-					layer_background_blend(background, make_color_rgb(whitecolor, whitecolor, whitecolor))
-					whitecolor += 5
-				}
-				break;
-		}
+				case 6:
+					if whitecolor < 255 {
+						if whitecolor == 0
+							instance_create_depth(320, 180, -9999, obj_jinx6)
+							
+						whitecolor += 5
+						layer_background_blend(background, make_color_rgb(whitecolor, whitecolor, whitecolor))
+						
+					}
+					break;
+			}
 
 
 
@@ -162,7 +167,7 @@ if paused == false {
 
 	else if room == bonuscat {
 	
-		scripttimer += 1
+		scripttimer += 1 * global.fm
 	
 		if quickentrance == true {
 			audio_play_sound(snd_finale, 10, true)
@@ -186,7 +191,7 @@ if paused == false {
 	
 			if scripttimer > 300 and whitecolor > 0 {
 				layer_background_blend(background, make_color_rgb(whitecolor, whitecolor, whitecolor))
-				whitecolor -= 5
+				whitecolor -= 5 * global.fm
 			}
 	
 			if scripttimer == 360

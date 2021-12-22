@@ -13,3 +13,13 @@ beginsixpart = 1
 warnboxheight = 0
 laserangle = 0
 
+function fairirandom(a, b) {
+	
+	i = irandom_range(a, b)	
+	while i == prevattack
+		i = irandom_range(a, b)	
+		
+	prevattack = i
+	return i
+	
+}

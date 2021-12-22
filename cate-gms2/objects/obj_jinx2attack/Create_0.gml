@@ -4,4 +4,4 @@ image_speed = 0
 move = 7
 
 dir = -point_direction(x, y, mouse_x, mouse_y)
-alarm_set(0, 60)
+alarm_set(0, global.fps)

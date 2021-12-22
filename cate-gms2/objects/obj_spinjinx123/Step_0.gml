@@ -16,6 +16,7 @@ if clicked() and global.timer <= 15 {
 	}
 		
 }
-	
-if bounce > 0
-	bounce -= 1
+
+repeat(global.execute)
+	if bounce > 0 
+		bounce -= 1

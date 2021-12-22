@@ -8,7 +8,7 @@ if paused == false {
 	
 		if phase == 0 {
 			if global.timer > 15.28 {
-				screenalpha += 0.005
+				screenalpha += 0.005 * global.fm
 				draw_set_alpha(screenalpha)
 	
 				draw_rectangle(0, 0, 640, 360, false)
@@ -19,6 +19,17 @@ if paused == false {
 		else {
 			draw_sprite(spr_varframe, 0, 320, 300)
 			draw_text(320, 300, global.hp)
+			draw_text(320, 70, global.fps)
+			
+			if keyboard_check_pressed(ord("D")) {
+				global.fps += 60
+				obj_executetime.frames = 0	
+			}
+			if keyboard_check_pressed(ord("A")) {
+				global.fps -= 60
+				obj_executetime.frames = 0	
+			}
+				
 		}
 
 		if currentjinx != 0 {
@@ -26,8 +37,8 @@ if paused == false {
 		
 			if instance_exists(object) {
 			
-				//if keyboard_check_pressed(ord("Q"))
-				//	object.hp = 0
+				if keyboard_check_pressed(ord("Q"))
+					object.hp = 0
 			
 				if global.attackcooldown > 0 {
 					draw_sprite(spr_varframe, 0, 320, 50)
@@ -44,7 +55,7 @@ if paused == false {
 				draw_sprite(spr_varframe, 0, 320, 300)
 				draw_text(320, 300, global.hp)
 			}
-		
+				
 			if global.attackcooldown > 0 {
 				draw_sprite(spr_varframe, 0, 320, 50)
 				draw_text(320, 50, obj_jinx7.hp)
@@ -55,7 +66,7 @@ if paused == false {
 		draw_set_color(c_white)
 		draw_set_alpha(whitescreen)
 		draw_rectangle(0, 0, 640, 360, false)	
-		whitescreen -= 0.01
+		whitescreen -= 0.01 * global.fm
 		draw_set_alpha(1)
 	}
 }

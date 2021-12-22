@@ -3,11 +3,12 @@ if hp > 0 {
 	x = px + 320
 	y = py + 180
 	
+
 	if starttimer > 0 {
-		starttimer -= 1
-		image_alpha += 0.05
+		starttimer -= global.fm
+		image_alpha += 0.05 * global.fm
 		if starttimer >= 5 {
-			fx_set_parameter(global.layerfx, "g_DistortAngle", (power(starttimer - 5, 2)) / 3)
+			fx_set_parameter(global.layerfx, "g_DistortAngle", (power(starttimer - 5, 2)) / 4)
 
 		}
 			
@@ -20,12 +21,14 @@ if hp > 0 {
 		py = dcos(global.timer * (555 / hp)) * 110
 	
 	}
+	
 
 
 	
 }
 
-else {
+else repeat(global.execute) {
+
 	if deathtimer == 0 {
 		x = 320
 		y = 180
@@ -45,4 +48,5 @@ else {
 		instance_destroy(id)
 	}
 	deathtimer += 1
+	
 }
