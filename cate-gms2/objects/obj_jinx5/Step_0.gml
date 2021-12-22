@@ -97,10 +97,10 @@ else {
 	}
 	if deathtimer < 312 and deathtimer > 30 {
 		image_angle += deathtimer / 10 * global.fm
-		if deathtimer % 2 == 0 and global.execute > 0
-			image_index = irandom_range(0, 3)
+		image_speed = deathtimer / 10 * global.fm
 	}
 	else if deathtimer > 312 {
+		image_speed = 0
 		image_alpha -= 0.015 * global.fm
 		image_xscale += 0.004 * global.fm
 		image_yscale += 0.004 * global.fm

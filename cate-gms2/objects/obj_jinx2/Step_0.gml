@@ -70,18 +70,20 @@ else {
 		
 		deathsound = true
 	}
+	if deathtimer > 25 {
+		x = 320 + dcos(global.timer * 500 + 5) * invertcatvar
+		y = 180 + dsin(global.timer * 50 + 10) * invertcatvar
+	}
+	
 	repeat (global.execute) {
 		if healjinx > 0 and deathtimer % 2 == 0 {
 			instance_create_depth(x, y, -9999, obj_healingjinx)
 			healjinx -= 1
 		}
+		
 	
-	
-		if deathtimer > 25 {
-			x = 320 + dcos(global.timer * 500 + 5) * invertcatvar
-			y = 180 + dsin(global.timer * 50 + 10) * invertcatvar
+		if deathtimer > 25 
 			invertcatvar -= 4
-		}
 		else 
 			image_alpha -= 0.02
 	

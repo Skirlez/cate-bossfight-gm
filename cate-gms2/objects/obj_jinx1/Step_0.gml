@@ -5,14 +5,14 @@ if hp > 0 {
 	
 		
 
-		if clicked() and global.attackcooldown == 0 {
-			audio_play_sound(snd_big_boing, 10, false)
-			audio_play_sound(snd_attack_hit, 10, false)
-			audio_play_sound(snd_bigcut, 10, false)
-			bounce = 40
-			hp -= 1
-			global.attackcooldown = 61
-		}
+	if clicked() and global.attackcooldown == 0 {
+		audio_play_sound(snd_big_boing, 10, false)
+		audio_play_sound(snd_attack_hit, 10, false)
+		audio_play_sound(snd_bigcut, 10, false)
+		bounce = 40
+		hp -= 1
+		global.attackcooldown = 61
+	}
 		
 	repeat(global.execute) {
 		if image_alpha < 1

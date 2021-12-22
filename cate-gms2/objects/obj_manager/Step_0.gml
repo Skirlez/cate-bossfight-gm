@@ -41,7 +41,7 @@ if paused == false {
 			if global.timer > 10.25 {
 				obj_spinjinx123.image_speed = 0.5
 				obj_spinjinx4.image_speed = 0.5
-				obj_spinjinx5.image_speed = 0.5
+				obj_spinjinx5.image_speed = 1
 				obj_spinjinx6.image_speed = 1
 				obj_guitar.move = true
 			}	
@@ -160,9 +160,9 @@ if paused == false {
 			room_goto(death)
 		}
 	
-		if keyboard_check(ord("E")) {
-			room_goto(ending)
-		}	
+		//if keyboard_check(ord("E")) 
+		//	room_goto(ending)
+		
 	}
 
 	else if room == bonuscat {

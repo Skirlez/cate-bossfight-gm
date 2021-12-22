@@ -1,6 +1,10 @@
 x = obj_jinx3.x
 y = obj_jinx3.y + 10 - offset
 
+
+if timer > 144
+	image_angle = point_direction(x, y, mouse_x, mouse_y)
+
 repeat(global.execute) {
 
 	if timer > 300 {
@@ -9,8 +13,7 @@ repeat(global.execute) {
 	}
 
 
-	if timer > 144
-		image_angle = point_direction(x, y, mouse_x, mouse_y)
+	
 	
 	switch (timer) {
 	

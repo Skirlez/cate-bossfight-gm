@@ -16,9 +16,10 @@ if hp > 0 {
 		
 	}	
 
-	if starttimer == 0 {
-		px = px + ((270 * switchguitar - px) / 4)
+	if starttimer <= 0 {
+		px = px + ((270 * switchguitar - px) / 4 * global.fm)
 		py = dcos(global.timer * (555 / hp)) * 110
+		starttimer = 0
 	
 	}
 	

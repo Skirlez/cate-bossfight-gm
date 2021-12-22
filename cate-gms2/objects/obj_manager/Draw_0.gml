@@ -3,6 +3,9 @@ draw_set_font(font_fixedsys)
 draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
 
+//draw_sprite(spr_varframe, 0, 320, 70)
+//draw_text(320, 70, fps)
+
 if paused == false {
 	if room == mainroom {
 	
@@ -19,17 +22,6 @@ if paused == false {
 		else {
 			draw_sprite(spr_varframe, 0, 320, 300)
 			draw_text(320, 300, global.hp)
-			draw_text(320, 70, global.fps)
-			
-			if keyboard_check_pressed(ord("D")) {
-				global.fps += 60
-				obj_executetime.frames = 0	
-			}
-			if keyboard_check_pressed(ord("A")) {
-				global.fps -= 60
-				obj_executetime.frames = 0	
-			}
-				
 		}
 
 		if currentjinx != 0 {
@@ -37,9 +29,11 @@ if paused == false {
 		
 			if instance_exists(object) {
 			
-				if keyboard_check_pressed(ord("Q"))
-					object.hp = 0
-			
+				//if keyboard_check_pressed(ord("Q"))
+				//	object.hp = 0
+					
+
+				
 				if global.attackcooldown > 0 {
 					draw_sprite(spr_varframe, 0, 320, 50)
 					draw_text(320, 50, object.hp)
