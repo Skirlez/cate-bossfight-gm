@@ -1,6 +1,5 @@
 // all of this sucks and is rushed I do not care shut up
 if go == true {
-	
 	x = 320 + dsin(global.timer * 200) * 200
 	y = 180 + dcos(global.timer * 180) * 110
 	
@@ -30,10 +29,7 @@ repeat(global.execute) {
 	
 	if timer % 5 == 0
 		image_blend = make_color_rgb(irandom_range(0, 255), irandom_range(0, 255), irandom_range(0, 255))
-	
-
-
-
+		
 	timer += 1
 	
 	if spintimer > 0 {
@@ -72,16 +68,25 @@ repeat(global.execute) {
 				instance_destroy(obj_laserdot)
 				audio_play_sound(snd_bombfall, 10, false)
 				laserangle = point_direction(x, y, mouse_x, mouse_y)
-				instance_create_depth(x, y, -10000, obj_laserdot)
+				i = instance_create_depth(x, y, -10000, obj_laserdot)
+				if timer == 240 {
+					i.image_xscale = 2
+					i.image_yscale = 2
+				}
 			}
-			else if timer == 140 or timer == 200 or timer == 260 {
+			else if timer == 140 or timer == 200 or timer == 280 {
 				audio_play_sound(snd_lasergo, 10, false)
-				instance_destroy(obj_laserdot)
-				i = instance_create_depth(x, y, -10000, obj_shootlaser)	
+				i = instance_create_depth(obj_laserdot.x, obj_laserdot.y, -10000, obj_shootlaser)	
 				i.image_angle = laserangle
+				if timer == 280 {
+					i.image_xscale = 2
+					i.image_yscale = 2
+				}
+				instance_destroy(obj_laserdot)
+
 			}
 		
-			if timer == 280 {
+			if timer == 360 {
 			
 				timer = -60
 				decideattack = fairirandom(0, 5)
@@ -222,8 +227,8 @@ repeat(global.execute) {
 			if timer == 220
 				audio_play_sound(snd_sparkles, 10, false)
 		
-			if timer > 220
-				image_yscale += 0.005
+			if timer > 220 and image_yscale < 0.1
+					image_yscale += 0.005
 			
 			if timer == 250 {
 				image_yscale = 0.1

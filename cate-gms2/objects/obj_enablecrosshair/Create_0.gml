@@ -7,7 +7,6 @@ if global.crosshair == false {
 
 else {
 	image_index = 1
-	global.crosshair = true
 	obj_mousebox.visible = true
 	window_set_cursor(cr_none)
 }

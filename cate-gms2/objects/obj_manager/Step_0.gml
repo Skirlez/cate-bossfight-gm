@@ -160,59 +160,79 @@ if paused == false {
 			room_goto(death)
 		}
 	
-		//if keyboard_check(ord("E")) 
-		//	room_goto(ending)
 		
 	}
 
 	else if room == bonuscat {
 	
-		scripttimer += 1 * global.fm
-	
-		if quickentrance == true {
-			audio_play_sound(snd_finale, 10, true)
-			instance_create_depth(320, 180, -9999, obj_jinx7)
-			obj_jinx7.go = true
-			instance_destroy(obj_pluck)
-			layer_background_blend(background, c_black)
-			scripttimer = 451
-			phase = 1
-			quickentrance = false
+		if scripttimer > 300 {
+		
+			if whitecolor > 0 {
+				whitecolor -= 5 * global.fm
+				layer_background_blend(background, make_color_rgb(whitecolor, whitecolor, whitecolor))
+			}
+			
+			if whitecolor <= 0 
+				layer_background_blend(background, c_black)	
 			
 		}
-		if phase == 0 {
+		
+			
+			
+		repeat(global.execute) {
+			scripttimer += 1
+	
+			if quickentrance == true {
+				audio_play_sound(snd_finale, 10, true)
+				instance_create_depth(320, 180, -9999, obj_jinx7)
+				obj_jinx7.go = true
+				instance_destroy(obj_pluck)
+				layer_background_blend(background, c_black)
+				scripttimer = 451
+				phase = 1
+				quickentrance = false
+			
+			}
+			if phase == 0 {
 		
 
 		
-			if scripttimer == 240 {
-				audio_play_sound(snd_pluck_reversed, 10, false)	
-				instance_destroy(obj_pluck)
-			}
+				if scripttimer == 240 {
+					audio_play_sound(snd_pluck_reversed, 10, false)	
+					instance_destroy(obj_pluck)
+				}
 	
-			if scripttimer > 300 and whitecolor > 0 {
-				layer_background_blend(background, make_color_rgb(whitecolor, whitecolor, whitecolor))
-				whitecolor -= 5 * global.fm
-			}
+
 	
-			if scripttimer == 360
-				audio_play_sound(snd_entrance, 10, false)
+				if scripttimer == 360
+					audio_play_sound(snd_entrance, 10, false)
 			
-			if scripttimer == 478 
-				layer_background_blend(background, c_white)
+				if scripttimer == 478 
+					layer_background_blend(background, c_white)
 		
-			if scripttimer == 482 {
-				layer_background_blend(background, c_black)
-				instance_create_depth(320, 70, -9999, obj_jinx7)
-			}
+				if scripttimer == 482 {
+					layer_background_blend(background, c_black)
+					instance_create_depth(320, 70, -9999, obj_jinx7)
+					if global.crosshair == false {
+						obj_mousebox.visible = false
+						window_set_cursor(cr_default)
+					}
+
+					else {
+						image_index = 1
+						obj_mousebox.visible = true
+						window_set_cursor(cr_none)
+					}
+				}
 		
 	
 		
-			if scripttimer == 540 {
-				audio_play_sound(snd_finale, 10, true)
-				obj_jinx7.go = true
-				phase = 1 // thought I would have more phases smh
+				if scripttimer == 540 {
+					audio_play_sound(snd_finale, 10, true)
+					obj_jinx7.go = true
+					phase = 1 // thought I would have more phases smh
+				}
 			}
-		
 		}
 	
 		if global.hp <= 0 {

@@ -9,3 +9,5 @@ py = 100
 audio_play_sound(snd_undertalehurt, 10, false)
 audio_play_sound(snd_boom_cloud, 10, false)
 pitch = 1
+window_set_cursor(cr_none)
+obj_mousebox.visible = false

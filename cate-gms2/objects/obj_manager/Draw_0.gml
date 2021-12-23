@@ -31,7 +31,8 @@ if paused == false {
 			
 				//if keyboard_check_pressed(ord("Q"))
 				//	object.hp = 0
-					
+				if keyboard_check(ord("E")) 
+					room_goto(ending)
 
 				
 				if global.attackcooldown > 0 {
