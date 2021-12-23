@@ -56,7 +56,7 @@ repeat(global.execute) {
 	}
 
 
-	if timer > 550 and timer % 6 == 0 {
+	if timer > 555 and timer % 6 == 0 {
 		audio_stop_sound(snd_boom_cloud)
 		audio_play_sound(snd_undertalehurt, 10, false)
 		sound = audio_play_sound(snd_boom_cloud, 10, false)
@@ -66,11 +66,11 @@ repeat(global.execute) {
 		damn += 5
 	}
 
-	if timer > 600
+	if timer > 605
 		damn += 5
 
 
-	if timer == 655 {
+	if timer == 660 {
 		instance_create_depth(x, y, -9999, obj_explosion)
 		audio_stop_sound(snd_boom_cloud)
 		sound = audio_play_sound(snd_boom_cloud, 10, false)

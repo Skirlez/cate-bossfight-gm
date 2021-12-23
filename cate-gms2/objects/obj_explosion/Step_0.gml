@@ -1,7 +1,7 @@
 repeat(global.execute) {
 	timer += 1
 
-	if timer == 430 {
+	if timer == 500 {
 		audio_play_sound(snd_pluck, 10, false)
 		room_goto(bonuscat)
 	}

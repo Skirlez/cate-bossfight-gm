@@ -9,4 +9,4 @@ notes = irandom_range(40, 120)
 bonuswait = 0
 notettimer = 10
 depth = -10000
-image_alpha = 0
+image_alpha = -0.05

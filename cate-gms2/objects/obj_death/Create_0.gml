@@ -1,1 +1,1 @@
-alarm_set(0, 240)
+alarm_set(0, global.fps * 4)

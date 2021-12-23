@@ -29,7 +29,7 @@ repeat(global.execute) {
 
 
 	else if timer < 146 and timer >= 122 {
-		if timer % 4 == 0
+		if timer % 6 == 0
 			image_index = 1
 		else
 			image_index = 0

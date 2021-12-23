@@ -3,7 +3,7 @@ if intro == false {
 	x = obj_jinx4.x - 2
 	y = obj_jinx4.y + 12
 	if image_alpha < 1 and obj_jinx4.hp > 0
-		image_alpha += 0.05 * global.fm
+		image_alpha += 0.04 * global.fm
 }
 else { // hardcoded instance id!!! cringe!!!
 	image_alpha = 1

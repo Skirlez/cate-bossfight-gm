@@ -6,7 +6,7 @@ if hp > 0 {
 
 	if starttimer > 0 {
 		starttimer -= global.fm
-		image_alpha += 0.05 * global.fm
+		image_alpha += 0.04 * global.fm
 		if starttimer >= 5 {
 			fx_set_parameter(global.layerfx, "g_DistortAngle", (power(starttimer - 5, 2)) / 4)
 
@@ -41,7 +41,7 @@ else repeat(global.execute) {
 	if deathtimer == 90
 		audio_play_sound(snd_brrr, 10, false)
 		
-	if deathtimer > 90 
+	if deathtimer > 90 and deathtimer < 180
 		instance_create_depth(irandom_range(0, 640), irandom_range(0, 360), -10000, obj_decoyjinx4)	
 	
 	if deathtimer == 180 {
