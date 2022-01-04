@@ -74,11 +74,11 @@ repeat(global.execute) {
 					i.image_yscale = 2
 				}
 			}
-			else if timer == 140 or timer == 200 or timer == 280 {
+			else if timer == 140 or timer == 200 or timer == 260 {
 				audio_play_sound(snd_lasergo, 10, false)
 				i = instance_create_depth(obj_laserdot.x, obj_laserdot.y, -10000, obj_shootlaser)	
 				i.image_angle = laserangle
-				if timer == 280 {
+				if timer == 260 {
 					i.image_xscale = 2
 					i.image_yscale = 2
 				}
@@ -86,7 +86,7 @@ repeat(global.execute) {
 
 			}
 		
-			if timer == 360 {
+			if timer == 300 {
 			
 				timer = -60
 				decideattack = fairirandom(0, 5)

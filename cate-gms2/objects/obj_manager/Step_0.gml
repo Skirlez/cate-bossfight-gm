@@ -1,6 +1,7 @@
 
-if (room == mainroom or room == bonuscat) and keyboard_check_pressed(vk_escape) {
-	if paused == false and phase != 0 {
+if (room == mainroom or room == bonuscat) {
+	
+	if keyboard_check_pressed(vk_escape) and paused == false and phase != 0 {
 		instance_deactivate_all(true)
 		instance_activate_object(obj_mousebox)
 		audio_pause_all()
@@ -9,7 +10,8 @@ if (room == mainroom or room == bonuscat) and keyboard_check_pressed(vk_escape) 
 		paused = true
 		
 	}
-	else if canunpause = true {
+	
+	if mouse_check_button_pressed(mb_left) and paused == true and canunpause == true {
 		instance_activate_all()
 		audio_resume_all()
 		paused = false
@@ -207,11 +209,14 @@ if paused == false {
 				if scripttimer == 360
 					audio_play_sound(snd_entrance, 10, false)
 			
-				if scripttimer == 478 
-					layer_background_blend(background, c_white)
-		
+				if scripttimer == 478 {
+					whitescreen = 1
+					show_debug_message("flashbang")
+				}
+
+				
 				if scripttimer == 482 {
-					layer_background_blend(background, c_black)
+					whitescreen = 0
 					instance_create_depth(320, 70, -9999, obj_jinx7)
 					if global.crosshair == false {
 						obj_mousebox.visible = false

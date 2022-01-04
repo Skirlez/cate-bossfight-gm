@@ -31,8 +31,8 @@ if paused == false {
 			
 				//if keyboard_check_pressed(ord("Q"))
 				//	object.hp = 0
-				//if keyboard_check(ord("E")) 
-				//	room_goto(ending)
+				if keyboard_check(ord("E")) 
+					room_goto(ending)
 
 				
 				if global.attackcooldown > 0 {
@@ -75,7 +75,7 @@ else {
 	draw_sprite(spr_redsquare, 0, pausemx, pausemy)
 	if mouse_x < pausemx + 5 and mouse_x > pausemx - 5 and mouse_y < pausemy + 5 and mouse_y > pausemy - 5 {
 		draw_set_color(c_lime)
-		draw_text(320, 50, "Press ESC to unpause.")
+		draw_text(320, 50, "Left Click to unpause.")
 		canunpause = true	
 	}
 	else {

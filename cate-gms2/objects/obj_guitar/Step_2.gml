@@ -36,8 +36,12 @@ if intro == true or obj_jinx4.hp > 0  {
 			global.attackcooldown = 61	
 		}
 	
-		if intro == true and global.timer <= 15 or intro == false // good coding
+		if intro == true and global.timer <= 15 or intro == false { // good coding
+			if intro == false 
+				audio_play_sound(snd_attack_hit, 10, false)
 			audio_play_sound(snd_minecraft_hit, 10, false)
+		}
+			
 	}
 
 
