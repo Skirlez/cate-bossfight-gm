@@ -14,6 +14,10 @@ plus Vity6 (https://scratch.mit.edu/users/vity6/) and Bloccjo (https://scratch.m
 The game contains sound files from Undertale/Deltarune, and Sonic & Knuckles, obviously those are not mine.
 All I did was write the code.
 
+Full playthrough:
+https://youtu.be/F_kS8bTDCac
+
+
 
 I don't know how licenses work or if this should even be licensed, but you can do whatever the hell you want, I don't care
 
