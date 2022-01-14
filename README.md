@@ -18,6 +18,7 @@ Full playthrough:
 https://youtu.be/F_kS8bTDCac
 
 
+Feel free to PR any fixes, improvements, additions, whatever
 
 I don't know how licenses work or if this should even be licensed, but you can do whatever the hell you want, I don't care
 
