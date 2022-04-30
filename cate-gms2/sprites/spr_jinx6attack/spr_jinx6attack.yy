@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_jinx6attack","path":"sprites/spr_jinx6attack/spr_jinx6attack.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_jinx6attack",
     "tags": [],
     "resourceType": "GMSequence",

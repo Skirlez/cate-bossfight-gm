@@ -79,7 +79,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_ending","path":"sprites/spr_ending/spr_ending.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_ending",
     "tags": [],
     "resourceType": "GMSequence",

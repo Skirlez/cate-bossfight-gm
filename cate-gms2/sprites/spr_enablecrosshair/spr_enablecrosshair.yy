@@ -142,7 +142,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_enablecrosshair","path":"sprites/spr_enablecrosshair/spr_enablecrosshair.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_enablecrosshair",
     "tags": [],
     "resourceType": "GMSequence",

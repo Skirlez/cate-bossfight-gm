@@ -34,22 +34,28 @@ repeat(global.execute) {
 	
 	if spintimer > 0 {
 	
+		var spinspeed = spintimer
+		if spinspeed < 11
+			spinspeed = 11
 		if spintarget = -0.1 {
-			if image_xscale == spintarget
+			if image_xscale <= spintarget
 				spintarget = 0.1
 			else
-				image_xscale -= 0.01	
+				image_xscale -= 0.001 * spinspeed
 		}
 		else if spintarget = 0.1 {
-			if image_xscale == spintarget
+			if image_xscale >= spintarget 
 				spintarget = -0.1
 			else
-				image_xscale += 0.01	
+				image_xscale += 0.001 * spinspeed
 		}
 
 		
-	
-		spintimer -= 1
+		if spintimer != 1
+			spintimer -= 1
+		else if abs(image_xscale) > 0.09
+			spintimer = 0
+			
 	}
 	else 
 		image_xscale = 0.1

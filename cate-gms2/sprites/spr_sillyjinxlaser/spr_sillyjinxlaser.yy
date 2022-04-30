@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_sillyjinxlaser","path":"sprites/spr_sillyjinxlaser/spr_sillyjinxlaser.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_sillyjinxlaser",
     "tags": [],
     "resourceType": "GMSequence",

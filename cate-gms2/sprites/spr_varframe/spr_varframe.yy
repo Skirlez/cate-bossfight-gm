@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_varframe","path":"sprites/spr_varframe/spr_varframe.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_varframe",
     "tags": [],
     "resourceType": "GMSequence",

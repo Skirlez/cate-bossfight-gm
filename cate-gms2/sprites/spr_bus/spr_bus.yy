@@ -151,7 +151,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_bus","path":"sprites/spr_bus/spr_bus.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_bus",
     "tags": [],
     "resourceType": "GMSequence",

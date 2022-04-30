@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_bonuslaser","path":"sprites/spr_bonuslaser/spr_bonuslaser.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_bonuslaser",
     "tags": [],
     "resourceType": "GMSequence",

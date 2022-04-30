@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_COOL","path":"sprites/spr_COOL/spr_COOL.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_COOL",
     "tags": [],
     "resourceType": "GMSequence",

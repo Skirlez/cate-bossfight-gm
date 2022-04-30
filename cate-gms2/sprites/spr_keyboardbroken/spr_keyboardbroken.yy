@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_keyboardbroken","path":"sprites/spr_keyboardbroken/spr_keyboardbroken.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_keyboardbroken",
     "tags": [],
     "resourceType": "GMSequence",

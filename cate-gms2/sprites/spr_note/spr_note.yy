@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_note","path":"sprites/spr_note/spr_note.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_note",
     "tags": [],
     "resourceType": "GMSequence",

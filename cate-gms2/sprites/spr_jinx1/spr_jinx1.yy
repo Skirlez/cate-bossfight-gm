@@ -83,7 +83,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_jinx1","path":"sprites/spr_jinx1/spr_jinx1.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_jinx1",
     "tags": [],
     "resourceType": "GMSequence",

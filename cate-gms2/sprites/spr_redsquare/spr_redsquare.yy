@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_redsquare","path":"sprites/spr_redsquare/spr_redsquare.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_redsquare",
     "tags": [],
     "resourceType": "GMSequence",

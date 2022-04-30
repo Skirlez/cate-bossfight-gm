@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_jinx2dead","path":"sprites/spr_jinx2dead/spr_jinx2dead.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_jinx2dead",
     "tags": [],
     "resourceType": "GMSequence",

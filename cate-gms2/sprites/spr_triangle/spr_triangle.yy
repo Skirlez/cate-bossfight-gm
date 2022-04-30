@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_triangle","path":"sprites/spr_triangle/spr_triangle.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_triangle",
     "tags": [],
     "resourceType": "GMSequence",

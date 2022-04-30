@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_brightnote","path":"sprites/spr_brightnote/spr_brightnote.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_brightnote",
     "tags": [],
     "resourceType": "GMSequence",

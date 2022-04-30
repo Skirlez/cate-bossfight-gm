@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_guitar","path":"sprites/spr_guitar/spr_guitar.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_guitar",
     "tags": [],
     "resourceType": "GMSequence",

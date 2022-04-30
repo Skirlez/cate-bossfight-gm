@@ -65,7 +65,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_volumetest","path":"sprites/spr_volumetest/spr_volumetest.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_volumetest",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_dottedline","path":"sprites/spr_dottedline/spr_dottedline.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_dottedline",
     "tags": [],
     "resourceType": "GMSequence",

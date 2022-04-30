@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_fullscreen","path":"sprites/spr_fullscreen/spr_fullscreen.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_fullscreen",
     "tags": [],
     "resourceType": "GMSequence",

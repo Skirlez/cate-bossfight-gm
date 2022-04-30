@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_keyboard","path":"sprites/spr_keyboard/spr_keyboard.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_keyboard",
     "tags": [],
     "resourceType": "GMSequence",

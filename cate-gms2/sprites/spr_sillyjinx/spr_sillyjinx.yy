@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_sillyjinx","path":"sprites/spr_sillyjinx/spr_sillyjinx.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_sillyjinx",
     "tags": [],
     "resourceType": "GMSequence",
