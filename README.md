@@ -1,5 +1,5 @@
-# cate-gms2
-A remake of https://scratch.mit.edu/projects/579835309/ in GameMaker Studio 2.
+# cate-bossfight
+A remake of https://scratch.mit.edu/projects/579835309/ in GameMaker.
 Honestly I don't really know why I did this. It was pretty fun.
 I tried to be accurate to the original, as long as it was fun to play and as long as it was even possible.
 Due to the way scratch operates, It's very hard to faithfully recreate things 1:1 in GMS2.
