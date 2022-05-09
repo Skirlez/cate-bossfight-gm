@@ -15,3 +15,4 @@ jumpingVar = 0
 clickcooldown = false
 action = 0
 deathtimer = 0
+shook = false

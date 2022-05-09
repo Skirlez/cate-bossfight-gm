@@ -2,6 +2,7 @@ if timer > 30
 	image_alpha -= 0.02 * global.fm
 
 
+image_speed = global.imagespeed / 2
 if image_alpha <= 0
 	instance_destroy(id)
 	

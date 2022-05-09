@@ -23,3 +23,5 @@ function fairirandom(a, b) {
 	return i
 	
 }
+
+timeroffset = 0

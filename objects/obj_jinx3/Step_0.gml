@@ -1,3 +1,4 @@
+image_speed = global.imagespeed
 if hp > 0 {
 	x = 320 + dsin(global.timer * 70 + 60) * 110
 	y = 180 + dcos(global.timer * 50 + 60) * 110
@@ -7,6 +8,7 @@ else repeat(global.execute) {
 	
 		if deathtimer == 180 {
 			instance_destroy(obj_keyboard)
+			shakeScreen(80, 3, 0.1)
 			audio_play_sound(snd_glass_breaking, 10, false)
 			obj_hurt.phase = 1
 		}
@@ -33,7 +35,7 @@ if clicked() and obj_bus.image_speed == 0 { // very accurate
 	
 
 	audio_play_sound(snd_car_horn, 10, false)	
-	obj_bus.image_speed = 1
+	obj_bus.move = true
 	if choose(0, 1) == 1 {
 		obj_bus.image_blend = make_color_rgb(0, 255, 0)
 		audio_play_sound(snd_head_shake, 10, false)

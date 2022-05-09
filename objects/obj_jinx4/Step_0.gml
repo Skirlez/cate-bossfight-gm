@@ -1,4 +1,3 @@
-
 if hp > 0 {
 	x = px + 320
 	y = py + 180
@@ -34,12 +33,15 @@ else repeat(global.execute) {
 		x = 320
 		y = 180
 		obj_hurt.phase = 1
+		shakeScreen(80, 7, 0.1)
 		audio_play_sound(snd_whatdog, 10, false)
 		audio_play_sound(snd_vinethud, 10, false)
 	}
 	
-	if deathtimer == 90
+	if deathtimer == 90 {
 		audio_play_sound(snd_brrr, 10, false)
+		shakeScreen(90, 0.1, -0.1)	
+	}
 		
 	if deathtimer > 90 and deathtimer < 180
 		instance_create_depth(irandom_range(0, 640), irandom_range(0, 360), -10000, obj_decoyjinx4)	

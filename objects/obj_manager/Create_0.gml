@@ -10,8 +10,10 @@ if !variable_global_exists("fps")
 	global.fps = 120
 	
 if !variable_global_exists("crosshair")
-	global.crosshair = false
+	global.crosshair = true
 	
+obj_mousebox.visible = true
+window_set_cursor(cr_none)
 global.fm = 0.5 // framerate multiplier
 depth = -10002
 sprite_set_offset(spr_keyboard, 480, 360)
@@ -26,3 +28,11 @@ paused = false
 pausemx = 320
 pausemy = 180
 canunpause = true
+room_speed = 999999
+
+global.shake = -1
+global.shakeStrength = 0
+global.shakeDecay = 0
+global.gamespeed = 1
+global.music = -1
+global.hard = false

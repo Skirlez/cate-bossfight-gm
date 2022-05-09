@@ -3,3 +3,4 @@ image_yscale = 0
 image_speed = 0
 hit = false
 audio_play_sound(snd_explosion, 10, false)
+shakeScreen(100, 10, 0.1)

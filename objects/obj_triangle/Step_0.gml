@@ -1,3 +1,4 @@
+move_towards_point(x + dcos(dir) * 30, y - dsin(dir) * 30, 6 * global.fm)
 image_angle += 20 * global.fm
 
 if image_xscale < 1 {

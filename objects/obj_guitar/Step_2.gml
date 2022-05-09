@@ -1,9 +1,9 @@
-
 if intro == false {
 	x = obj_jinx4.x - 2
 	y = obj_jinx4.y + 12
 	if image_alpha < 1 and obj_jinx4.hp > 0
 		image_alpha += 0.04 * global.fm
+	
 }
 else { // hardcoded instance id!!! cringe!!!
 	image_alpha = 1
@@ -26,7 +26,7 @@ else { // hardcoded instance id!!! cringe!!!
 }
 
 
-if intro == true or obj_jinx4.hp > 0  {
+if intro == true or obj_jinx4.hp > 0 {
 	if clicked() and !audio_is_playing(snd_head_shake) {
 		if intro == false and obj_jinx4.starttimer == 0 {
 			obj_jinx4.switchguitar *= -1
@@ -116,6 +116,6 @@ else {
 	image_xscale += 0.01 * global.fm
 	image_yscale += 0.01 * global.fm
 	image_alpha -= 0.01 * global.fm
-	if image_alpha == 0
+	if image_alpha <= 0
 		instance_destroy(id)
 }

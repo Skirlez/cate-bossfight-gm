@@ -1,11 +1,12 @@
 repeat(global.execute) {
-	if timer == 120 {
+	if timer == 60 {
 		visible = true
 		audio_play_sound(snd_great_shine, 10, false)
 	}
-	if timer == 160
+	if timer == 160 
 		audio_play_sound(snd_usefountain, 10, false)
-
+	
+	
 	if timer == 790
 		audio_play_sound(snd_revival, 10, false)
 	
@@ -37,4 +38,6 @@ repeat(global.execute) {
 		instance_create_depth(0, 0, -9999, obj_trueend)	
 		audio_play_sound(snd_head_shake, 10, false)
 	}
+	
+
 }

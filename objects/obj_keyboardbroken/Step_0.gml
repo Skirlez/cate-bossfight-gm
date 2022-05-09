@@ -5,7 +5,7 @@ repeat(global.execute) {
 
 hspeed = 2 * global.fm * dir 
 
-if y > room_height
+if y > room_height + 200
 	instance_destroy(id)
 	
 

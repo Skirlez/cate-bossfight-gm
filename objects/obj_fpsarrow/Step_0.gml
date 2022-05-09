@@ -37,6 +37,8 @@ if image_yscale == 1 {
 					break;
 			}
 		}
+		room_speed = global.fps
+		global.fm = 60 / global.fps
 	}
 	
 	
@@ -83,6 +85,8 @@ else {
 					break;
 			}
 		}
+		room_speed = global.fps
+		global.fm = 60 / global.fps
 	}
 	
 	

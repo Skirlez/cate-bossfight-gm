@@ -1,4 +1,4 @@
-
+image_speed = global.imagespeed
 if hp > 0 {
 	x = 320 + dsin(global.timer * 220) * 150 
 	y = 180 + dcos(global.timer * 200) * 110 + dsin(global.timer * 2000) * bounce
@@ -57,6 +57,7 @@ if hp > 0 {
 }
 else {
 	if deathsound == false {
+		shakeScreen(80, 7, 0.1)
 		instance_destroy(obj_sillyjinx)
 		instance_destroy(obj_sillyjinxlaser)
 		sprite_index = spr_jinx2dead

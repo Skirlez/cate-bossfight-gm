@@ -1,6 +1,6 @@
 x = 320 + dsin(global.timer * 50) * 110
 y = 180 + dcos(global.timer * 100) * 110
-
+image_speed = global.imagespeed
 
 
 if clicked() and global.attackcooldown == 0 {

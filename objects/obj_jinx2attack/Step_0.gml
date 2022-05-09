@@ -9,3 +9,7 @@ if on_mouse() {
 	audio_play_sound(snd_basketball_bounce, 10, false)
 	instance_destroy(id)
 }
+
+destroytimer -= global.execute
+if destroytimer <= 0
+	instance_destroy(id)

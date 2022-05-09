@@ -1,3 +1,4 @@
+image_speed = global.imagespeed
 if hp > 0 {
 	x = 320 + dsin(global.timer * 200) * 150 
 	y = 180 + dcos(global.timer * 180) * 110 + dsin(global.timer * 2000) * bounce
@@ -39,6 +40,7 @@ if hp > 0 {
 		if attacking == 7 {
 			instance_create_depth(x, y, -10000, obj_jinx1attack)	
 			audio_play_sound(snd_low_boing, 10, false)
+			shakeScreen(10, 1, 0)
 			sprite_index = spr_jinx1
 		}
 
@@ -58,6 +60,7 @@ if hp > 0 {
 }
 else {
 	if deathsound == false {
+		shakeScreen(80, 7, 0.1)
 		audio_play_sound(snd_boom_cloud, 10, false)
 		obj_hurt.phase = 1
 		deathsound = true

@@ -29,8 +29,8 @@ if paused == false {
 		
 			if instance_exists(object) {
 			
-				//if keyboard_check_pressed(ord("Q"))
-				//	object.hp = 0
+				if keyboard_check_pressed(ord("Q"))
+					object.hp = 0
 				//if keyboard_check(ord("E")) 
 				//	room_goto(ending)
 
@@ -56,7 +56,12 @@ if paused == false {
 				draw_text(320, 50, obj_jinx7.hp)
 			}	
 	}
-
+	else if room == hardmodecutscene {
+		if obj_hardmodecutscene.drawself == true {
+			draw_sprite(spr_varframe, 0, 320, 50)
+			draw_text(320, 50, 1)	
+		}
+	}
 	if whitescreen > 0 {
 		draw_set_color(c_white)
 		draw_set_alpha(whitescreen)

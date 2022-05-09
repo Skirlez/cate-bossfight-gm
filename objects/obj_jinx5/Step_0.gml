@@ -95,9 +95,14 @@ else {
 		image_index = 0
 		image_angle = 0
 	}
+
 	if deathtimer < 312 and deathtimer > 30 {
+		if shook == false {
+			shakeScreen(280, 0.1, -0.05)
+			shook = true	
+		}
 		image_angle += deathtimer / 10 * global.fm
-		image_speed = deathtimer / 10 * global.fm
+		image_speed = deathtimer / 50 * global.imagespeed
 	}
 	else if deathtimer > 312 {
 		image_speed = 0
