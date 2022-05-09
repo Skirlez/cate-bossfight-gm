@@ -5,14 +5,15 @@ image_speed = global.imagespeed
 if timer > 144
 	image_angle = point_direction(x, y, mouse_x, mouse_y)
 
-repeat(global.execute) {
-
+repeat(global.execute) {	
 	if timer > 300 {
 		image_alpha += 0.01	
 		offset -= 1
 	}
-
-
+	
+	
+	if timer < 80 and timer >= 20 
+		image_angle += 6 * rotdir
 	
 	
 	switch (timer) {
@@ -31,8 +32,19 @@ repeat(global.execute) {
 		case 121:
 			image_xscale += 0.5
 			break;
-	
-		
+		case 100:
+			rotdir = choose(-1, 1)
+			if rotdir = 1
+				audio_play_sound(snd_higher_pitch_alert, 10, false)
+			else
+				audio_play_sound(snd_alert, 10, false)
+			break;
+	/*
+		case 80:
+			if global.hard
+				timer = 3
+			break;
+	*/
 		case 2:
 			image_xscale -= 0.5
 			break;
@@ -49,7 +61,10 @@ repeat(global.execute) {
 	if timer <= 0 {
 		sprite_set_offset(spr_keyboard, 480, 360)
 		sprite_set_offset(spr_static, 480, 360)
-		timer = 294
+		if global.hard
+			timer = irandom_range(150, 250)
+		else
+			timer = 294
 	
 	}
 
@@ -67,8 +82,13 @@ repeat(global.execute) {
 		attackcooldown -= 1
 		
 	}
-	else
+	else {
 		sprite_index = spr_keyboard
+		if global.hard
+			image_index = 1
+		else
+			image_index = 0	
+	}
 	
 
 }

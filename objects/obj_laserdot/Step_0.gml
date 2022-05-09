@@ -5,7 +5,7 @@ if instance_exists(obj_jinx7)  {
 		image_angle = point_direction(x, y, mouse_x, mouse_y)
 	}
 }
-else 
+else if update == true
 	instance_destroy(id)	
 
 

@@ -4,20 +4,40 @@ if go == false {
 }
 
 else {
+	if bomb == true {
+		if x + 20 > room_width or x - 20 < 0 
+			flip_x *= -1	
+		
+		if y + 18 > room_height or y - 20 < 0
+			flip_y *= -1
+		repeat (global.execute) {
+			bombtimer -= 1
+			image_blend = make_color_hsv(irandom_range(0, 255), 255, 255)
+			if bombtimer == 0 {
+				if !audio_is_playing(snd_explosion)
+				audio_play_sound(snd_explosion, 10, false)	
+				repeat(30)
+					instance_create_depth(x, y, -10001, obj_note)
+				instance_destroy(id)
+			}
+		}
+	}
 	if calcdir == false {
 		dir = -point_direction(x, y, mouse_x, mouse_y) + irandom_range(-30, 30)
 		calcdir = true
 		mercy = false
 	}
-	move_towards_point(x + dcos(dir) * 50, y + dsin(dir) * 50, 10 * global.fm)
-	image_xscale += 0.02 * global.fm
-	image_yscale += 0.02 * global.fm
-	image_alpha -= 0.02 * global.fm
+	move_towards_point(x + (dcos(dir) * 50) * flip_x, y + (dsin(dir) * 50) * flip_y, 10 * global.fm)
+	if bomb == false {
+		image_xscale += 0.02 * global.fm
+		image_yscale += 0.02 * global.fm
+		image_alpha -= 0.02 * global.fm
+	}
 }
 
 
 	
-if diddamage == false and on_mouse() and mercy == false {
+if diddamage == false and on_mouse() and mercy == false and bomb == false {
 	global.hp -= 1
 	audio_play_sound(snd_basketball_bounce, 10, false)
 	diddamage = true

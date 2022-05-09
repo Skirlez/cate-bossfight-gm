@@ -1,22 +1,24 @@
-if global.shake > -1 and global.execute > 0 {
-	global.shake -= 1
-	if global.shake != 0 {
-		camera_set_view_pos(view_camera[0], global.shakeStrength * sign(irandom_range(-1, 1)), global.shakeStrength * sign(irandom_range(-1, 1)))
+
+if global.execute > 0 {
+	camera_set_view_pos(view_camera[0], 0, 0)	
+	if global.shake > 0 {
+		global.shake -= 1
+		if global.shake != 0 {
+			camera_set_view_pos(view_camera[0], global.shakeStrength * sign(irandom_range(-1, 1)), global.shakeStrength * sign(irandom_range(-1, 1)))
 		
-		if global.shakeStrength > 0 
-			global.shakeStrength -= global.shakeDecay	
+			if global.shakeStrength > 0 
+				global.shakeStrength -= global.shakeDecay	
 			
-		if global.shakeStrength <= 0 {
-			global.shake = -1
+			if global.shakeStrength <= 0 {
+				global.shake = 0
+				global.shakeStrength = 0
+				global.shakeDecay = 0
+			}
+		}
+		else {
 			global.shakeStrength = 0
 			global.shakeDecay = 0
-			camera_set_view_pos(view_camera[0], 0, 0)
 		}
-	}
-	else {
-		global.shakeStrength = 0
-		global.shakeDecay = 0
-		camera_set_view_pos(view_camera[0], 0, 0)		
 	}
 }
 if (room == mainroom or room == bonuscat) {
@@ -27,7 +29,7 @@ if (room == mainroom or room == bonuscat) {
 		audio_pause_all()
 		pausemx = mouse_x
 		pausemy = mouse_y
-		paused = true
+		paused = true	
 		
 	}
 	

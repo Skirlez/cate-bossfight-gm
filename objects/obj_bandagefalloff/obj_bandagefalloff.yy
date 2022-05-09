@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_death",
-    "path": "sprites/spr_death/spr_death.yy",
+    "name": "spr_bandage",
+    "path": "sprites/spr_bandage/spr_bandage.yy",
   },
   "solid": false,
   "visible": true,
@@ -31,7 +31,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_death",
+  "name": "obj_bandagefalloff",
   "tags": [],
   "resourceType": "GMObject",
 }

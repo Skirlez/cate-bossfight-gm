@@ -40,7 +40,7 @@ else repeat(global.execute) {
 	
 	if deathtimer == 90 {
 		audio_play_sound(snd_brrr, 10, false)
-		shakeScreen(90, 0.1, -0.1)	
+		shakeScreen(90, 0.5, -0.1)	
 	}
 		
 	if deathtimer > 90 and deathtimer < 180

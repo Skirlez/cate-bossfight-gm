@@ -8,3 +8,7 @@ depth = -9999
 hp = 10
 actiontime = 7
 deathsound = false
+hardmodeattacks = 7
+hardlaser = 3
+hardlasertimer = -1
+laserangle = 0

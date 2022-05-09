@@ -23,8 +23,11 @@ if hp > 0 {
 		if bounce == 40
 			bounce = 0
 	
-	
-		if actiontime == 1 {
+		if global.hard and instance_number(obj_jinx2attack) >= 3
+			hardstopattack = true
+		else
+			hardstopattack = false
+		if actiontime == 1 and hardstopattack == false {
 			if attacking == 0 and irandom_range(0, 7) == 0 {
 				attacking = 45
 				audio_play_sound(snd_higher_pitch_alert, 10, false)
@@ -60,6 +63,8 @@ else {
 		shakeScreen(80, 7, 0.1)
 		instance_destroy(obj_sillyjinx)
 		instance_destroy(obj_sillyjinxlaser)
+		instance_destroy(obj_note)
+		instance_destroy(obj_jinx2attack)
 		sprite_index = spr_jinx2dead
 		audio_play_sound(snd_boom_cloud, 10, false)
 		audio_play_sound(snd_squeaky_toy, 10, false)

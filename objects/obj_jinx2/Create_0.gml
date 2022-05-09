@@ -10,4 +10,4 @@ actiontime = 7
 deathsound = false
 deathtimer = 0
 instance_create_depth(0, 0, -9999, obj_sillyjinx)
-
+hardstopattack = false

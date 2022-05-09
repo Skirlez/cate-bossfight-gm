@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_death",
-    "path": "sprites/spr_death/spr_death.yy",
+    "name": "spr_gun",
+    "path": "sprites/spr_gun/spr_gun.yy",
   },
   "solid": false,
   "visible": true,
@@ -31,7 +31,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_death",
+  "name": "obj_gun",
   "tags": [],
   "resourceType": "GMObject",
 }

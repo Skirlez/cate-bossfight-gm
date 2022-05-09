@@ -35,19 +35,55 @@ if hp > 0 {
 		}
 
 
-
+		if attacking == 6 and global.hard 
+			hardlaser -= 1
+		
 
 		if attacking == 7 {
-			instance_create_depth(x, y, -10000, obj_jinx1attack)	
-			audio_play_sound(snd_low_boing, 10, false)
-			shakeScreen(10, 1, 0)
-			sprite_index = spr_jinx1
+			if hardlaser != 0 {
+				instance_create_depth(x, y, -10000, obj_jinx1attack)	
+				audio_play_sound(snd_low_boing, 10, false)
+				shakeScreen(6, 1, 0)
+				if global.hard == false
+					sprite_index = spr_jinx1
+				else { 
+					if hardmodeattacks > 0 {
+						attacking = 15
+						hardmodeattacks -= 1
+					}
+					else {
+						hardmodeattacks = irandom_range(7, 10)
+						sprite_index = spr_jinx1
+					}
+				}
+			}
+			else {
+				audio_play_sound(snd_bombfall, 10, false)
+				laserangle = point_direction(x, y, mouse_x, mouse_y)
+				var i = instance_create_depth(x, y, -10000, obj_laserdot)
+				i.image_xscale = 2
+				i.image_yscale = 2
+				hardlasertimer = 15
+			}
 		}
+		if hardlasertimer != -1 {
+			hardlasertimer -= 1
+			if hardlasertimer == 0 {
+				audio_play_sound(snd_lasergo, 10, false)
+				var i = instance_create_depth(obj_laserdot.x, obj_laserdot.y, -10000, obj_shootlaser)	
+				instance_destroy(obj_laserdot)
+				i.image_angle = laserangle
+				i.image_xscale = 2
+				i.image_yscale = 2
+				hardlasertimer = -1
+				hardlaser = 3
+			}
+		}
+		
 
 		if attacking > 0 {
 			attacking -= 1
 		}
-
 	
 		if actiontime > 0
 			actiontime -= 1
