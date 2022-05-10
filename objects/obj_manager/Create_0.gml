@@ -35,7 +35,8 @@ global.shakeStrength = 0
 global.shakeDecay = 0
 global.gamespeed = 1
 global.music = -1
-global.hard = true
+global.hard = false
 global.allowshake = true
 if !variable_global_exists("soundemitter")
-global.soundemitter = audio_emitter_create()
+	global.soundemitter = audio_emitter_create()
+

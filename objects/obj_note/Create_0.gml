@@ -7,3 +7,8 @@ image_yscale = 0.03
 depth = -10001
 move_towards_point(x + dcos(dir) * 30, y - dsin(dir) * 30, 3 * global.fm)
 harmless = false
+nobouncetimer_x = 0
+nobouncetimer_y = 0
+flip_x = 1
+flip_y = 1
+bounce = 0

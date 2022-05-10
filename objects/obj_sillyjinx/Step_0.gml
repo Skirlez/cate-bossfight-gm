@@ -37,7 +37,8 @@ repeat(global.execute) {
 
 	else if timer == 121 {
 		image_index = 0
-		instance_create_depth(-640, y, -10000, obj_sillyjinxlaser)
+		var i = instance_create_depth(-640, y, -10000, obj_sillyjinxlaser)
+		i.bomb = global.hard
 		play_sound(snd_drum_boing, false)
 		play_sound(snd_boom_cloud2, false)
 	}

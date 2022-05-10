@@ -30,11 +30,6 @@ repeat (global.execute) {
 				instance_create_depth(x, y, -10000, obj_jinx2attack)	
 				play_sound(snd_low_boing2, false)
 			}
-			if timer == 105 {
-				phase = 2
-				timer = 0
-				sprite_index = spr_jinx2	
-			}
 			break
 		case 2:
 			if timer > 60 {

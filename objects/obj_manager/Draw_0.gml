@@ -26,8 +26,18 @@ if paused == false {
 
 		if currentjinx != 0 {
 			object = asset_get_index("obj_jinx" + string(currentjinx))
-		
 			if instance_exists(object) {
+				/* for anyone lucky enough to be seeing this. please uncomment this code. it wants to be freed.
+				var dist = point_distance(mouse_x, mouse_y, object.x, object.y)
+				if dist < 200 {
+					global.gamespeed = dist / 200
+					audio_emitter_pitch(global.soundemitter, dist / 200)
+				}
+				else {
+					global.gamespeed = 1
+					audio_emitter_pitch(global.soundemitter, 1)
+				}
+				*/
 			
 				if keyboard_check_pressed(ord("Q"))
 					object.hp = 0

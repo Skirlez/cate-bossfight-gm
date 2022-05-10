@@ -8,7 +8,6 @@ if room == mainroom {
 		global.distance = 250
 	global.attackcooldown = 0
 	global.distortlayer = layer_get_id("Distort")
-	show_debug_message(global.distortlayer)
 	global.layerfx = layer_get_fx(global.distortlayer)
 	global.music = play_sound(snd_music_phase1, false)
 	phase = 0

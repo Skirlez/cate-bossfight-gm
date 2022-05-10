@@ -10,6 +10,4 @@ actiontime = 7
 deathsound = false
 hardmodeattacks = 7
 hardlaser = 3
-hardlasertimer = -1
-laserangle = 0
-laserattacks = 3
+laserattacks = 5

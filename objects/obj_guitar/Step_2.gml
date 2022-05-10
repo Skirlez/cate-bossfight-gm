@@ -16,8 +16,12 @@ else { // hardcoded instance id!!! cringe!!!
 			notettimer -= 1
 		else {
 			repeat(choose(1, 2)){
-				i = instance_create_depth(x, y, -10000, obj_note)	
+				var i = instance_create_depth(x, y, -10000, obj_note)	
 				i.harmless = true
+				if global.hard  {
+					i.bounce = 1
+					show_debug_message("did")	
+				}
 			}
 			notettimer = 90
 		}
@@ -37,7 +41,7 @@ if intro == true or obj_jinx4.hp > 0 {
 		}
 	
 		if intro == true and global.timer <= 15 or intro == false { // good coding
-			if intro == false 
+			if intro == false and obj_jinx4.starttimer == 0   
 				play_sound(snd_attack_hit, false)
 			play_sound(snd_minecraft_hit, false)
 		}
@@ -82,7 +86,9 @@ if intro == true or obj_jinx4.hp > 0 {
 	
 			attacktimer += 1
 			if attacktimer < notes {
-				instance_create_depth(x, y, -10001, obj_note)
+				var i = instance_create_depth(x, y, -10001, obj_note)
+				if global.hard 
+					i.bounce = 2
 				play_sound(snd_elecguitar, false)
 			}
 

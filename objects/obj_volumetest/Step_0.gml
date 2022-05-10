@@ -11,9 +11,10 @@ repeat(global.execute) {
 		else {
 		
 			repeat(irandom_range(4, 7)) {
-				i = instance_create_depth(x, y, -10000, obj_note)	
+				var i = instance_create_depth(x, y, -10000, obj_note)	
 				i.harmless = true
 				i.sprite_index = spr_brightnote
+				i.bounce = 3
 			}
 			
 			notettimer = 18

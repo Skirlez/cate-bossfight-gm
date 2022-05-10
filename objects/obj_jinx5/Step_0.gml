@@ -13,9 +13,9 @@ if hp > 0 {
 	if spintimer <= 60
 		image_angle += animcurve_channel_evaluate(spincurvechannel, spintimer / 60) * 30 * global.fm
 	repeat(global.execute) {
-		if global.hard and spawnasshole != 60 {
+		if global.hard and spawnasshole != 120 {
 			spawnasshole += 1
-			if spawnasshole == 60
+			if spawnasshole == 120
 				instance_create_depth(670, 64, depth, obj_assholejinx2)
 		}
 		if timer == 0 {

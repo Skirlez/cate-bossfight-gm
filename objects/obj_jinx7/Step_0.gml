@@ -11,7 +11,7 @@ if go == false
 
 
 if hp == 1 and global.hard == false {
-	var dist = distance_to_object(obj_mousebox)	
+	var dist = point_distance(mouse_x, mouse_y, x, y)
 	if dist < 200 {
 		global.gamespeed = dist / 200
 		audio_emitter_pitch(global.soundemitter, dist / 200)

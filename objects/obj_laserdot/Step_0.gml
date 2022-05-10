@@ -8,7 +8,11 @@ if instance_exists(obj_jinx7)  {
 else if update == true
 	instance_destroy(id)	
 
-
+if timer != -1 {
+	timer -= 1
+	if timer == 0
+		instance_destroy(id)
+}
 
 if image_alpha < 1
 	image_alpha += 0.005 * global.fm

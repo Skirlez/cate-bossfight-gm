@@ -1,5 +1,3 @@
-
-
 if !surface_exists(rainbowsurface) {
 	rainbowsurface = surface_create(1920, 360)
 	surface_set_target(rainbowsurface)

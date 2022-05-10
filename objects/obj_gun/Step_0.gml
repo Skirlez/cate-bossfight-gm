@@ -1,8 +1,8 @@
 image_angle = point_direction(x, y, mouse_x, mouse_y) + recoil
 var mousedist = distance_to_point(mouse_x, mouse_y)
-if mousedist < 90 and dist == 50 {
+if mousedist < 90 
 	distoffset = 80 - (mousedist - 10)
-}
+
 x = obj_jinx3.x + (dist - distoffset) * dcos(image_angle) - 1
 y = obj_jinx3.y - (dist - distoffset) * dsin(image_angle) - 1
 repeat (global.execute) {

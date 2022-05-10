@@ -59,32 +59,20 @@ if hp > 0 {
 			}
 			else {
 				play_sound(snd_bombfall, false)
-				laserangle = point_direction(x, y, mouse_x, mouse_y)
 				var i = instance_create_depth(x, y, -10000, obj_laserdot)
 				i.image_xscale = 2
 				i.image_yscale = 2
-				hardlasertimer = 15
-			}
-		}
-		if hardlasertimer != -1 {
-			hardlasertimer -= 1
-			if hardlasertimer == 0 {
-				play_sound(snd_lasergo, false)
-				var i = instance_create_depth(obj_laserdot.x, obj_laserdot.y, -10000, obj_shootlaser)	
-				instance_destroy(obj_laserdot)
-				i.image_angle = laserangle
-				i.image_xscale = 2
-				i.image_yscale = 2
+				i.becomelaser = true
+				i.timer = 120
 				if laserattacks > 0 {
-					attacking = 30
+					attacking = 15	
 					laserattacks -= 1
-					hardlaser = 0
 				}
 				else {
-					sprite_index = spr_jinx1
 					laserattacks = 3
-					hardlasertimer = -1
-					hardlaser = 3
+					hardmodeattacks = 7
+					hardlaser = 4
+					sprite_index = spr_jinx1
 				}
 			}
 		}
