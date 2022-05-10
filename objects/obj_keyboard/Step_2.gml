@@ -12,18 +12,18 @@ repeat(global.execute) {
 	}
 	
 	
-	if timer < 80 and timer >= 20 
+	if global.hard and timer < 80 and timer >= 20 
 		image_angle += 6 * rotdir
 	
 	
 	switch (timer) {
 	
 		case 144:
-			audio_play_sound(snd_bombfall, 10, false)
+			play_sound(snd_bombfall, false)
 			break;
 		case 122:
-			audio_play_sound(snd_heavyswing, 10, false)
-			audio_play_sound(snd_b_piano, 10, false)
+			play_sound(snd_heavyswing, false)
+			play_sound(snd_b_piano, false)
 			sprite_set_offset(spr_keyboard, 0, 360)
 			sprite_set_offset(spr_static, 0, 360)
 			image_xscale += 0.5
@@ -33,12 +33,15 @@ repeat(global.execute) {
 			image_xscale += 0.5
 			break;
 		case 100:
-			rotdir = choose(-1, 1)
-			if rotdir = 1
-				audio_play_sound(snd_higher_pitch_alert, 10, false)
-			else
-				audio_play_sound(snd_alert, 10, false)
+			if global.hard {
+				rotdir = choose(-1, 1)
+				if rotdir = 1
+					play_sound(snd_higher_pitch_alert, false)
+				else
+					play_sound(snd_alert, false)
+			}
 			break;
+			
 	/*
 		case 80:
 			if global.hard
@@ -73,7 +76,7 @@ repeat(global.execute) {
 	if on_mouse() and attackcooldown == 0 and image_alpha == 1 {
 		global.hp -= 2
 		attackcooldown = 90
-		audio_play_sound(snd_basketball_bounce_keyboard, 10, false)
+		play_sound(snd_basketball_bounce_keyboard, false)
 		sprite_index = spr_static
 	
 	}

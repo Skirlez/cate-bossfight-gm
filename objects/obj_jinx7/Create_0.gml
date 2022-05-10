@@ -4,7 +4,7 @@ image_yscale = 0.1
 go = false
 spintimer = 0
 spintarget = -0.1
-hp = 3
+hp = 35
 decideattack = irandom_range(0, 5)
 prevattack = 4
 repeatattack = 3
@@ -24,4 +24,4 @@ function fairirandom(a, b) {
 	
 }
 
-timeroffset = 0
+timeroffset = 1

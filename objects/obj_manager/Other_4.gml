@@ -1,12 +1,16 @@
 if room == mainroom {
+	finaletimer = 0
 	global.timer = 0
 	global.hp = 20
-	global.distance = 400
+	if global.hard
+		global.distance = 400
+	else
+		global.distance = 250
 	global.attackcooldown = 0
 	global.distortlayer = layer_get_id("Distort")
 	show_debug_message(global.distortlayer)
 	global.layerfx = layer_get_fx(global.distortlayer)
-	global.music = audio_play_sound(snd_music_phase1, 10, false)
+	global.music = play_sound(snd_music_phase1, false)
 	phase = 0
 	backgroundlayer = layer_get_id("Background")
 	background = layer_background_get_id(backgroundlayer)

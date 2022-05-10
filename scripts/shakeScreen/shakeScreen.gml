@@ -1,4 +1,6 @@
 function shakeScreen(shaketimer, shakestrength = 1, shakedecay = 0) {
+	if global.allowshake == false
+		exit
 	global.shakeDecay = shakedecay
 	if global.shake == 0 {
 		global.shake = shaketimer

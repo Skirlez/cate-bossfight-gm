@@ -7,9 +7,9 @@ if hp > 0 {
 		
 
 	if clicked() and global.attackcooldown == 0 {
-		audio_play_sound(snd_big_boing, 10, false)
-		audio_play_sound(snd_attack_hit, 10, false)
-		audio_play_sound(snd_bigcut, 10, false)
+		play_sound(snd_big_boing, false)
+		play_sound(snd_attack_hit, false)
+		play_sound(snd_bigcut, false)
 		bounce = 40
 		hp -= 1
 		global.attackcooldown = 61
@@ -26,7 +26,7 @@ if hp > 0 {
 		if actiontime == 1 {
 			if attacking == 0 and irandom_range(0, 6) == 0 {
 				attacking = 45
-				audio_play_sound(snd_alert, 10, false)
+				play_sound(snd_alert, false)
 				sprite_index = spr_jinx1attack	
 	
 			}
@@ -42,7 +42,7 @@ if hp > 0 {
 		if attacking == 7 {
 			if hardlaser != 0 {
 				instance_create_depth(x, y, -10000, obj_jinx1attack)	
-				audio_play_sound(snd_low_boing, 10, false)
+				play_sound(snd_low_boing, false)
 				shakeScreen(6, 1, 0)
 				if global.hard == false
 					sprite_index = spr_jinx1
@@ -58,7 +58,7 @@ if hp > 0 {
 				}
 			}
 			else {
-				audio_play_sound(snd_bombfall, 10, false)
+				play_sound(snd_bombfall, false)
 				laserangle = point_direction(x, y, mouse_x, mouse_y)
 				var i = instance_create_depth(x, y, -10000, obj_laserdot)
 				i.image_xscale = 2
@@ -69,14 +69,23 @@ if hp > 0 {
 		if hardlasertimer != -1 {
 			hardlasertimer -= 1
 			if hardlasertimer == 0 {
-				audio_play_sound(snd_lasergo, 10, false)
+				play_sound(snd_lasergo, false)
 				var i = instance_create_depth(obj_laserdot.x, obj_laserdot.y, -10000, obj_shootlaser)	
 				instance_destroy(obj_laserdot)
 				i.image_angle = laserangle
 				i.image_xscale = 2
 				i.image_yscale = 2
-				hardlasertimer = -1
-				hardlaser = 3
+				if laserattacks > 0 {
+					attacking = 30
+					laserattacks -= 1
+					hardlaser = 0
+				}
+				else {
+					sprite_index = spr_jinx1
+					laserattacks = 3
+					hardlasertimer = -1
+					hardlaser = 3
+				}
 			}
 		}
 		
@@ -97,7 +106,7 @@ if hp > 0 {
 else {
 	if deathsound == false {
 		shakeScreen(80, 7, 0.1)
-		audio_play_sound(snd_boom_cloud, 10, false)
+		play_sound(snd_boom_cloud, false)
 		obj_hurt.phase = 1
 		deathsound = true
 		obj_manager.hptrack = 0

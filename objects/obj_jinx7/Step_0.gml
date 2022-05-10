@@ -1,10 +1,11 @@
 // all of this sucks and is rushed I do not care shut up
 image_speed = global.imagespeed
-if go == true {
-	x = 320 + dsin((global.timer - timeroffset) * 200) * 200
-	y = 180 + dcos((global.timer - timeroffset) * 180) * 110
-	
-}
+
+x = 320 + dsin((global.timer - timeroffset) * 200) * 200
+y = 180 + dcos((global.timer - timeroffset) * 180) * 110
+
+if go == false
+	timeroffset += (delta_time / 1000000) * global.gamespeed
 
 
 
@@ -13,18 +14,18 @@ if hp == 1 and global.hard == false {
 	var dist = distance_to_object(obj_mousebox)	
 	if dist < 200 {
 		global.gamespeed = dist / 200
-		audio_sound_pitch(global.music, dist / 200)
+		audio_emitter_pitch(global.soundemitter, dist / 200)
 	}
 	else {
 		global.gamespeed = 1
-		audio_sound_pitch(global.music, 1)
+		audio_emitter_pitch(global.soundemitter, 1)
 	}
 }
 
 if clicked() and global.attackcooldown == 0 and go = true {
-	audio_play_sound(snd_punchstrong, 10, false)
-	audio_play_sound(snd_saber3, 10, false)
-	audio_play_sound(snd_attack_hit, 10, false)
+	play_sound(snd_punchstrong, false)
+	play_sound(snd_saber3, false)
+	play_sound(snd_attack_hit, false)
 	spintimer = 40
 	image_xscale = 0.1
 	spintarget = -0.1
@@ -74,7 +75,7 @@ repeat(global.execute) {
 		case 0:
 			// this sucks
 			if timer == 0 {
-				audio_play_sound(snd_lasercharge, 10, false)
+				play_sound(snd_lasercharge, false)
 				i = instance_create_depth(x, y, -10000, obj_laserdot)
 				i.update = true
 				i.image_alpha = 0
@@ -82,7 +83,7 @@ repeat(global.execute) {
 			
 			else if timer == 120 or timer == 180 or timer == 240 {
 				instance_destroy(obj_laserdot)
-				audio_play_sound(snd_bombfall, 10, false)
+				play_sound(snd_bombfall, false)
 				laserangle = point_direction(x, y, mouse_x, mouse_y)
 				i = instance_create_depth(x, y, -10000, obj_laserdot)
 				i.image_xscale = 2
@@ -90,7 +91,7 @@ repeat(global.execute) {
 				
 			}
 			else if timer == 140 or timer == 200 or timer == 260 {
-				audio_play_sound(snd_lasergo, 10, false)
+				play_sound(snd_lasergo, false)
 				i = instance_create_depth(obj_laserdot.x, obj_laserdot.y, -10000, obj_shootlaser)	
 				i.image_angle = laserangle
 				i.image_xscale = 2
@@ -110,11 +111,11 @@ repeat(global.execute) {
 			break;
 		case 1:
 			if timer == 120
-				audio_play_sound(snd_higher_pitch_alert, 10, false)
+				play_sound(snd_higher_pitch_alert, false)
 			
 			if timer > 120 and timer % 20 == 0 and timer < 300 {
 				instance_create_depth(x, y, -10000, obj_jinx7attack1)	
-				audio_play_sound(snd_low_boing, 10, false)	
+				play_sound(snd_low_boing, false)	
 			}
 		
 			if timer == 300 {
@@ -126,24 +127,24 @@ repeat(global.execute) {
 		
 		case 2:
 			if timer == 120 
-				audio_play_sound(snd_alert, 10, false)
+				play_sound(snd_alert, false)
 		
 		
 			if timer > 160 and timer < 190 {
 				i = instance_create_depth(x, y, -10001, obj_note)
 				i.sprite_index = spr_brightnote	
-				audio_play_sound(snd_elecguitar, 10, false)
+				play_sound(snd_elecguitar, false)
 			}
 		
 			if timer == 210 {
 				instance_create_depth(x, y, -10000, obj_jinx7attack1)	
-				audio_play_sound(snd_low_boing, 10, false)
+				play_sound(snd_low_boing, false)
 			}
 		
 			if timer > 230 and timer < 280 {
 				i = instance_create_depth(x, y, -10001, obj_note)
 				i.sprite_index = spr_brightnote	
-				audio_play_sound(snd_elecguitar, 10, false)
+				play_sound(snd_elecguitar, false)
 			}
 		
 			if timer == 300 {
@@ -155,7 +156,7 @@ repeat(global.execute) {
 		
 		case 3:
 			if timer == 50 
-				audio_play_sound(snd_impact, 10, false)
+				play_sound(snd_impact, false)
 		
 			if timer >= 50 and timer <= 80 and timer % 10 == 0 {
 				i = instance_create_depth(x, y, -10000, obj_jinx6attack)	
@@ -175,7 +176,7 @@ repeat(global.execute) {
 		
 			if timer == 130 {
 				obj_jinx6attack.go = true
-				audio_play_sound(snd_scytheburst, 10, false)
+				play_sound(snd_scytheburst, false)
 			}
 		
 			else if timer == 140 {
@@ -201,7 +202,7 @@ repeat(global.execute) {
 		
 		
 			if timer == 100 {
-				audio_play_sound(snd_a_piano, 10, false)
+				play_sound(snd_a_piano, false)
 				warnboxheight = 0
 			}
 		
@@ -211,8 +212,8 @@ repeat(global.execute) {
 			if timer >= 120 and timer % 30 == 0 and timer < 250 {
 				instance_create_depth(-640, 320 - jinxlaser, -10000, obj_sillyjinxlaser)
 				audio_stop_sound(snd_boom_cloud2)
-				audio_play_sound(snd_drum_boing, 10, false)
-				audio_play_sound(snd_boom_cloud2, 10, false)
+				play_sound(snd_drum_boing, false)
+				play_sound(snd_boom_cloud2, false)
 		
 				jinxlaser += 75
 			}
@@ -237,13 +238,13 @@ repeat(global.execute) {
 
 			switch (timer) {
 				case 100:
-					audio_play_sound(snd_gunshot, 10, false)
+					play_sound(snd_gunshot, false)
 					break;
 				case 160:
 					instance_create_depth(x, y, depth, obj_jinx7attack2)
 					break;
 				case 220:
-					audio_play_sound(snd_sparkles, 10, false)
+					play_sound(snd_sparkles, false)
 					break;
 				case 250:
 					image_yscale = 0.1

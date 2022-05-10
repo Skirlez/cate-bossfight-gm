@@ -20,8 +20,8 @@ repeat(global.execute) {
 		case 180:
 		case 240:
 		case 300:
-			audio_play_sound(snd_undertalehurt, 10, false)
-			audio_play_sound(snd_boom_cloud, 10, false)
+			play_sound(snd_undertalehurt, false)
+			play_sound(snd_boom_cloud, false)
 			image_index += 1
 			damn = 100
 			break;
@@ -31,8 +31,8 @@ repeat(global.execute) {
 		case 420:
 		case 450:
 			audio_stop_sound(snd_boom_cloud)
-			audio_play_sound(snd_undertalehurt, 10, false)
-			sound = audio_play_sound(snd_boom_cloud, 10, false)
+			play_sound(snd_undertalehurt, false)
+			sound = play_sound(snd_boom_cloud, false)
 			pitch += 0.025
 			audio_sound_pitch(sound, pitch)
 			image_index += 1
@@ -44,8 +44,8 @@ repeat(global.execute) {
 		case 520:
 		case 540:
 			audio_stop_sound(snd_boom_cloud)
-			audio_play_sound(snd_undertalehurt, 10, false)
-			sound = audio_play_sound(snd_boom_cloud, 10, false)
+			play_sound(snd_undertalehurt, false)
+			sound = play_sound(snd_boom_cloud, false)
 			pitch += 0.025
 			audio_sound_pitch(sound, pitch)
 			image_index += 1
@@ -58,8 +58,8 @@ repeat(global.execute) {
 
 	if timer > 555 and timer % 6 == 0 {
 		audio_stop_sound(snd_boom_cloud)
-		audio_play_sound(snd_undertalehurt, 10, false)
-		sound = audio_play_sound(snd_boom_cloud, 10, false)
+		play_sound(snd_undertalehurt, false)
+		sound = play_sound(snd_boom_cloud, false)
 		pitch += 0.025
 		audio_sound_pitch(sound, pitch)
 		image_index += 1
@@ -73,7 +73,7 @@ repeat(global.execute) {
 	if timer == 660 {
 		instance_create_depth(x, y, -9999, obj_explosion)
 		audio_stop_sound(snd_boom_cloud)
-		sound = audio_play_sound(snd_boom_cloud, 10, false)
+		sound = play_sound(snd_boom_cloud, false)
 		audio_sound_pitch(sound, 0.5)
 		instance_destroy(id)	
 	}

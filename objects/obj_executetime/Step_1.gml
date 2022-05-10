@@ -1,13 +1,12 @@
 frame += delta_time * global.gamespeed
 if frame >= 16666 {
-	while frame >= 16666 {
-		frame -= 16666
-		global.execute += 1
-	}
-	exit
+	frame = frame % 16666
+	global.execute = floor(frame / 16666) + 2
+	
 }
-if frame <= 16666
-	global.execute = 0
+if frame <= 16666 and global.execute > 0
+	global.execute -= 1
+
 
 /*
 executetime = global.fps / 60

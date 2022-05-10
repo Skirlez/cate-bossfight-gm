@@ -24,7 +24,7 @@ repeat(global.execute) {
 
 
 	if timer == 146 
-		audio_play_sound(snd_a_piano, 10, false)
+		play_sound(snd_a_piano, false)
 
 
 
@@ -38,8 +38,8 @@ repeat(global.execute) {
 	else if timer == 121 {
 		image_index = 0
 		instance_create_depth(-640, y, -10000, obj_sillyjinxlaser)
-		audio_play_sound(snd_drum_boing, 10, false)
-		audio_play_sound(snd_boom_cloud2, 10, false)
+		play_sound(snd_drum_boing, false)
+		play_sound(snd_boom_cloud2, false)
 	}
 	if timer < 60
 		image_alpha -= 0.02

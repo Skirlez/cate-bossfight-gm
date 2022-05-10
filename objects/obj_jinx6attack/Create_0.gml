@@ -4,7 +4,7 @@ bomb = false
 bombtimer = 100
 spin = 0
 go = false
-audio_play_sound(snd_gloophit, 10, false)
+play_sound(snd_gloophit, false)
 calcdir = false
 
 diddamage = false

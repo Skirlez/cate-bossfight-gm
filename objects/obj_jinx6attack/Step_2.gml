@@ -15,7 +15,8 @@ else {
 			image_blend = make_color_hsv(irandom_range(0, 255), 255, 255)
 			if bombtimer == 0 {
 				if !audio_is_playing(snd_explosion)
-				audio_play_sound(snd_explosion, 10, false)	
+				play_sound(snd_explosion, false)	
+				shakeScreen(20, 8, 0.1)
 				repeat(30)
 					instance_create_depth(x, y, -10001, obj_note)
 				instance_destroy(id)
@@ -37,9 +38,9 @@ else {
 
 
 	
-if diddamage == false and on_mouse() and mercy == false and bomb == false {
+if diddamage == false and on_mouse() and mercy == false {
 	global.hp -= 1
-	audio_play_sound(snd_basketball_bounce, 10, false)
+	play_sound(snd_basketball_bounce, false)
 	diddamage = true
 }
 	

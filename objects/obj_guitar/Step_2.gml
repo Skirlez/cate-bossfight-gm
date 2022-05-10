@@ -32,14 +32,14 @@ if intro == true or obj_jinx4.hp > 0 {
 			obj_jinx4.switchguitar *= -1
 			obj_jinx4.hp -= 1
 			global.hp += 1
-			audio_play_sound(snd_head_shake, 10, false)
+			play_sound(snd_head_shake, false)
 			global.attackcooldown = 61	
 		}
 	
 		if intro == true and global.timer <= 15 or intro == false { // good coding
 			if intro == false 
-				audio_play_sound(snd_attack_hit, 10, false)
-			audio_play_sound(snd_minecraft_hit, 10, false)
+				play_sound(snd_attack_hit, false)
+			play_sound(snd_minecraft_hit, false)
 		}
 			
 	}
@@ -83,7 +83,7 @@ if intro == true or obj_jinx4.hp > 0 {
 			attacktimer += 1
 			if attacktimer < notes {
 				instance_create_depth(x, y, -10001, obj_note)
-				audio_play_sound(snd_elecguitar, 10, false)
+				play_sound(snd_elecguitar, false)
 			}
 
 

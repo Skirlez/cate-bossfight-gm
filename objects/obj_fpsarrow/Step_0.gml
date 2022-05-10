@@ -2,7 +2,7 @@
 if image_yscale == 1 {
 	if clicked() {
 		
-		audio_play_sound(snd_big_boing, 10, false)
+		play_sound(snd_big_boing, false)
 		bounce = 40	
 		
 		if global.fps != 360 {
@@ -51,7 +51,7 @@ else {
 	if clicked() {
 		
 		bounce = 1
-		audio_play_sound(snd_big_boing_reversed, 10, false)
+		play_sound(snd_big_boing_reversed, false)
 		
 		if global.fps != 30 {
 			obj_executetime.frames = 0

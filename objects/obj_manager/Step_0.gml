@@ -4,8 +4,9 @@ if global.execute > 0 {
 	if global.shake > 0 {
 		global.shake -= 1
 		if global.shake != 0 {
-			camera_set_view_pos(view_camera[0], global.shakeStrength * sign(irandom_range(-1, 1)), global.shakeStrength * sign(irandom_range(-1, 1)))
-		
+			var offset_x = global.shakeStrength * sign(irandom_range(-1, 1))
+			var offset_y = global.shakeStrength * sign(irandom_range(-1, 1))
+			camera_set_view_pos(view_camera[0],  offset_x, offset_y)
 			if global.shakeStrength > 0 
 				global.shakeStrength -= global.shakeDecay	
 			
@@ -13,11 +14,16 @@ if global.execute > 0 {
 				global.shake = 0
 				global.shakeStrength = 0
 				global.shakeDecay = 0
+				global.offset_x = 0
+				global.offset_y = 0
 			}
 		}
 		else {
 			global.shakeStrength = 0
 			global.shakeDecay = 0
+			global.offset_x = 0
+			global.offset_y = 0
+			
 		}
 	}
 }
@@ -27,6 +33,7 @@ if (room == mainroom or room == bonuscat) {
 		instance_deactivate_all(true)
 		instance_activate_object(obj_mousebox)
 		audio_pause_all()
+		camera_set_view_pos(view_camera[0], 0, 0)	
 		pausemx = mouse_x
 		pausemy = mouse_y
 		paused = true	
@@ -57,8 +64,12 @@ if paused == false {
 	
 	
 		if phase == 0 {
-			if global.distance > 110
-				global.distance -= 1 * global.fm
+			if global.distance > 110 {
+				if global.hard
+					global.distance -= 1 * global.fm
+				else
+					global.distance -= 0.5 * global.fm
+			}
 
 			if global.timer > 10.25 {
 				obj_spinjinx123.image_speed = global.imagespeed / 2
@@ -79,7 +90,7 @@ if paused == false {
 	
 		if phase == 1 and !audio_is_playing(snd_music_phase1) or phase == 0 and keyboard_check_pressed(vk_enter) {
 			audio_stop_sound(snd_music_phase1) 
-			global.music = audio_play_sound(snd_music_phase2, 10, false)
+			global.music = play_sound(snd_music_phase2, false)
 			instance_create_depth(320, 180, -10000, obj_jinx1)
 			currentjinx = 1
 			background_color = c_white
@@ -95,7 +106,7 @@ if paused == false {
 		}
 	
 		if phase == 2 and !audio_is_playing(snd_music_phase2) {
-			global.music = audio_play_sound(snd_music_phase3, 10, true)
+			global.music = play_sound(snd_music_phase3, true)
 			phase = 3	
 		}
 
@@ -172,7 +183,42 @@ if paused == false {
 						layer_background_blend(background, make_color_rgb(whitecolor, whitecolor, whitecolor))
 						
 					}
+					if !instance_exists(obj_jinx6)  {
+						currentjinx = 7
+						audio_sound_gain(snd_music_phase2, 0, 1000)
+						audio_sound_gain(snd_music_phase3, 0, 1000)
+					}
 					break;
+					
+				case 7:
+					finaletimer += 1
+					
+					if finaletimer >= 60 {
+						if finaletimer == 60
+							play_sound(snd_music_finalehardmodeintro, false)
+						if whitecolor > 0 {
+							whitecolor -= 5
+							layer_background_blend(background, make_color_rgb(whitecolor, whitecolor, whitecolor))	
+						}
+					
+						if finaletimer == 178 {
+							whitescreen = 1.5
+							play_sound(snd_appear, false)
+							audio_stop_sound(snd_music_phase2)
+							audio_stop_sound(snd_music_phase3)
+							instance_create_depth(320, -32, -9998, obj_jinx7_bg)
+							instance_create_depth(320, 70, -9999, obj_jinx7)
+						}
+						if finaletimer == 182
+							whitescreen = 0
+						else if finaletimer == 222 
+							obj_jinx7.go = true	
+						
+					
+						if !audio_is_playing(snd_music_finalehardmodeintro) and !audio_is_playing(snd_finale)
+							play_sound(snd_finale, true)
+					}
+	
 			}
 
 
@@ -205,8 +251,9 @@ if paused == false {
 			scripttimer += 1
 	
 			if quickentrance == true {
-				global.music = audio_play_sound(snd_finale, 10, true)
+				global.music = play_sound(snd_finale, true)
 				instance_create_depth(320, 180, -9999, obj_jinx7)
+				instance_create_depth(320, -32, -9998, obj_jinx7_bg)
 				obj_jinx7.go = true
 				instance_destroy(obj_pluck)
 				layer_background_blend(background, c_black)
@@ -220,17 +267,17 @@ if paused == false {
 
 		
 				if scripttimer == 240 {
-					audio_play_sound(snd_pluck_reversed, 10, false)	
+					play_sound(snd_pluck_reversed, false)	
 					instance_destroy(obj_pluck)
 				}
 	
 
 	
 				if scripttimer == 360
-					audio_play_sound(snd_entrance, 10, false)
+					play_sound(snd_entrance, false)
 			
 				if scripttimer == 478 {
-					whitescreen = 1
+					whitescreen = 1.5
 				}
 
 				
@@ -252,7 +299,7 @@ if paused == false {
 	
 		
 				if scripttimer == 540 {
-					global.music = audio_play_sound(snd_finale, 10, true)
+					global.music = play_sound(snd_finale, true)
 					obj_jinx7.go = true
 					phase = 1 // thought I would have more phases smh
 				}

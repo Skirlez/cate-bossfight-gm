@@ -1,6 +1,6 @@
 image_speed = 0
 hp = 15
-audio_play_sound(snd_audio_appearance, 10, false)
+play_sound(snd_audio_appearance, false)
 image_xscale = 0.1
 image_yscale = 0.1
 x = 320

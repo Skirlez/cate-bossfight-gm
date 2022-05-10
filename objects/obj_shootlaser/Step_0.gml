@@ -8,7 +8,7 @@ if image_alpha <= 0
 	
 if hit == false and on_mouse() and image_alpha == 1 {
 	global.hp -= 2
-	audio_play_sound(snd_basketball_bounce, 10, false)
+	play_sound(snd_basketball_bounce, false)
 	hit = true
 }
 	

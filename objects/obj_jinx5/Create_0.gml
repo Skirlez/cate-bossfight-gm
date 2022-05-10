@@ -16,3 +16,5 @@ clickcooldown = false
 action = 0
 deathtimer = 0
 shook = false
+shooktwo = false
+spawnasshole = 0

@@ -1,5 +1,5 @@
 if harmless == false {
 	global.hp -= 1
-	audio_play_sound(snd_basketball_bounce, 10, false)
+	play_sound(snd_basketball_bounce, false)
 	instance_destroy(id)
 }

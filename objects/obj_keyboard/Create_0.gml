@@ -10,5 +10,5 @@ if global.hard
 else
 	image_index = 0
 	
-rotoffset = 0
+
 rotdir = 1

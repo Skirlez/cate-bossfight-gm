@@ -4,12 +4,14 @@ repeat(global.execute) {
 
 	if timer == 0 {
 		hspeed = 0
-		shakeScreen(40, 5, 0.2)
-		repeat(120){
-			var i = instance_create_depth(640, y, -10001, obj_note)	
-			i.sprite_index = spr_brightnote
+		if bomb {
+			shakeScreen(40, 5, 0.2)
+			repeat(120){
+				var i = instance_create_depth(640, y, -10001, obj_note)	
+				i.sprite_index = spr_brightnote
+			}
+			play_sound(snd_explosion, false)
 		}
-		audio_play_sound(snd_explosion, 10, false)
 	}
 		
 
@@ -20,7 +22,7 @@ repeat(global.execute) {
 	
 	if damage == false and on_mouse() {
 		global.hp -= 1
-		audio_play_sound(snd_basketball_bounce, 10, false)
+		play_sound(snd_basketball_bounce, false)
 		damage = true	
 	}
 }

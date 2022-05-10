@@ -6,8 +6,8 @@ damn = 200
 timer = 1
 px = 100
 py = 100
-audio_play_sound(snd_undertalehurt, 10, false)
-audio_play_sound(snd_boom_cloud, 10, false)
+play_sound(snd_undertalehurt, false)
+play_sound(snd_boom_cloud, false)
 pitch = 1
 window_set_cursor(cr_none)
 obj_mousebox.visible = false

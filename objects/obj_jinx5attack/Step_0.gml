@@ -9,6 +9,6 @@ if image_alpha <= 0
 	
 if on_mouse() {
 	global.hp -= 2
-	audio_play_sound(snd_basketball_bounce_lowquality, 10, false)
+	play_sound(snd_basketball_bounce_lowquality, false)
 	instance_destroy(id)
 }

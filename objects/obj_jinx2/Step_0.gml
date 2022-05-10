@@ -6,9 +6,9 @@ if hp > 0 {
 	
 
 	if clicked() and global.attackcooldown == 0 {
-		audio_play_sound(snd_big_boing_reversed, 10, false)
-		audio_play_sound(snd_attack_hit, 10, false)
-		audio_play_sound(snd_bigcut, 10, false)
+		play_sound(snd_big_boing_reversed, false)
+		play_sound(snd_attack_hit, false)
+		play_sound(snd_bigcut, false)
 		bounce = 1
 		hp -= 1
 		global.attackcooldown = 61
@@ -30,7 +30,7 @@ if hp > 0 {
 		if actiontime == 1 and hardstopattack == false {
 			if attacking == 0 and irandom_range(0, 7) == 0 {
 				attacking = 45
-				audio_play_sound(snd_higher_pitch_alert, 10, false)
+				play_sound(snd_higher_pitch_alert, false)
 				sprite_index = spr_jinx2attack	
 	
 			}
@@ -43,7 +43,7 @@ if hp > 0 {
 
 		if attacking == 7 {
 			instance_create_depth(x, y, -10000, obj_jinx2attack)	
-			audio_play_sound(snd_low_boing2, 10, false)
+			play_sound(snd_low_boing2, false)
 			sprite_index = spr_jinx2
 		}
 
@@ -66,8 +66,8 @@ else {
 		instance_destroy(obj_note)
 		instance_destroy(obj_jinx2attack)
 		sprite_index = spr_jinx2dead
-		audio_play_sound(snd_boom_cloud, 10, false)
-		audio_play_sound(snd_squeaky_toy, 10, false)
+		play_sound(snd_boom_cloud, false)
+		play_sound(snd_squeaky_toy, false)
 		obj_hurt.phase = 1
 		invertcatvar = 200
 		deathtimer = 75

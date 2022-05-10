@@ -8,7 +8,7 @@ x = 320 + dsin(global.timer * mult + 4 * 60) * global.distance
 
 if clicked() and global.timer <= 15 {
 	bounce = 1
-	audio_play_sound(snd_big_boing_reversed, 10, false)
+	play_sound(snd_big_boing_reversed, false)
 }
 	
 	

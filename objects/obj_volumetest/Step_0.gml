@@ -1,6 +1,7 @@
 if clicked() {
-	audio_play_sound(snd_music_phase3, 10, false)
+	play_sound(snd_music_phase3, false)
 	image_index = 1
+	notettimer = 0
 }
 	
 repeat(global.execute) {
@@ -9,7 +10,7 @@ repeat(global.execute) {
 			notettimer -= 1
 		else {
 		
-			repeat(irandom_range(3, 6)) {
+			repeat(irandom_range(4, 7)) {
 				i = instance_create_depth(x, y, -10000, obj_note)	
 				i.harmless = true
 				i.sprite_index = spr_brightnote

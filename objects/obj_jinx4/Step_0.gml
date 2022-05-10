@@ -34,14 +34,13 @@ else repeat(global.execute) {
 		y = 180
 		obj_hurt.phase = 1
 		shakeScreen(80, 7, 0.1)
-		audio_play_sound(snd_whatdog, 10, false)
-		audio_play_sound(snd_vinethud, 10, false)
+		play_sound(snd_whatdog, false)
+		play_sound(snd_vinethud, false)
 	}
 	
-	if deathtimer == 90 {
-		audio_play_sound(snd_brrr, 10, false)
-		shakeScreen(90, 0.5, -0.1)	
-	}
+	if deathtimer == 90 
+		play_sound(snd_brrr, false)
+	
 		
 	if deathtimer > 90 and deathtimer < 180
 		instance_create_depth(irandom_range(0, 640), irandom_range(0, 360), -10000, obj_decoyjinx4)	

@@ -10,7 +10,7 @@ x = 320 + dsin(global.timer * mult + 5 * 60) * global.distance
 if clicked() and global.timer <= 15 {
 	spintimer = 0
 	image_angle = 0
-	audio_play_sound(snd_aliencreek, 10, false)
+	play_sound(snd_aliencreek, false)
 }
 
 if spintimer <= 60

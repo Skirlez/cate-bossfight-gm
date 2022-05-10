@@ -36,10 +36,10 @@ repeat (global.execute) {
 					i.bomb = true
 					m += 60
 				}
-				audio_play_sound(snd_vinethud, 10, false)	
+				play_sound(snd_vinethud, false)	
 			}
 			else
-				audio_play_sound(snd_big_boing, 10, false)
+				play_sound(snd_big_boing, false)
 			recoil = 20	
 		}
 	}

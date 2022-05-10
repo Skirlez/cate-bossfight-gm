@@ -1,5 +1,5 @@
 audio_stop_all()
-audio_play_sound(snd_appear, 10, false)
+play_sound(snd_appear, false)
 timer = 0
 flash = 10
 image_speed = global.imagespeed

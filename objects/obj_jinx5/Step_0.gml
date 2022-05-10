@@ -5,15 +5,19 @@ if hp > 0 {
 		spintimer = 0
 		image_angle = 0	
 		global.attackcooldown = 61
-		audio_play_sound(snd_aliencreek, 10, false)
-		audio_play_sound(snd_attack_hit, 10, false)
-		audio_play_sound(snd_bigcut, 10, false)
+		play_sound(snd_aliencreek, false)
+		play_sound(snd_attack_hit, false)
+		play_sound(snd_bigcut, false)
 		hp -= 1
 	}
 	if spintimer <= 60
 		image_angle += animcurve_channel_evaluate(spincurvechannel, spintimer / 60) * 30 * global.fm
 	repeat(global.execute) {
-	
+		if global.hard and spawnasshole != 60 {
+			spawnasshole += 1
+			if spawnasshole == 60
+				instance_create_depth(670, 64, depth, obj_assholejinx2)
+		}
 		if timer == 0 {
 			jump = 40
 			image_index = 0
@@ -39,7 +43,7 @@ if hp > 0 {
 				jumpingVar = 0	
 				sprite_index = spr_jinx5attack
 				image_index = 0
-				audio_play_sound(snd_bass_beatbox, 10, false)
+				play_sound(snd_bass_beatbox, false)
 				clickcooldown = true
 			}
 		
@@ -64,8 +68,8 @@ if hp > 0 {
 			if timer == 19 {
 				i = instance_create_depth(x, y,  -10000, obj_jinx5attack)
 				i.image_angle = image_angle
-				audio_play_sound(snd_bomb, 10, false)	
-				audio_play_sound(snd_cymbal_crash, 10, false)	
+				play_sound(snd_bomb, false)	
+				play_sound(snd_cymbal_crash, false)	
 				clickcooldown = false
 				sprite_index = spr_jinx5
 				image_index = 0
@@ -91,7 +95,9 @@ else {
 	
 	if deathtimer == 0 {
 		obj_hurt.phase = 1
-		audio_play_sound(snd_jinx5death, 10, false)
+		instance_destroy(obj_assholejinx2)
+		instance_destroy(obj_jinx2attack)
+		play_sound(snd_jinx5death, false)
 		image_index = 0
 		image_angle = 0
 	}
@@ -105,6 +111,10 @@ else {
 		image_speed = deathtimer / 50 * global.imagespeed
 	}
 	else if deathtimer > 312 {
+		if shooktwo == false {
+			shakeScreen(80, 7, 0.1)
+			shooktwo = true	
+		}
 		image_speed = 0
 		image_alpha -= 0.015 * global.fm
 		image_xscale += 0.004 * global.fm
