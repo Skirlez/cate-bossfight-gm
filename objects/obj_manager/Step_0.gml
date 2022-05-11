@@ -27,6 +27,9 @@ if global.execute > 0 {
 		}
 	}
 }
+if room == title
+	obj_mousebox.image_blend = global.cursorpink
+	
 if (room == mainroom or room == bonuscat) {
 	
 	if keyboard_check_pressed(vk_escape) and paused == false and phase != 0 {
@@ -101,6 +104,7 @@ if paused == false {
 			instance_destroy(obj_spinjinx6)
 			instance_destroy(obj_note)
 			layer_background_blend(background, c_white)
+			obj_mousebox.image_blend = global.cursorblue	
 			phase = 2	
 	
 		}
@@ -113,8 +117,10 @@ if paused == false {
 		repeat(global.execute)
 			switch (currentjinx) {
 				case 1:	
-					if obj_jinx1.image_alpha < 0.5 and obj_jinx1.image_speed == 0
+					if obj_jinx1.image_alpha < 0.5 and obj_jinx1.image_speed == 0 {
 						currentjinx = 2	
+						obj_mousebox.image_blend = global.cursorpink
+					}
 					break;
 		
 				case 2:
@@ -130,13 +136,13 @@ if paused == false {
 		
 					if instance_exists(obj_jinx2) and obj_jinx2.deathsound == true {
 						currentjinx = 3
+						obj_mousebox.image_blend = global.cursorblue	
 						whitecolor = 0	
 					}
 		
 					break;
 		
 				case 3:
-	
 					if whitecolor < 255 {
 						whitecolor += 5
 						layer_background_blend(background, make_color_rgb(whitecolor, whitecolor, whitecolor))
@@ -157,6 +163,7 @@ if paused == false {
 					if !instance_exists(obj_jinx4)  {
 						instance_create_depth(320, 180, -9999, obj_jinx5)
 						currentjinx = 5
+						obj_mousebox.image_blend = global.cursorpink
 						whitecolor = 255
 					}
 		
@@ -169,6 +176,7 @@ if paused == false {
 		
 					if !instance_exists(obj_jinx5)  {
 						currentjinx = 6
+						obj_mousebox.image_blend = global.cursorblue
 
 					}
 			
@@ -185,6 +193,7 @@ if paused == false {
 					}
 					if !instance_exists(obj_jinx6)  {
 						currentjinx = 7
+						obj_mousebox.image_blend = global.cursorpink
 						audio_sound_gain(snd_music_phase2, 0, 1000)
 						audio_sound_gain(snd_music_phase3, 0, 1000)
 					}
@@ -206,6 +215,7 @@ if paused == false {
 							play_sound(snd_appear, false)
 							audio_stop_sound(snd_music_phase2)
 							audio_stop_sound(snd_music_phase3)
+							obj_mousebox.image_blend = c_white
 							instance_create_depth(320, -32, -9998, obj_jinx7_bg)
 							instance_create_depth(320, 70, -9999, obj_jinx7)
 						}
@@ -243,15 +253,19 @@ if paused == false {
 			if whitecolor <= 0 
 				layer_background_blend(background, c_black)	
 			
+			
 		}
 		
 			
 			
 		repeat(global.execute) {
 			scripttimer += 1
-	
+			
+			if scripttimer == 1
+				obj_mousebox.image_blend = global.cursorblue
 			if quickentrance == true {
 				global.music = play_sound(snd_finale, true)
+				obj_mousebox.image_blend = c_white
 				instance_create_depth(320, 180, -9999, obj_jinx7)
 				instance_create_depth(320, -32, -9998, obj_jinx7_bg)
 				obj_jinx7.go = true
@@ -270,7 +284,8 @@ if paused == false {
 					play_sound(snd_pluck_reversed, false)	
 					instance_destroy(obj_pluck)
 				}
-	
+				if scripttimer == 300
+					obj_mousebox.image_blend = global.cursorpink
 
 	
 				if scripttimer == 360
@@ -283,6 +298,7 @@ if paused == false {
 				
 				if scripttimer == 482 {
 					whitescreen = 0
+					obj_mousebox.image_blend = c_white
 					instance_create_depth(320, -32, -9998, obj_jinx7_bg)
 					instance_create_depth(320, 70, -9999, obj_jinx7)
 					if global.crosshair == false {

@@ -1,4 +1,5 @@
 // all of this sucks and is rushed I do not care shut up
+var i
 image_speed = global.imagespeed
 
 x = 320 + dsin((global.timer - timeroffset) * 200) * 200
@@ -10,7 +11,7 @@ if go == false
 
 
 
-if hp == 1 and global.hard == false {
+if hp == 1 and global.hard == false and image_yscale == 0.1{
 	var dist = point_distance(mouse_x, mouse_y, x, y)
 	if dist < 200 {
 		global.gamespeed = dist / 200
@@ -70,39 +71,33 @@ repeat(global.execute) {
 	}
 	else 
 		image_xscale = 0.1
-	
+	// this sucks
 	switch (decideattack) {
 		case 0:
-			// this sucks
+			if global.hard 
+				var condition = timer % 15 == 0
+			else
+				var condition = timer % 60 == 0
 			if timer == 0 {
 				play_sound(snd_lasercharge, false)
 				i = instance_create_depth(x, y, -10000, obj_laserdot)
 				i.update = true
 				i.image_alpha = 0
 			}
-			
-			else if timer == 120 or timer == 180 or timer == 240 {
+			else if timer >= 120 and condition and timer <= 240 {
 				instance_destroy(obj_laserdot)
 				play_sound(snd_bombfall, false)
 				laserangle = point_direction(x, y, mouse_x, mouse_y)
 				i = instance_create_depth(x, y, -10000, obj_laserdot)
 				i.image_xscale = 2
 				i.image_yscale = 2
+				i.becomelaser = true
+				i.timer = 20
 				
 			}
-			else if timer == 140 or timer == 200 or timer == 260 {
-				play_sound(snd_lasergo, false)
-				i = instance_create_depth(obj_laserdot.x, obj_laserdot.y, -10000, obj_shootlaser)	
-				i.image_angle = laserangle
-				i.image_xscale = 2
-				i.image_yscale = 2
-				
-				instance_destroy(obj_laserdot)
 
-			}
 		
 			if timer == 300 {
-			
 				timer = -60
 				decideattack = fairirandom(0, 5)
 			}
@@ -110,13 +105,18 @@ repeat(global.execute) {
 			
 			break;
 		case 1:
-			if timer == 120
+			if timer == 90
 				play_sound(snd_higher_pitch_alert, false)
 			
-			if timer > 120 and timer % 20 == 0 and timer < 300 {
+			if global.hard 
+				var condition = timer % 3 == 0
+			else
+				var condition = timer % 20 == 0
+			if timer > 120 and condition and timer < 300 {
 				instance_create_depth(x, y, -10000, obj_jinx7attack1)	
 				play_sound(snd_low_boing, false)	
 			}
+			
 		
 			if timer == 300 {
 				timer = -60
@@ -133,17 +133,28 @@ repeat(global.execute) {
 			if timer > 160 and timer < 190 {
 				i = instance_create_depth(x, y, -10001, obj_note)
 				i.sprite_index = spr_brightnote	
+				i.bounce = 1
 				play_sound(snd_elecguitar, false)
 			}
 		
 			if timer == 210 {
-				instance_create_depth(x, y, -10000, obj_jinx7attack1)	
+				if global.hard {
+					var i = instance_create_depth(x, y, -10001, obj_jinx6attack)
+					i.calcdir = true
+					i.dir = -point_direction(x, y, mouse_x, mouse_y) 
+					i.go = true
+					i.bomb = true
+					i.brightnotes = true
+				}
+				else
+					instance_create_depth(x, y, -10000, obj_jinx7attack1)	
 				play_sound(snd_low_boing, false)
 			}
 		
 			if timer > 230 and timer < 280 {
 				i = instance_create_depth(x, y, -10001, obj_note)
 				i.sprite_index = spr_brightnote	
+				i.bounce = 1
 				play_sound(snd_elecguitar, false)
 			}
 		

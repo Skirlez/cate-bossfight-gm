@@ -1,5 +1,5 @@
 repeat(global.execute) {
-	if timer == 60 {
+	if timer == 120 {
 		visible = true
 		play_sound(snd_great_shine, false)
 	}
@@ -16,20 +16,20 @@ repeat(global.execute) {
 		image_yscale += 0.01
 	}
 	else {
-	sizetimer -= 1
+		sizetimer -= 1
 	
-	if sizetimer <= 160 and sizetimer > 80 {
-		image_xscale += 0.0002
-		image_yscale += 0.0002
-	}
+		if sizetimer <= 160 and sizetimer > 80 {
+			image_xscale += 0.0002
+			image_yscale += 0.0002
+		}
 
-	if sizetimer < 80 {
-		image_xscale -= 0.0002
-		image_yscale -= 0.0002
-	}
+		if sizetimer < 80 {
+			image_xscale -= 0.0002
+			image_yscale -= 0.0002
+		}
 
-	if sizetimer == 0
-		sizetimer = 160
+		if sizetimer == 0
+			sizetimer = 160
 	}
 	
 	timer += 1

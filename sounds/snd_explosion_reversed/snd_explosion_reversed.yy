@@ -11,14 +11,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "snd_elecguitar.wav",
-  "duration": 0.472154,
+  "soundFile": "snd_explosion_reversed.wav",
+  "duration": 2.5,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
-  "name": "snd_elecguitar",
+  "name": "snd_explosion_reversed",
   "tags": [],
   "resourceType": "GMSound",
 }

@@ -18,10 +18,9 @@ else { // hardcoded instance id!!! cringe!!!
 			repeat(choose(1, 2)){
 				var i = instance_create_depth(x, y, -10000, obj_note)	
 				i.harmless = true
-				if global.hard  {
+				if global.hard  
 					i.bounce = 1
-					show_debug_message("did")	
-				}
+				
 			}
 			notettimer = 90
 		}
@@ -58,9 +57,10 @@ if intro == true or obj_jinx4.hp > 0 {
 			else
 				image_angle -= 1	
 
-
+			if global.hard and angletimer % 5 == 0
+				image_blend = make_color_hsv(irandom_range(0, 255), 255, 255)
 			angletimer += 1
-
+			
 			if angletimer == 10
 				angletimer = 0
 	
@@ -81,19 +81,41 @@ if intro == true or obj_jinx4.hp > 0 {
 	
 			sizetimer -= 1
 		}
+		else
+			image_blend = c_white
 	
-		if intro == false and obj_jinx4.starttimer == 0 {
+		if intro == false and obj_jinx4.starttimer == 0 { 
 	
 			attacktimer += 1
-			if attacktimer < notes {
-				var i = instance_create_depth(x, y, -10001, obj_note)
-				if global.hard 
-					i.bounce = 2
+			if attacktimer < notes and (round(x + 2) == 50 or round(x + 2) == 590) { // position check to make sure it doesn't fire while moving
+				if global.hard {
+					if bombtimer != 0 {
+						var i = instance_create_depth(x, y, -10001, choose(obj_jinx1attack, obj_jinx2attack))
+						i.dir += irandom_range(-90, 90)	
+						bombtimer -= 1
+					}
+					else {
+						repeat (3) {
+							var i = instance_create_depth(x, y, -10001, obj_jinx6attack)
+							i.calcdir = true
+							i.dir = -point_direction(x, y, mouse_x, mouse_y) 
+							i.go = true
+							i.bomb = true
+							i.dir += irandom_range(-90, 90)	
+						}
+						bombtimer = 120
+					}
+					audio_sound_pitch(snd_elecguitar, sin(global.timer) + 1)
+				}
+				else
+					var i = instance_create_depth(x, y, -10001, obj_note)
+					
+				
 				play_sound(snd_elecguitar, false)
 			}
 
 
-			if attacktimer == 120 and obj_jinx4.hp <= 3
+			if attacktimer == 120 and obj_jinx4.hp <= 5
 				notecooldown += 1
 
 
@@ -101,18 +123,18 @@ if intro == true or obj_jinx4.hp > 0 {
 				if attacktimer >= 240 + bonuswait {
 					attacktimer = 0
 					bonuswait = 0	
-					notes = irandom_range(40, 120)
+					notes = irandom_range(40, 80)
 				}
 			}
-			else if attacktimer >= 120 + (0.3 * obj_jinx4.hp) + bonuswait {
+			else if attacktimer >= 160 + (0.3 * obj_jinx4.hp) + bonuswait {
 				attacktimer = 0
 				bonuswait = 0	
-				notes = irandom_range(40, 120)
+				notes = irandom_range(40, 80)
 			}
 	
 	
 			if notecooldown == 5 {
-				bonuswait = 120
+				bonuswait = 160
 				notecooldown = 0	
 			}
 		}

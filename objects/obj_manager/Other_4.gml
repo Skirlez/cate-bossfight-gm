@@ -1,4 +1,7 @@
 if room == mainroom {
+	screenalpha = 0
+	sprite_set_offset(spr_keyboard, 480, 360)
+	sprite_set_offset(spr_static, 480, 360)
 	finaletimer = 0
 	global.timer = 0
 	global.hp = 20

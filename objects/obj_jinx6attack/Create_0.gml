@@ -9,5 +9,8 @@ calcdir = false
 
 diddamage = false
 
+nobouncetimer_x = 0
+nobouncetimer_y = 0
 flip_x = 1
 flip_y = 1
+brightnotes = false

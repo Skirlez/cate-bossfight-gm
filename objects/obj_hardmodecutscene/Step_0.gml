@@ -1,8 +1,10 @@
+image_speed = global.imagespeed
 if timer > 120 and timer < 1200 {
 	obj_mousebox.x = 320
 	obj_mousebox.y = 250
-	if timer > 340 {
-		shakeScreen(0.5, 3, 0)
+	if timer == 340
+		shakeScreen(860, 1, -0.02, false)
+	else if timer > 340 {
 		if timer > 600 {
 			audio_sound_pitch(global.music, timer / 600)	
 			flash = 2
@@ -21,6 +23,7 @@ repeat(global.execute) {
 		case 120:
 			drawself = true
 			flash = 10
+			shakeScreen(80, 3, 0.1)
 			play_sound(snd_appear, false)
 			break;
 		case 240:

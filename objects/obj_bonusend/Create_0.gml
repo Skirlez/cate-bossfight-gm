@@ -6,7 +6,7 @@ play_sound(snd_saber3, false)
 play_sound(snd_attack_hit, false)
 image_xscale = 0.1
 image_yscale = 0.1
-timer = -120
+timer = 0
 image_speed = 0
 sizetimer = 160
 startmoving = false

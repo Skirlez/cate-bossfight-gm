@@ -6,7 +6,7 @@ if hp > 0 {
 }
 else {
 	if global.hard and dogun == true {
-		hp = 6
+		hp = 7
 		summonguntimer = 0
 		dogun = false
 		instance_destroy(obj_keyboard)
@@ -73,10 +73,7 @@ if clicked() and obj_bus.image_speed == 0 { // very accurate
 		hp -= 1
 		play_sound(snd_attack_hit, false)
 		play_sound(snd_bigcut, false)
-		if dogun == true
-			global.attackcooldown = 61
-		else
-			global.attackcooldown = 121
+		global.attackcooldown = 61
 	}
 	
 

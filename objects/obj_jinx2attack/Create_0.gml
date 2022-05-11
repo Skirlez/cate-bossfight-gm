@@ -5,3 +5,4 @@ move = 7
 
 dir = -point_direction(x, y, mouse_x, mouse_y)
 destroytimer = 60
+immortal = false

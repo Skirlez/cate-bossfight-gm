@@ -41,7 +41,9 @@ if hp > 0 {
 
 		if attacking == 7 {
 			if hardlaser != 0 {
-				instance_create_depth(x, y, -10000, obj_jinx1attack)	
+				var i = instance_create_depth(x, y, -10000, obj_jinx1attack)	
+				if global.hard
+					i.move = 12
 				play_sound(snd_low_boing, false)
 				shakeScreen(6, 1, 0)
 				if global.hard == false
@@ -63,13 +65,13 @@ if hp > 0 {
 				i.image_xscale = 2
 				i.image_yscale = 2
 				i.becomelaser = true
-				i.timer = 120
+				i.timer = 60
 				if laserattacks > 0 {
 					attacking = 15	
 					laserattacks -= 1
 				}
 				else {
-					laserattacks = 3
+					laserattacks = 5
 					hardmodeattacks = 7
 					hardlaser = 4
 					sprite_index = spr_jinx1

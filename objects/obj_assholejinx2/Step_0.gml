@@ -27,7 +27,8 @@ repeat (global.execute) {
 				sprite_index = spr_jinx2attack	
 			}
 			if timer % 15 == 0 and timer >= 30 {
-				instance_create_depth(x, y, -10000, obj_jinx2attack)	
+				var i = instance_create_depth(x, y, -10000, obj_jinx2attack)	
+				i.immortal = true
 				play_sound(snd_low_boing2, false)
 			}
 			break

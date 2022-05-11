@@ -3,7 +3,10 @@ image_yscale = 0.2
 attacktimer = 100
 hp = 20
 depth = -9999
-repeatattack = 3
+if global.hard
+	repeatattack = 0
+else	
+	repeatattack = 3
 x = 320 + dsin(global.timer * 50) * 110
 y = 180 + dcos(global.timer * 100) * 110
 deathsound = false

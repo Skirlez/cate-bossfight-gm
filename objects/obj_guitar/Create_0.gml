@@ -10,3 +10,4 @@ bonuswait = 0
 notettimer = 10
 depth = -10000
 image_alpha = -0.05
+bombtimer = 160

@@ -47,8 +47,10 @@ else {
 			play_sound(snd_impact, false)
 	
 		if attacktimer >= 240 and attacktimer < 256 and attacktimer % 2 == 0 {
-			i = instance_create_depth(x, y, -10000, obj_jinx6attack)
+			var i = instance_create_depth(x, y, -10000, obj_jinx6attack)
 			i.spin = (attacktimer - 240) / 2
+			if global.hard
+			i.bomb = true
 		}
 
 
@@ -60,7 +62,10 @@ else {
 				repeatattack -= 1
 			}
 			else {
-				repeatattack = 3
+				if global.hard
+					repeatattack = 0
+				else	
+					repeatattack = 3
 				attacktimer = 0
 			}
 		}

@@ -42,7 +42,8 @@ if hp > 0 {
 
 
 		if attacking == 7 {
-			instance_create_depth(x, y, -10000, obj_jinx2attack)	
+			var i = instance_create_depth(x, y, -10000, obj_jinx2attack)	
+			i.immortal = global.hard
 			play_sound(snd_low_boing2, false)
 			sprite_index = spr_jinx2
 		}

@@ -1,1 +1,2 @@
-instance_destroy(id)
+if special == false
+	instance_destroy(id)

@@ -4,3 +4,5 @@ image_speed = 0
 hit = false
 play_sound(snd_explosion, false)
 shakeScreen(100, 10, 0.1)
+timer = 0
+flip = 1
