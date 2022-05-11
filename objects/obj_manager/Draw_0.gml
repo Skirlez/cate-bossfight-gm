@@ -72,9 +72,12 @@ if paused == false {
 		}
 	}
 	if whitescreen > 0 {
-		draw_set_color(c_white)
+		draw_set_color(whitescreencolor)
 		draw_set_alpha(whitescreen)
-		draw_rectangle(0, 0, 640, 360, false)	
+		if whitescreen >= 1
+			draw_clear_alpha(whitescreencolor, 1)
+		else
+			draw_rectangle(0, 0, 640, 360, false)	
 		whitescreen -= 0.01 * global.fm
 		draw_set_alpha(1)
 	}

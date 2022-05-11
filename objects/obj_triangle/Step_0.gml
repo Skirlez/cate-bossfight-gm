@@ -1,7 +1,7 @@
 move_towards_point(x + dcos(dir) * 30, y - dsin(dir) * 30, spd * global.fm)
 hspeed *= flip
 vspeed *= flip
-image_angle += 20 * global.fm
+image_angle += 20 * global.fm * flip
 
 if image_xscale < 1 or flipsize == -1 {
 	image_xscale += 0.1 * global.fm * flipsize
@@ -17,7 +17,7 @@ else {
 	if instance_exists(creator) {
 		flip = creator.flip
 		
-		if flip == -1 and point_distance(x, y, creator.x, creator.y) < 70
+		if flip == -1 and point_distance(x, y, creator.x, creator.y) < 75
 			flipsize = -1
 			
 	

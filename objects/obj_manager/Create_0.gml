@@ -35,10 +35,14 @@ global.shakeStrength = 0
 global.shakeDecay = 0
 global.gamespeed = 1
 global.music = -1
-global.hard = true
+global.hard = false
 global.allowshake = true
 if !variable_global_exists("soundemitter")
 	global.soundemitter = audio_emitter_create()
 
 global.cursorblue = #0000FF
 global.cursorpink = #FF00FF
+
+global.intensevis = true
+global.flashcolor = c_white
+whitescreencolor = c_white

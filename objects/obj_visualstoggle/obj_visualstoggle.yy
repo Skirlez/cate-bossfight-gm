@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_fullscreen",
-    "path": "sprites/spr_fullscreen/spr_fullscreen.yy",
+    "name": "spr_visualstoggle",
+    "path": "sprites/spr_visualstoggle/spr_visualstoggle.yy",
   },
   "solid": false,
   "visible": true,
@@ -31,7 +31,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_fullscreen",
+  "name": "obj_visualstoggle",
   "tags": [],
   "resourceType": "GMObject",
 }

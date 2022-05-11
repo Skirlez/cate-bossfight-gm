@@ -8,7 +8,7 @@ if drawgreybackground == true {
 
 if flash > 0 {
 	draw_set_alpha(drawalpha)
-	draw_set_color(c_white)
+	draw_set_color(flashcolor)
 	draw_rectangle(0 - 100, 0 - 20, 640 + 100, 360 + 100, false)	
 	flash -= global.execute
 	draw_set_alpha(1)

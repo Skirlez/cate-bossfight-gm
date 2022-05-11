@@ -2,6 +2,7 @@ image_index = global.allowshake
 
 if clicked() {
 	if global.allowshake == true {
+		play_sound(snd_b_sax, false)	
 		global.allowshake = false
 		global.shake = 0
 		global.shakeStrength = 0

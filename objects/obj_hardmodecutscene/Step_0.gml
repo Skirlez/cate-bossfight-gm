@@ -8,6 +8,7 @@ if timer > 120 and timer < 1200 {
 		if timer > 600 {
 			audio_sound_pitch(global.music, timer / 600)	
 			flash = 2
+			flashcolor = c_white
 			drawalpha += 0.001 * global.fm
 		}
 	}
@@ -23,6 +24,7 @@ repeat(global.execute) {
 		case 120:
 			drawself = true
 			flash = 10
+			flashcolor = global.flashcolor
 			shakeScreen(80, 3, 0.1)
 			play_sound(snd_appear, false)
 			break;
@@ -41,6 +43,7 @@ repeat(global.execute) {
 			drawself = false
 			audio_stop_sound(snd_rewind)
 			play_sound(snd_appear, false)
+			flashcolor = global.flashcolor
 			instance_destroy(obj_rewindthing)
 			global.hard = true
 			flash = 5

@@ -12,8 +12,14 @@ repeat(global.execute) {
 	}
 	
 	
-	if global.hard and timer < 80 and timer >= 20 
-		image_angle += 6 * rotdir
+	if global.hard and timer < 100 and timer >= 20  {
+		if timer % 5 == 0
+			image_blend = make_color_hsv(irandom_range(0, 255), 255, 255)
+		if timer < 80
+			image_angle += 6 * rotdir
+	}
+	else
+		image_blend = c_white
 	
 	
 	switch (timer) {

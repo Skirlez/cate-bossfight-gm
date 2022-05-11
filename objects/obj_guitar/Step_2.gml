@@ -115,7 +115,7 @@ if intro == true or obj_jinx4.hp > 0 {
 			}
 
 
-			if attacktimer == 120 and obj_jinx4.hp <= 5
+			if attacktimer == 120 and obj_jinx4.hp <= 6
 				notecooldown += 1
 
 
@@ -126,10 +126,10 @@ if intro == true or obj_jinx4.hp > 0 {
 					notes = irandom_range(40, 80)
 				}
 			}
-			else if attacktimer >= 160 + (0.3 * obj_jinx4.hp) + bonuswait {
+			else if attacktimer >= 120 + (0.3 * obj_jinx4.hp) + bonuswait {
 				attacktimer = 0
 				bonuswait = 0	
-				notes = irandom_range(40, 80)
+				notes = irandom_range(40, 120)
 			}
 	
 	

@@ -293,11 +293,13 @@ if paused == false {
 			
 				if scripttimer == 478 {
 					whitescreen = 1.5
+					whitescreencolor = global.flashcolor
 				}
 
 				
 				if scripttimer == 482 {
 					whitescreen = 0
+					whitescreencolor = c_white
 					obj_mousebox.image_blend = c_white
 					instance_create_depth(320, -32, -9998, obj_jinx7_bg)
 					instance_create_depth(320, 70, -9999, obj_jinx7)

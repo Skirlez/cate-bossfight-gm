@@ -1,8 +1,10 @@
-if image_alpha > 0.15 and flip == 1 {
+if image_alpha > 0.05 and flip == 1 {
 	repeat(global.execute) {
-		var i = instance_create_depth(x, y, -10001, obj_triangle)
-		i.special = true
-		i.creator = id	
+		repeat ((global.hard + 1)) {
+			var i = instance_create_depth(x, y, -10001, obj_triangle)
+			i.special = true
+			i.creator = id	
+		}
 	}
 }
 
@@ -17,14 +19,17 @@ if global.hard {
 	if timer != -1
 		timer += global.execute
 	else {
-		if image_xscale < 0 
+		if image_xscale < 0 {
 			instance_destroy(id)
+			shakeScreen(40, 4, 0.05, false)
+		}
 		repeat (global.execute) {
 			if flip != -1
 				flip -= 0.05
 		}	
 	}
 	if timer >= 100 {
+		shakeScreen(135, 0.1, -0.1)
 		play_sound(snd_explosion_reversed, false)
 		timer = -1
 	}

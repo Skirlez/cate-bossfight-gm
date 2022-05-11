@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_fullscreen",
-    "path": "sprites/spr_fullscreen/spr_fullscreen.yy",
+    "name": "spr_volumecontrol",
+    "path": "sprites/spr_volumecontrol/spr_volumecontrol.yy",
   },
   "solid": false,
   "visible": true,
@@ -22,6 +22,7 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
@@ -31,7 +32,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_fullscreen",
+  "name": "obj_volumecontrol",
   "tags": [],
   "resourceType": "GMObject",
 }

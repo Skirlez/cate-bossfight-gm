@@ -10,3 +10,4 @@ drawalpha = 1
 depth = -10030
 drawgreybackground = false
 obj_mousebox.image_blend = global.cursorpink
+flashcolor = global.flashcolor

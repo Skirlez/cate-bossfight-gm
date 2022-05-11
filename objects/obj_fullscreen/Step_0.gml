@@ -3,5 +3,7 @@ if window_get_fullscreen()
 else
 	image_index = 1
 	
-if clicked()
+if clicked() {
 	window_set_fullscreen(!window_get_fullscreen())
+	play_sound(snd_vinethud, false)		
+}
