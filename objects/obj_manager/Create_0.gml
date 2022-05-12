@@ -29,6 +29,7 @@ pausemx = 320
 pausemy = 180
 canunpause = true
 room_speed = 999999
+room_speed = 24
 
 global.shake = -1
 global.shakeStrength = 0

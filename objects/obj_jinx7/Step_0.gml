@@ -221,8 +221,10 @@ repeat(global.execute) {
 				i = instance_create_depth(x, y, -10000, obj_jinx6attack)
 				i.spin = (timer - 120)
 				i.object = id
-				if global.hard 
+				if global.hard {
 					i.bomb = true
+					i.brightnotes = true
+				}
 			}
 		
 			if timer == 130 {

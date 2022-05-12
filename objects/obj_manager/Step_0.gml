@@ -113,7 +113,7 @@ if paused == false {
 			global.music = play_sound(snd_music_phase3, true)
 			phase = 3	
 		}
-		repeat(global.execute)
+		repeat(global.execute) {
 			if stoptiming == false
 				cattime += 1
 			switch (currentjinx) {
@@ -248,8 +248,8 @@ if paused == false {
 		}
 	
 		
+		}
 	}
-
 	else if room == bonuscat {
 	
 		if scripttimer > 300 {
