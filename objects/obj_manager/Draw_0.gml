@@ -46,7 +46,10 @@ if paused == false {
 				
 				if global.attackcooldown > 0 {
 					draw_sprite(spr_varframe, 0, 320, 50)
-					draw_text(320, 50, object.hp)
+					if object.object_index == obj_jinx7 and instance_exists(object.summon)
+						draw_text(320, 50, object.summon.hp)
+					else
+						draw_text(320, 50, object.hp)
 				}
 			}
 
@@ -62,7 +65,10 @@ if paused == false {
 				
 			if global.attackcooldown > 0 {
 				draw_sprite(spr_varframe, 0, 320, 50)
-				draw_text(320, 50, obj_jinx7.hp)
+				if instance_exists(obj_jinx7.summon)
+						draw_text(320, 50, obj_jinx7.summon.hp)
+				else
+					draw_text(320, 50, obj_jinx7.hp)
 			}	
 	}
 	else if room == hardmodecutscene {

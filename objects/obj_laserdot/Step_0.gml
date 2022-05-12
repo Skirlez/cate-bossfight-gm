@@ -10,7 +10,7 @@ else if update == true
 
 if timer != -1 {
 	timer -= global.execute
-	if timer == 0
+	if timer <= 0
 		instance_destroy(id)
 }
 

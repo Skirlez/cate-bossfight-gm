@@ -28,6 +28,7 @@ if clicked() and global.attackcooldown == 0 and go = true {
 	play_sound(snd_saber3, false)
 	play_sound(snd_attack_hit, false)
 	spintimer = 40
+	nobgspin = false
 	image_xscale = 0.1
 	spintarget = -0.1
 	global.attackcooldown = 61
@@ -48,7 +49,8 @@ repeat(global.execute) {
 		var spinspeed = spintimer
 		if spinspeed < 11
 			spinspeed = 11
-		obj_jinx7_bg.timeroffset += spintimer * 0.002
+		if nobgspin == false
+			obj_jinx7_bg.timeroffset += spintimer * 0.002
 		if spintarget = -0.1 {
 			if image_xscale <= spintarget
 				spintarget = 0.1
@@ -65,8 +67,10 @@ repeat(global.execute) {
 		
 		if spintimer != 1
 			spintimer -= 1
-		else if abs(image_xscale) > 0.09
+		else if abs(image_xscale) > 0.09 {
 			spintimer = 0
+			nobgspin = false
+		}
 			
 	}
 	else 
@@ -107,14 +111,43 @@ repeat(global.execute) {
 		case 1:
 			if timer == 90
 				play_sound(snd_higher_pitch_alert, false)
-			
-			if global.hard 
-				var condition = timer % 3 == 0
-			else
-				var condition = timer % 20 == 0
-			if timer > 120 and condition and timer < 300 {
-				instance_create_depth(x, y, -10000, obj_jinx7attack1)	
-				play_sound(snd_low_boing, false)	
+			if global.hard {
+				if timer == 100 {
+					play_sound(snd_gunshot, false)
+					spintimer = 40	
+					nobgspin = true
+				}
+				if timer > 100 and timer <= 120 
+					image_yscale -= 0.005
+				if timer == 180 {
+					summon = instance_create_depth(x, y, depth, choose(obj_jinx1, obj_jinx2, obj_jinx5))
+					summon.hp = 5
+				}
+				if timer = 182 {
+					nobgspin = true
+					spintimer = 40
+					play_sound(snd_sparkles, false)
+				}
+				if timer > 182 and image_yscale < 0.1
+					image_yscale += 0.005
+				if timer == 181 and instance_exists(summon) {
+					timer -= 1
+					timeroffset += 1 / 60
+				}
+				
+				
+			}
+			else {
+				/*
+				if global.hard 
+					var condition = timer % 3 == 0
+				else
+				*/
+					var condition = timer % 20 == 0
+				if timer > 120 and condition and timer < 300 {
+					instance_create_depth(x, y, -10000, obj_jinx7attack1)	
+					play_sound(snd_low_boing, false)	
+				}
 			}
 			
 		
@@ -174,6 +207,8 @@ repeat(global.execute) {
 				i.spin = beginsixpart
 				i.object = id
 				i.mercy = true
+				if global.hard 
+					i.bomb = true
 				beginsixpart += 2
 			}
 			
@@ -183,6 +218,8 @@ repeat(global.execute) {
 				i = instance_create_depth(x, y, -10000, obj_jinx6attack)
 				i.spin = (timer - 120)
 				i.object = id
+				if global.hard 
+					i.bomb = true
 			}
 		
 			if timer == 130 {
@@ -198,7 +235,10 @@ repeat(global.execute) {
 				else {
 					timer = -60
 					decideattack = fairirandom(0, 5)
-					repeatattack = 3	
+					if global.hard
+						repeatattack = 0
+					else
+						repeatattack = 3	
 				}
 				
 			
@@ -221,7 +261,9 @@ repeat(global.execute) {
 				instance_destroy(obj_warnbox)
 			
 			if timer >= 120 and timer % 30 == 0 and timer < 250 {
-				instance_create_depth(-640, 320 - jinxlaser, -10000, obj_sillyjinxlaser)
+				var i = instance_create_depth(-640, 320 - jinxlaser, -10000, obj_sillyjinxlaser)
+				if global.hard
+					i.bomb = true
 				audio_stop_sound(snd_boom_cloud2)
 				play_sound(snd_drum_boing, false)
 				play_sound(snd_boom_cloud2, false)
@@ -250,12 +292,16 @@ repeat(global.execute) {
 			switch (timer) {
 				case 100:
 					play_sound(snd_gunshot, false)
+					spintimer = 40	
+					nobgspin = true
 					break;
 				case 160:
 					instance_create_depth(x, y, depth, obj_jinx7attack2)
 					break;
 				case 220:
 					play_sound(snd_sparkles, false)
+					spintimer = 40	
+					nobgspin = true
 					break;
 				case 250:
 					image_yscale = 0.1

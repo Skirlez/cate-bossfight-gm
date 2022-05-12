@@ -4,10 +4,13 @@ image_yscale = 0.1
 go = false
 spintimer = 0
 spintarget = -0.1
-hp = 3
-decideattack = irandom_range(0, 5)
+hp = 35
+decideattack = 1
 prevattack = 4
-repeatattack = 3
+if global.hard
+	repeatattack = 0
+else
+	repeatattack = 3
 jinxlaser = 0
 beginsixpart = 1
 warnboxheight = 0
@@ -21,5 +24,6 @@ function fairirandom(a, b) {
 	prevattack = i
 	return i
 }
-
+summon = noone
+nobgspin = false
 timeroffset = 1

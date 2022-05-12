@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_scoretoggle",
+    "path": "sprites/spr_scoretoggle/spr_scoretoggle.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
@@ -18,6 +21,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
@@ -27,7 +31,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_title",
+  "name": "obj_scrolltoggle",
   "tags": [],
   "resourceType": "GMObject",
 }

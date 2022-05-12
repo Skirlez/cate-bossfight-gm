@@ -73,7 +73,12 @@ else {
 		invertcatvar = 200
 		deathtimer = 75
 		obj_manager.hptrack = 0
-		healjinx = irandom_range(5, 15)
+		if instance_exists(obj_jinx7)
+			 healjinx = 0
+		else if global.hard
+			healjinx = 10
+		else
+			healjinx = irandom_range(5, 15)
 		
 		deathsound = true
 	}

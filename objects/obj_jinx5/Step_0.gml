@@ -97,7 +97,11 @@ else {
 		obj_hurt.phase = 1
 		instance_destroy(obj_assholejinx2)
 		instance_destroy(obj_jinx2attack)
-		play_sound(snd_jinx5death, false)
+		var i = play_sound(snd_jinx5death, false)
+		if instance_exists(obj_jinx7) {
+			audio_sound_set_track_position(i, 5.3)
+			deathtimer = 312	
+		}
 		image_index = 0
 		image_angle = 0
 	}

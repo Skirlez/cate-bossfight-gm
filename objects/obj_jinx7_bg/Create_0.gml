@@ -1,4 +1,4 @@
-depth = -9998
+depth = -9995
 
 points_x = []
 points_y = []
