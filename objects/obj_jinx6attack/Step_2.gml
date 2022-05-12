@@ -23,7 +23,7 @@ else {
 			bombtimer -= 1
 			if bombtimer == 0 {
 				if !audio_is_playing(snd_explosion)
-				play_sound(snd_explosion, false)	
+					play_sound(snd_explosion, false, 2)	
 				shakeScreen(20, 8, 0.1)
 				repeat(30) {
 					var i = instance_create_depth(x, y, -10001, obj_note)

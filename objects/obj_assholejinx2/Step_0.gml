@@ -1,6 +1,6 @@
 repeat (global.execute) {
 	
-	if instance_number(obj_jinx2attack) < 5 and phase = -1
+	if instance_number(obj_jinx2attack) < 3 and phase = -1
 		phase = 0
 		
 	if phase != -1
@@ -16,7 +16,7 @@ repeat (global.execute) {
 			}
 			break
 		case 1:
-			if instance_number(obj_jinx2attack) >= 5 {
+			if instance_number(obj_jinx2attack) >= 3 {
 				phase = 2
 				timer = 0
 				sprite_index = spr_jinx2

@@ -5,6 +5,7 @@ timer = 0
 image_speed = 0
 depth = -9999
 y = 200
+image_alpha = 0
 
 spincurve = animcurve_get(ac_speen);
 spincurvechannel = spincurve.channels[0]

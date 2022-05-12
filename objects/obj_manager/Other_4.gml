@@ -13,6 +13,7 @@ if room == mainroom {
 	global.distortlayer = layer_get_id("Distort")
 	global.layerfx = layer_get_fx(global.distortlayer)
 	global.music = play_sound(snd_music_phase1, false)
+	global.score = 0
 	phase = 0
 	backgroundlayer = layer_get_id("Background")
 	background = layer_background_get_id(backgroundlayer)

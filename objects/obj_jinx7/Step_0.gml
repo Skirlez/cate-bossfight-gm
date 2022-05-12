@@ -166,7 +166,8 @@ repeat(global.execute) {
 			if timer > 160 and timer < 190 {
 				i = instance_create_depth(x, y, -10001, obj_note)
 				i.sprite_index = spr_brightnote	
-				i.bounce = 1
+				if global.hard
+					i.bounce = 1
 				play_sound(snd_elecguitar, false)
 			}
 		
@@ -207,8 +208,10 @@ repeat(global.execute) {
 				i.spin = beginsixpart
 				i.object = id
 				i.mercy = true
-				if global.hard 
+				if global.hard {
 					i.bomb = true
+					i.brightnotes = true	
+				}
 				beginsixpart += 2
 			}
 			

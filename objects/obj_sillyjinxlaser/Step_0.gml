@@ -6,7 +6,7 @@ repeat(global.execute) {
 		hspeed = 0
 		if bomb {
 			shakeScreen(40, 5, 0.2)
-			repeat(120){
+			repeat(45) {
 				var i = instance_create_depth(640, y, -10001, obj_note)	
 				i.sprite_index = spr_brightnote
 			}

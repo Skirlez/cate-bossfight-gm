@@ -1,5 +1,4 @@
 if hp > 0 {
-	
 	// this is a nightmare
 	if clicked() and global.attackcooldown == 0 and clickcooldown = false { 
 		spintimer = 0
@@ -13,6 +12,8 @@ if hp > 0 {
 	if spintimer <= 60
 		image_angle += animcurve_channel_evaluate(spincurvechannel, spintimer / 60) * 30 * global.fm
 	repeat(global.execute) {
+		if image_alpha < 1
+			image_alpha += 0.02
 		if global.hard and spawnasshole != 120 {
 			spawnasshole += 1
 			if spawnasshole == 120

@@ -113,12 +113,14 @@ if paused == false {
 			global.music = play_sound(snd_music_phase3, true)
 			phase = 3	
 		}
-
 		repeat(global.execute)
+			if stoptiming == false
+				cattime += 1
 			switch (currentjinx) {
 				case 1:	
 					if obj_jinx1.image_alpha < 0.5 and obj_jinx1.image_speed == 0 {
 						currentjinx = 2	
+						stoptiming = true
 						obj_mousebox.image_blend = global.cursorpink
 					}
 					break;
@@ -129,6 +131,7 @@ if paused == false {
 						layer_background_blend(background, make_color_rgb(whitecolor, whitecolor, whitecolor))
 					}
 					else if whitecolor != -100 {
+						stoptiming = false
 						instance_create_depth(320, 180, -9999, obj_jinx2)
 						whitecolor = -100
 					}
@@ -136,6 +139,7 @@ if paused == false {
 		
 					if instance_exists(obj_jinx2) and obj_jinx2.deathsound == true {
 						currentjinx = 3
+						stoptiming = true
 						obj_mousebox.image_blend = global.cursorblue	
 						whitecolor = 0	
 					}
@@ -148,6 +152,7 @@ if paused == false {
 						layer_background_blend(background, make_color_rgb(whitecolor, whitecolor, whitecolor))
 					}
 					else if whitecolor != 256 {
+						stoptiming = false
 						instance_create_depth(320, 180, -9999, obj_jinx3)
 						whitecolor = 256
 					}
@@ -176,6 +181,7 @@ if paused == false {
 		
 					if !instance_exists(obj_jinx5)  {
 						currentjinx = 6
+						stoptiming = true
 						obj_mousebox.image_blend = global.cursorblue
 
 					}
@@ -184,15 +190,17 @@ if paused == false {
 		
 				case 6:
 					if whitecolor < 255 {
-						if whitecolor == 0
+						if whitecolor == 0 {
 							instance_create_depth(320, 180, -9999, obj_jinx6)
-							
+							stoptiming = false	
+						}
 						whitecolor += 5
 						layer_background_blend(background, make_color_rgb(whitecolor, whitecolor, whitecolor))
 						
 					}
 					if !instance_exists(obj_jinx6)  {
 						currentjinx = 7
+						stoptiming = true
 						obj_mousebox.image_blend = global.cursorpink
 						audio_sound_gain(snd_music_phase2, 0, 1000)
 						audio_sound_gain(snd_music_phase3, 0, 1000)
@@ -216,6 +224,7 @@ if paused == false {
 							audio_stop_sound(snd_music_phase2)
 							audio_stop_sound(snd_music_phase3)
 							obj_mousebox.image_blend = c_white
+							stoptiming = false
 							instance_create_depth(320, -32, -9998, obj_jinx7_bg)
 							instance_create_depth(320, 70, -9999, obj_jinx7)
 						}
@@ -293,6 +302,7 @@ if paused == false {
 			
 				if scripttimer == 478 {
 					whitescreen = 1.5
+					shakeScreen(80, 7, 0.1)
 					whitescreencolor = global.flashcolor
 				}
 

@@ -47,3 +47,7 @@ global.cursorpink = #FF00FF
 global.intensevis = true
 global.flashcolor = c_white
 whitescreencolor = c_white
+
+global.score = 0
+cattime = 0
+stoptiming = false
