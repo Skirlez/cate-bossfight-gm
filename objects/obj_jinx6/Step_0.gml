@@ -21,6 +21,7 @@ if hp <= 0 {
 	}
 	else {
 		obj_hurt.phase = 1	
+		award_reset_score()
 		room_goto(ending)
 	}
 }

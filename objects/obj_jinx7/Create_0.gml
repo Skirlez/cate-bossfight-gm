@@ -5,8 +5,8 @@ go = false
 spintimer = 0
 spintarget = -0.1
 hp = 35
-decideattack = 1
-prevattack = 4
+decideattack = irandom_range(0, 5)
+prevattack = decideattack
 if global.hard
 	repeatattack = 0
 else
@@ -27,3 +27,4 @@ function fairirandom(a, b) {
 summon = noone
 nobgspin = false
 timeroffset = 1
+

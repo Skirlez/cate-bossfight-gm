@@ -80,7 +80,7 @@ repeat(global.execute) {
 
 
 	if on_mouse() and attackcooldown == 0 and image_alpha == 1 {
-		global.hp -= 2
+		damage_player(2)
 		attackcooldown = 90
 		play_sound(snd_basketball_bounce_keyboard, false)
 		sprite_index = spr_static

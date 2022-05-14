@@ -1,0 +1,1 @@
+golefttimer = 60

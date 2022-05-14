@@ -29,8 +29,6 @@ pausemx = 320
 pausemy = 180
 canunpause = true
 room_speed = 999999
-room_speed = 24
-
 global.shake = -1
 global.shakeStrength = 0
 global.shakeDecay = 0
@@ -50,5 +48,6 @@ global.flashcolor = c_white
 whitescreencolor = c_white
 
 global.score = 0
+global.hplost = 0
 cattime = 0
 stoptiming = false

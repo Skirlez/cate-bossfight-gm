@@ -1,4 +1,3 @@
-draw_set_color(c_white)
 draw_set_font(font_fixedsys)
 draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
@@ -7,12 +6,11 @@ draw_set_valign(fa_middle)
 if global.scoretoggle {
 	var drawscore = string_format(global.score, 6, 0)
 	drawscore = string_replace_all(drawscore, " ", "0")
-	draw_set_color(c_black)
-	draw_text(31, 16, drawscore)
-	draw_text(29, 14, drawscore)
-	draw_set_color(c_white)
+	draw_set_color(obj_mousebox.image_blend)
 	draw_text(30, 15, drawscore)
+	draw_text(60, 30, cattime)
 }
+draw_set_color(c_white)
 if paused == false {
 	if room == mainroom {
 	

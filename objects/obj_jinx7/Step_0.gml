@@ -121,7 +121,7 @@ repeat(global.execute) {
 					image_yscale -= 0.005
 				if timer == 180 {
 					summon = instance_create_depth(x, y, depth, choose(obj_jinx1, obj_jinx2, obj_jinx5))
-					summon.hp = 5
+					summon.hp = 4
 				}
 				if timer = 182 {
 					nobgspin = true
@@ -188,7 +188,8 @@ repeat(global.execute) {
 			if timer > 230 and timer < 280 {
 				i = instance_create_depth(x, y, -10001, obj_note)
 				i.sprite_index = spr_brightnote	
-				i.bounce = 1
+				if global.hard
+					i.bounce = 1
 				play_sound(snd_elecguitar, false)
 			}
 		
@@ -267,7 +268,7 @@ repeat(global.execute) {
 			
 			if timer >= 120 and timer % 30 == 0 and timer < 250 {
 				var i = instance_create_depth(-640, 320 - jinxlaser, -10000, obj_sillyjinxlaser)
-				if global.hard
+				if global.hard and jinxlaser == 150
 					i.bomb = true
 				audio_stop_sound(snd_boom_cloud2)
 				play_sound(snd_drum_boing, false)
@@ -319,10 +320,13 @@ repeat(global.execute) {
 }
 
 if hp <= 0 {
-	if global.hard = false
+	if global.hard = false {
 		room_goto(hardmodecutscene)
+		award_reset_score(4200)	
+	}
 	else {
 		instance_create_depth(x, y, -9999, obj_bonusend)
 		room_goto(bonusend)
+		award_reset_score()
 	}
 }

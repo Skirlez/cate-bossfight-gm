@@ -8,7 +8,7 @@ if image_alpha <= 0
 	instance_destroy(id)
 	
 if on_mouse() {
-	global.hp -= 2
+	damage_player(2)
 	play_sound(snd_basketball_bounce_lowquality, false)
 	instance_destroy(id)
 }

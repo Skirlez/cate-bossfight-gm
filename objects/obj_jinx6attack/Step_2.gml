@@ -50,7 +50,7 @@ else {
 
 	
 if diddamage == false and on_mouse() and mercy == false and image_alpha > 0.25 and bomb == false {
-	global.hp -= 1
+	damage_player(1)
 	play_sound(snd_basketball_bounce, false)
 	diddamage = true
 }

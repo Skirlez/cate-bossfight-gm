@@ -7,7 +7,7 @@ if image_alpha <= 0
 	instance_destroy(id)
 	
 if hit == false and on_mouse() and image_alpha == 1 {
-	global.hp -= 2
+	damage_player(2)
 	play_sound(snd_basketball_bounce, false)
 	hit = true
 }
