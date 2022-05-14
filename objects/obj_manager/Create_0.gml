@@ -6,12 +6,13 @@ draw_set_valign(fa_middle)
 surface_resize(application_surface, global.screenWidth, global.screenHeight)
 window_set_fullscreen(true)
 
+/* unused as of 1.6
 if !variable_global_exists("fps")
 	global.fps = 120
 	
 if !variable_global_exists("crosshair")
 	global.crosshair = true
-	
+*/
 obj_mousebox.visible = true
 window_set_cursor(cr_none)
 global.fm = 0.5 // framerate multiplier
@@ -35,15 +36,11 @@ global.shakeDecay = 0
 global.gamespeed = 1
 global.music = -1
 global.hard = false
-global.scoretoggle = false
-global.allowshake = true
 if !variable_global_exists("soundemitter")
 	global.soundemitter = audio_emitter_create()
 
 global.cursorblue = #0000FF
 global.cursorpink = #FF00FF
-
-global.intensevis = true
 global.flashcolor = c_white
 whitescreencolor = c_white
 
@@ -53,3 +50,5 @@ cattime = 0
 stoptiming = false
 global.hp = 1
 currentjinx = -1
+global.version = "1.6"
+lpitch = 0.5

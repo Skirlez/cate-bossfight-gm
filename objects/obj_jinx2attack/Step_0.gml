@@ -11,7 +11,7 @@ else if immortal {
 	
 if on_mouse() {
 	damage_player(1)
-	play_sound(snd_basketball_bounce, false)
+	play_sound(snd_basketball_bounce_invert, false)
 	instance_destroy(id)
 }
 if !immortal

@@ -20,6 +20,12 @@ repeat(global.execute) {
 	if timer % 5 == 0
 		image_blend = make_color_hsv(irandom_range(0, 255), 255, 255)	
 		
+		
+	if squish == true and image_yscale > 0 {
+		image_yscale -= 0.01
+		if image_yscale <= 0
+			drawself = false
+	}
 	switch (timer) {
 		case 120:
 			drawself = true
@@ -39,6 +45,10 @@ repeat(global.execute) {
 		case 600:
 			drawalpha = 0
 			break;
+		case 800:
+			play_sound(snd_gunshot, false)
+			squish = true
+			break;
 		case 1200:
 			drawself = false
 			audio_stop_sound(snd_rewind)
@@ -52,7 +62,9 @@ repeat(global.execute) {
 			depth = -9998
 			break;
 		case 1300:
+			change_progress(2)
 			room_goto(mainroom)
+			break;
 	}
 			
 }

@@ -7,3 +7,5 @@ if keyboard_check_pressed(vk_f11) or keyboard_check_pressed(ord("F")) {
 	display_reset(0, false)	
 	window_set_fullscreen(true)
 }
+
+draw_text(30, 345, global.version)

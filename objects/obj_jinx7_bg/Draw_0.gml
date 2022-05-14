@@ -17,8 +17,9 @@ if global.intensevis {
 	shader_reset()
 }
 else {
-	draw_set_color(make_color_hsv(irandom_range(0, 255), 255, 255))
+	draw_set_color(make_color_hsv(color, 255, 255))
 	repeat(global.execute) {
+		color = irandom_range(0, 255)
 		var i = 0
 		refresh -= 1
 		if refresh == 0 {
@@ -26,14 +27,16 @@ else {
 			points_y[0] = 0
 			while (points_y[i] < room_height) {
 				var angle = irandom_range(0, 180)
-				var vert = irandom_range(60, 70) * dsin(angle) - 1
-				var hor = irandom_range(60, 70) * dcos(angle) - 1
+				
+				var len = irandom_range(60, 80)
+				var vert = len * dsin(angle) - 1
+				var hor = len * dcos(angle) - 1
 				i++
 				points_x[i] = points_x[i - 1] + hor
 				points_y[i] = points_y[i - 1] + vert
 			}
 			steps = i
-			refresh = irandom_range(2, 3)
+			refresh = irandom_range(3, 4)
 		}
 	}
 

@@ -28,6 +28,7 @@ repeat(global.execute) {
 			play_sound(snd_bombfall, false)
 			break;
 		case 122:
+			shakeScreen(40, 3, 0.2)
 			play_sound(snd_heavyswing, false)
 			play_sound(snd_b_piano, false)
 			sprite_set_offset(spr_keyboard, 0, 360)

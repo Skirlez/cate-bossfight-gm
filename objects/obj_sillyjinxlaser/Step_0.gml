@@ -21,8 +21,8 @@ repeat(global.execute) {
 	
 	
 	if damage == false and on_mouse() {
-		damage_player(1)
-		play_sound(snd_basketball_bounce, false)
+		damage_player(2)
+		play_sound(snd_basketball_bounce_invert, false)
 		damage = true	
 	}
 }

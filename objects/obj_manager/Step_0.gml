@@ -168,7 +168,7 @@ if paused == false {
 					if !instance_exists(obj_jinx3) and whitecolor == 256 {
 						currentjinx = 4
 						if global.hard
-							award_reset_score(1600, 5) // lower because this actually ends up being for the small "gun" phase, other award is in obj_jinx3
+							award_reset_score(1600, 4) // lower because this actually ends up being for the small "gun" phase, other award is in obj_jinx3
 						else
 							award_reset_score(3600)
 						instance_create_depth(320, 180, -9999, obj_jinx4)
@@ -182,9 +182,9 @@ if paused == false {
 						instance_create_depth(320, 180, -9999, obj_jinx5)
 						currentjinx = 5
 						if global.hard
-							award_reset_score(2900, 5)
+							award_reset_score(2900, 4)
 						else
-							award_reset_score(2200, 6)
+							award_reset_score(2200, 5)
 						obj_mousebox.image_blend = global.cursorpink
 						whitecolor = 255
 					}
@@ -246,6 +246,8 @@ if paused == false {
 							audio_stop_sound(snd_music_phase2)
 							audio_stop_sound(snd_music_phase3)
 							obj_mousebox.image_blend = c_white
+							if global.hp < 15
+								global.hp = 15
 							instance_create_depth(320, -32, -9998, obj_jinx7_bg)
 							instance_create_depth(320, 70, -9999, obj_jinx7)
 						}
@@ -253,13 +255,11 @@ if paused == false {
 							whitescreen = 0
 						else if finaletimer == 222 {
 							obj_jinx7.go = true		
+							change_progress(3)
 							stoptiming = false	
 							cattime = 0
 						}
 						
-					
-						if !audio_is_playing(snd_music_finalehardmodeintro) and !audio_is_playing(snd_finale)
-							play_sound(snd_finale, true)
 					}
 	
 			}
@@ -293,7 +293,12 @@ if paused == false {
 			if scripttimer == 1
 				obj_mousebox.image_blend = global.cursorblue
 			if quickentrance == true {
-				global.music = play_sound(snd_finale, true)
+				if global.hard == false
+					global.music = play_sound(snd_finale, true)
+				else {
+					global.music = play_sound(snd_music_finalehardmodeintro, false)
+					audio_sound_set_track_position(global.music, 2.7)	
+				}
 				obj_mousebox.image_blend = c_white
 				instance_create_depth(320, 180, -9999, obj_jinx7)
 				instance_create_depth(320, -32, -9998, obj_jinx7_bg)
@@ -335,15 +340,9 @@ if paused == false {
 					obj_mousebox.image_blend = c_white
 					instance_create_depth(320, -32, -9998, obj_jinx7_bg)
 					instance_create_depth(320, 70, -9999, obj_jinx7)
-					if global.crosshair == false {
-						obj_mousebox.visible = false
-						window_set_cursor(cr_default)
-					}
-					else {
-						image_index = 1
-						obj_mousebox.visible = true
-						window_set_cursor(cr_none)
-					}
+					image_index = 1
+					obj_mousebox.visible = true
+					window_set_cursor(cr_none)
 				}
 		
 	
@@ -351,10 +350,15 @@ if paused == false {
 				if scripttimer == 540 {
 					global.music = play_sound(snd_finale, true)
 					obj_jinx7.go = true
+					change_progress(1)
 					stoptiming = false	
 					cattime = 0
 					phase = 1 // thought I would have more phases smh
 				}
+			}
+			else {
+				if !audio_is_playing(snd_music_finalehardmodeintro) and !audio_is_playing(snd_finale)
+					global.music = play_sound(snd_finale, true)	
 			}
 		}
 	
@@ -370,3 +374,4 @@ if global.hp <= 0 {
 	else
 		room_goto(death)
 }
+

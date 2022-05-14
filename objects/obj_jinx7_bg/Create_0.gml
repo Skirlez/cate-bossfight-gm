@@ -7,3 +7,5 @@ refresh = 3
 
 rainbowsurface = 0
 timeroffset = 0
+color = 255
+turn = 1

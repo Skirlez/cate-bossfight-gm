@@ -1,0 +1,2 @@
+//GOODBYE
+save_game()

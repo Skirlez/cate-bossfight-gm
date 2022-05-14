@@ -24,10 +24,18 @@ if room == mainroom {
 
 if room == bonuscat {
 	global.timer = 0
-	global.hp = 10
+	if global.hard
+		global.hp = 15
+	else {
+		if global.hp < 10
+			global.hp = 10
+	}
 	scripttimer = 0
 	phase = 0
 	backgroundlayer = layer_get_id("Background")
 	background = layer_background_get_id(backgroundlayer)
 	whitecolor = 255
 }
+
+if room == title
+	save_game()

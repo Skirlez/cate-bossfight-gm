@@ -8,8 +8,8 @@ repeat(global.execute) {
 }
 
 if image_alpha > 0  {
-	image_xscale += 0.001 * global.fm
-	image_yscale += 0.001 * global.fm
+	image_xscale += 0.002 * global.fm
+	image_yscale += 0.002 * global.fm
 	catalpha -= 0.0015 * global.fm
 }
 

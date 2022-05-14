@@ -1,3 +1,4 @@
+var sound
 px = px + ((dsin(global.timer * 700) * damn) - px) / 8 * global.fm
 py = py + ((dsin(global.timer * 500) * damn) - py) / 8 * global.fm
 
@@ -21,7 +22,9 @@ repeat(global.execute) {
 		case 240:
 		case 300:
 			play_sound(snd_undertalehurt, false)
-			play_sound(snd_boom_cloud, false)
+			sound = play_sound(snd_boom_cloud, false)
+			pitch += 0.01
+			audio_sound_pitch(sound, pitch)
 			image_index += 1
 			damn = 100
 			break;
@@ -60,7 +63,7 @@ repeat(global.execute) {
 		audio_stop_sound(snd_boom_cloud)
 		play_sound(snd_undertalehurt, false)
 		sound = play_sound(snd_boom_cloud, false)
-		pitch += 0.025
+		pitch += 0.05
 		audio_sound_pitch(sound, pitch)
 		image_index += 1
 		damn += 5
@@ -74,7 +77,7 @@ repeat(global.execute) {
 		instance_create_depth(x, y, -9999, obj_explosion)
 		audio_stop_sound(snd_boom_cloud)
 		sound = play_sound(snd_boom_cloud, false)
-		audio_sound_pitch(sound, 0.5)
+		audio_sound_pitch(sound, 0.55)
 		instance_destroy(id)	
 	}
 	
