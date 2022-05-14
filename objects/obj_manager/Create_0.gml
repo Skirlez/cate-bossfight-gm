@@ -51,3 +51,5 @@ global.score = 0
 global.hplost = 0
 cattime = 0
 stoptiming = false
+global.hp = 1
+currentjinx = -1

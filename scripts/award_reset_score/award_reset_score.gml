@@ -1,8 +1,8 @@
-function award_reset_score(goodtime = 1800) {
+function award_reset_score(goodtime = 1800, goodhits = 3) {
 	var hitsmultiplier, timemultiplier;
 	var hits = global.hplost
-	if hits > 3 
-		hitsmultiplier = 10 / (hits + 6)
+	if hits > goodhits
+		hitsmultiplier = 10 / (hits + (10 - (goodhits + 1)))
 	else 
 		hitsmultiplier = 1.1
 	
@@ -16,6 +16,6 @@ function award_reset_score(goodtime = 1800) {
 	show_debug_message(time)
 	show_debug_message("\n")
 	change_score(10000, timemultiplier * hitsmultiplier)
-	cattime = 0
+	obj_manager.cattime = 0
 	global.hplost = 0
 }

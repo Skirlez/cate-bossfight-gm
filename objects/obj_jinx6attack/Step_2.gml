@@ -10,12 +10,12 @@ else {
 			nobouncetimer_x -= global.execute
 		if x + 20 > room_width or x - 20 < 0  {
 			flip_x *= -1	
-			nobouncetimer_x = 0	
+			nobouncetimer_x = 10	
 		}
 		
 		if nobouncetimer_y != 0
 			nobouncetimer_y -= global.execute
-		else if y + 18 > room_height or y - 20 < 0 {
+		else if y + 20 > room_height or y - 20 < 0 {
 			flip_y *= -1
 			nobouncetimer_y = 10	
 		}

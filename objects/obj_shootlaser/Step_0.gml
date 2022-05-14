@@ -11,5 +11,5 @@ if hit == false and on_mouse() and image_alpha == 1 {
 	play_sound(snd_basketball_bounce, false)
 	hit = true
 }
-	
-timer += 1
+
+timer += global.execute

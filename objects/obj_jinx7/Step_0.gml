@@ -327,6 +327,6 @@ if hp <= 0 {
 	else {
 		instance_create_depth(x, y, -9999, obj_bonusend)
 		room_goto(bonusend)
-		award_reset_score()
+		award_reset_score(6000)
 	}
 }

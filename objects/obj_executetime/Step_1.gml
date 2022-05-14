@@ -3,8 +3,8 @@ if frame >= 16666 {
 	global.execute = floor(frame / 16666) 
 	frame = frame % 16666
 }
-else if frame <= 16666 and global.execute > 0
-	global.execute -= 1
+else if frame < 16666 and global.execute > 0
+	global.execute = 0
 
 
 /*
