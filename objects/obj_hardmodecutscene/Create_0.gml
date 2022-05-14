@@ -12,3 +12,5 @@ drawgreybackground = false
 obj_mousebox.image_blend = global.cursorpink
 flashcolor = global.flashcolor
 squish = false
+spintimer = 0
+spintarget = -0.1

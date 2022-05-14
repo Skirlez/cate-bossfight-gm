@@ -3,7 +3,7 @@ function award_reset_score(goodtime = 1800, goodhits = 3) {
 		var hitsmultiplier, timemultiplier;
 		var hits = global.hplost
 		if hits > goodhits
-			hitsmultiplier = 10 / (hits + (10 - (goodhits + 1)))
+			hitsmultiplier = 20 / (hits + (20 - (goodhits + 1))) // this might be stupid
 		else 
 			hitsmultiplier = 1.1
 	

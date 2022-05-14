@@ -19,10 +19,35 @@ repeat(global.execute) {
 	timer += 1
 	if timer % 5 == 0
 		image_blend = make_color_hsv(irandom_range(0, 255), 255, 255)	
+	if spintimer > 0 {
+		var spinspeed = spintimer
+		if spinspeed < 11
+			spinspeed = 11
+		if spintarget = -0.1 {
+			if image_xscale <= spintarget
+				spintarget = 0.1
+			else
+				image_xscale -= 0.001 * spinspeed
+		}
+		else if spintarget = 0.1 {
+			if image_xscale >= spintarget 
+				spintarget = -0.1
+			else
+				image_xscale += 0.001 * spinspeed
+		}
+
 		
+		if spintimer != 1
+			spintimer -= 1
+		else if abs(image_xscale) > 0.09 
+			spintimer = 0
+			
+	}
+	else 
+		image_xscale = 0.1
 		
 	if squish == true and image_yscale > 0 {
-		image_yscale -= 0.01
+		image_yscale -= 0.005
 		if image_yscale <= 0
 			drawself = false
 	}
@@ -48,6 +73,7 @@ repeat(global.execute) {
 		case 800:
 			play_sound(snd_gunshot, false)
 			squish = true
+			spintimer = 40
 			break;
 		case 1200:
 			drawself = false

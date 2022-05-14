@@ -8,12 +8,6 @@ if global.scoretoggle {
 	drawscore = string_replace_all(drawscore, " ", "0")
 	draw_set_color(obj_mousebox.image_blend)
 	draw_text(30, 15, drawscore)
-	
-	if global.highscore != 0 {
-		drawscore = string_format(global.highscore, 6, 0)
-		drawscore = string_replace_all(drawscore, " ", "0")	
-		draw_text(567, 15, "Highscore: " + drawscore)
-	}
 	//draw_text(30, 30, cattime)
 }
 draw_set_color(c_white)

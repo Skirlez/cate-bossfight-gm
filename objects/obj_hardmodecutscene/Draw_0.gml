@@ -1,5 +1,5 @@
 if drawself == true
-	draw_sprite_ext(sprite_index, image_index, x, y, 0.1, image_yscale, 0, image_blend, 1)
+	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, image_blend, 1)
 	
 if drawgreybackground == true {
 	draw_set_color(#666E6D)	

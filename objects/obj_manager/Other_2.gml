@@ -2,6 +2,11 @@
 
 ini_open("cate.jinx") // this is my format. I invented  it
 if !ini_section_exists("settings") {
+	global.scoretoggle = false
+	global.intensevis = true
+	global.allowshake = true
+	global.volume = 60
+	window_set_fullscreen(true)
 	ini_write_real("settings", "scoretoggle", false) // i hate scoring
 	ini_write_real("settings", "intensevis", true) 
 	ini_write_real("settings", "allowshake", true) 
@@ -20,8 +25,8 @@ else {
 }
 
 if !ini_section_exists("game") {
+	global.highscore = 0
 	ini_write_real("game", "progress", 0)
-	ini_write_real("game", "progress", global.highscore)
 	ini_write_string("game", "version", global.version) // used for if I change the save file structure (implying i will ever touch this project again)
 }
 else {

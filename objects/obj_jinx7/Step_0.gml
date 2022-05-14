@@ -23,7 +23,7 @@ if hp == 1 and global.hard == false and image_yscale == 0.1{
 	}
 }
 
-if clicked() and global.attackcooldown == 0 and go = true {
+if clicked() and global.attackcooldown == 0 and go == true {
 	play_sound(snd_punchstrong, false)
 	play_sound(snd_saber3, false)
 	play_sound(snd_attack_hit, false)

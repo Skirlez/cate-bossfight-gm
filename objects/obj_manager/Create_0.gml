@@ -4,7 +4,6 @@ global.screenHeight = display_get_height()
 draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
 surface_resize(application_surface, global.screenWidth, global.screenHeight)
-window_set_fullscreen(true)
 
 /* unused as of 1.6
 if !variable_global_exists("fps")
