@@ -6,6 +6,8 @@ function save_game(){
 	ini_write_real("settings", "volume", global.volume)	
 	var fullscreen = window_get_fullscreen()
 	ini_write_real("settings", "fullscreen", fullscreen)
+	if global.score > global.highscore
+		global.highscore = global.score
 	ini_write_real("game", "highscore", global.highscore)
 	ini_close()
 }

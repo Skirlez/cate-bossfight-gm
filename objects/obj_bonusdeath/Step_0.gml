@@ -1,7 +1,8 @@
 
 repeat(global.execute) {
 	timer += 1
-
+	if timer == 240 and global.hard
+		global.music = audio_play_sound(snd_music_finalehardmodeintro, 10, false)
 	if timer > 300
 		whitescreen += 0.01
 	

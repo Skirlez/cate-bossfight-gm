@@ -26,6 +26,7 @@ else {
 
 if !ini_section_exists("game") {
 	global.highscore = 0
+	global.progress = 0
 	ini_write_real("game", "progress", 0)
 	ini_write_string("game", "version", global.version) // used for if I change the save file structure (implying i will ever touch this project again)
 }

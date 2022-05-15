@@ -56,7 +56,7 @@ repeat(global.execute) {
 	if summonguntimer != -1 {
 		if summonguntimer == 0 {
 			sprite_index = spr_jinx3_mad
-			award_reset_score(2900)
+			award_reset_score(1900) // hard mode reward
 			play_sound(snd_vinethud, false)
 		}
 		if summonguntimer == 50 {

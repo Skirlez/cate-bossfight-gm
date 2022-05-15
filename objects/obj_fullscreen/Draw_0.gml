@@ -1,4 +1,5 @@
 if on_mouse() {
+	draw_set_color(c_white)
 	if window_get_fullscreen()
 		var status = "Enabled"
 	else

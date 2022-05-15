@@ -50,4 +50,3 @@ stoptiming = false
 global.hp = 1
 currentjinx = -1
 global.version = "1.6"
-lpitch = 0.5

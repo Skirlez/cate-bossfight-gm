@@ -1,8 +1,8 @@
 var mult
 if global.hard == false
 	mult = 50
-else
-	mult = 200
+else 
+	mult = 400
 y = 180 + dcos(global.timer * mult + 5 * 60) * global.distance
 x = 320 + dsin(global.timer * mult + 5 * 60) * global.distance
 

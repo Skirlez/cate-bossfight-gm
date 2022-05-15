@@ -1,4 +1,4 @@
-hp = 20
+hp = 14 // lowering this health because you know what it was pretty boring
 image_xscale = 0.1
 image_yscale = 0.1
 depth = -9999

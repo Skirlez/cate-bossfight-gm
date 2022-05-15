@@ -3,7 +3,7 @@ draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
 //draw_sprite(spr_varframe, 0, 320, 70)
 //draw_text(320, 70, fps)
-if global.scoretoggle {
+if global.scoretoggle and obj_mousebox.visible {
 	var drawscore = string_format(global.score, 6, 0)
 	drawscore = string_replace_all(drawscore, " ", "0")
 	draw_set_color(obj_mousebox.image_blend)
@@ -43,12 +43,12 @@ if paused == false {
 					audio_emitter_pitch(global.soundemitter, 1)
 				}
 				*/
-					
-				//if keyboard_check_pressed(ord("Q"))
-				//	object.hp = 0
-				//if keyboard_check(ord("E")) 
-				//	room_goto(ending)
-
+				/*
+				if keyboard_check_pressed(ord("Q"))
+					object.hp = 0
+				if keyboard_check(ord("E")) 
+					room_goto(ending)
+				*/
 				
 				if global.attackcooldown > 0 {
 					draw_sprite(spr_varframe, 0, 320, 50)

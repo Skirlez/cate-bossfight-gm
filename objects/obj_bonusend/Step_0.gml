@@ -3,14 +3,14 @@ repeat(global.execute) {
 		visible = true
 		play_sound(snd_great_shine, false)
 	}
-	if timer == 160 
+	if timer == 190 
 		play_sound(snd_usefountain, false)
 	
 	
-	if timer == 790
+	if timer == 820
 		play_sound(snd_revival, false)
 	
-	if timer > 790 {
+	if timer > 820 {
 		image_alpha -= 0.005
 		image_xscale += 0.01
 		image_yscale += 0.01

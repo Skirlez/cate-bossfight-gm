@@ -77,7 +77,7 @@ repeat(global.execute) {
 		instance_create_depth(x, y, -9999, obj_explosion)
 		audio_stop_sound(snd_boom_cloud)
 		sound = play_sound(snd_boom_cloud, false)
-		audio_sound_pitch(sound, 0.55)
+		audio_sound_pitch(sound, 0.5555)
 		instance_destroy(id)	
 	}
 	

@@ -11,7 +11,7 @@ if go == false
 
 
 
-if hp == 1 and global.hard == false and image_yscale == 0.1{
+if hp == 1 and global.hard == false and image_yscale == 0.1 {
 	var dist = point_distance(mouse_x, mouse_y, x, y)
 	if dist < 200 {
 		global.gamespeed = dist / 200
@@ -39,9 +39,13 @@ if clicked() and global.attackcooldown == 0 and go == true {
 
 repeat(global.execute) {
 	
-	if timer % 5 == 0
+	if timer % 5 == 0 and whitetimer == 0
 		image_blend = make_color_hsv(irandom_range(0, 255), 255, 255)
-		
+	
+	if whitetimer > 0 {
+		whitetimer -= 1
+		image_blend = c_white	
+	}
 	timer += 1
 	
 	if spintimer > 0 {
@@ -109,8 +113,10 @@ repeat(global.execute) {
 			
 			break;
 		case 1:
-			if timer == 90
+			if timer == 90 {
 				play_sound(snd_higher_pitch_alert, false)
+				whitetimer = 30	
+			}
 			if global.hard {
 				if timer == 100 {
 					play_sound(snd_gunshot, false)
@@ -159,26 +165,27 @@ repeat(global.execute) {
 			break;
 		
 		case 2:
-			if timer == 120 
+			if timer == 120  {
 				play_sound(snd_alert, false)
-		
+				whitetimer = 40
+			}
 		
 			if timer > 160 and timer < 190 {
 				i = instance_create_depth(x, y, -10001, obj_note)
 				i.sprite_index = spr_brightnote	
-				if global.hard
-					i.bounce = 1
 				play_sound(snd_elecguitar, false)
 			}
 		
 			if timer == 210 {
 				if global.hard {
-					var i = instance_create_depth(x, y, -10001, obj_jinx6attack)
-					i.calcdir = true
-					i.dir = -point_direction(x, y, mouse_x, mouse_y) 
-					i.go = true
-					i.bomb = true
-					i.brightnotes = true
+					repeat (2) {
+						var i = instance_create_depth(x, y, -10001, obj_jinx6attack)
+						i.calcdir = true
+						i.dir = -point_direction(x, y, mouse_x, mouse_y) + irandom_range(-90, 90)
+						i.go = true
+						i.bomb = true
+						i.brightnotes = true
+					}
 				}
 				else
 					instance_create_depth(x, y, -10000, obj_jinx7attack1)	
@@ -188,8 +195,6 @@ repeat(global.execute) {
 			if timer > 230 and timer < 280 {
 				i = instance_create_depth(x, y, -10001, obj_note)
 				i.sprite_index = spr_brightnote	
-				if global.hard
-					i.bounce = 1
 				play_sound(snd_elecguitar, false)
 			}
 		

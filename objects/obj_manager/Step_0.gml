@@ -168,9 +168,9 @@ if paused == false {
 					if !instance_exists(obj_jinx3) and whitecolor == 256 {
 						currentjinx = 4
 						if global.hard
-							award_reset_score(1600, 4) // lower because this actually ends up being for the small "gun" phase, other award is in obj_jinx3
+							award_reset_score(1600, 2) // lower because this actually ends up being for the small "gun" phase, other award is in obj_jinx3
 						else
-							award_reset_score(3600)
+							award_reset_score(3600) // normal mode reward
 						instance_create_depth(320, 180, -9999, obj_jinx4)
 					}
 		
@@ -182,9 +182,9 @@ if paused == false {
 						instance_create_depth(320, 180, -9999, obj_jinx5)
 						currentjinx = 5
 						if global.hard
-							award_reset_score(2900, 4)
+							award_reset_score(2900, 6)
 						else
-							award_reset_score(2200, 5)
+							award_reset_score(2200, 7)
 						obj_mousebox.image_blend = global.cursorpink
 						whitecolor = 255
 					}
@@ -295,10 +295,6 @@ if paused == false {
 			if quickentrance == true {
 				if global.hard == false
 					global.music = play_sound(snd_finale, true)
-				else {
-					global.music = play_sound(snd_music_finalehardmodeintro, false)
-					audio_sound_set_track_position(global.music, 2.7)	
-				}
 				obj_mousebox.image_blend = c_white
 				instance_create_depth(320, 180, -9999, obj_jinx7)
 				instance_create_depth(320, -32, -9998, obj_jinx7_bg)
@@ -334,7 +330,7 @@ if paused == false {
 				}
 
 				
-				if scripttimer == 482 {
+				if scripttimer == 488 {
 					whitescreen = 0
 					whitescreencolor = c_white
 					obj_mousebox.image_blend = c_white

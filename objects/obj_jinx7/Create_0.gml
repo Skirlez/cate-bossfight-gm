@@ -4,7 +4,7 @@ image_yscale = 0.1
 go = false
 spintimer = 0
 spintarget = -0.1
-hp = 35
+hp = 3
 decideattack = irandom_range(0, 5)
 prevattack = decideattack
 if global.hard
@@ -27,4 +27,5 @@ function fairirandom(a, b) {
 summon = noone
 nobgspin = false
 timeroffset = 1
+whitetimer = 0
 

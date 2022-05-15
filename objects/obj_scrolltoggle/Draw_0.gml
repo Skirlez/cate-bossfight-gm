@@ -1,4 +1,5 @@
 if on_mouse() {
+	draw_set_color(c_white)
 	if global.scoretoggle == true
 		var status = "Enabled"
 	else

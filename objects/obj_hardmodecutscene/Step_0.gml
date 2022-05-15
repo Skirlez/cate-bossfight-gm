@@ -82,7 +82,7 @@ repeat(global.execute) {
 			flashcolor = global.flashcolor
 			instance_destroy(obj_rewindthing)
 			global.hard = true
-			flash = 5
+			flash = 10
 			drawalpha = 1
 			drawgreybackground = true
 			depth = -9998

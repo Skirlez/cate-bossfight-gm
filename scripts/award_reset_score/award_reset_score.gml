@@ -13,6 +13,8 @@ function award_reset_score(goodtime = 1800, goodhits = 3) {
 		else
 			timemultiplier = goodtime / (time * 1.25)
 		
+		
+		show_debug_message(obj_manager.cattime)
 		change_score(10000, timemultiplier * hitsmultiplier)
 		obj_manager.cattime = 0
 		global.hplost = 0
