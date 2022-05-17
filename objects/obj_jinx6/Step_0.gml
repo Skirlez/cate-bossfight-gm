@@ -31,12 +31,15 @@ else {
 	y = 180 + dcos(global.timer * 100) * 110
 
 
-	if clicked() and global.attackcooldown == 0 {
-		hp -= 1
+	if clicked() {
+		audio_stop_sound(snd_gloopboing)
 		play_sound(snd_gloopboing, false)
-		play_sound(snd_attack_hit, false)
-		play_sound(snd_bigcut, false)
-		global.attackcooldown = 91
+		if global.attackcooldown == 0 {
+			hp -= 1
+			play_sound(snd_attack_hit, false)
+			play_sound(snd_bigcut, false)
+			global.attackcooldown = 91
+		}
 
 	}
 
@@ -58,6 +61,7 @@ else {
 		if attacktimer == 308 {
 			obj_jinx6attack.go = true	
 			play_sound(snd_scytheburst, false)
+			shakeScreen(20, 3, 0.2)
 			if repeatattack != 0 {
 				attacktimer = 239
 				repeatattack -= 1

@@ -9,3 +9,4 @@ rainbowsurface = 0
 timeroffset = 0
 color = 255
 turn = 1
+drawoffset = 0

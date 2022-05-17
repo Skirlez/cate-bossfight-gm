@@ -41,14 +41,33 @@ else repeat(global.execute) {
 	if deathtimer == 90 
 		play_sound(snd_brrr, false)
 	
+	if global.hard {
+		offset = 90
+		if deathtimer == 180 {
+			obj_decoyjinx4.die = true
+			shakeScreen(90, 12, 0.1)
+			image_alpha = 1
+			play_sound(snd_boom_cloud, false)
+			play_sound(snd_boom_cloud, false)
+			play_sound(snd_boom_cloud, false)
+		}
+	}
+	else
+		offset = 0
 		
 	if deathtimer > 90 and deathtimer < 180
 		instance_create_depth(irandom_range(0, 640), irandom_range(0, 360), -10000, obj_decoyjinx4)	
 	
-	if deathtimer == 180 {
+	if deathtimer == 180 + offset {
 		instance_destroy(obj_decoyjinx4)
 		instance_destroy(id)
+		exit
 	}
-	deathtimer += 1
-	
+	deathtimer += 1	
+}
+
+if deathtimer > 180 {
+	image_alpha -= 0.015 * global.fm
+	image_xscale += 0.006 * global.fm
+	image_yscale += 0.006 * global.fm
 }

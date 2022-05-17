@@ -62,7 +62,7 @@ repeat(global.execute) {
 		if summonguntimer == 50 {
 			var i = play_sound(snd_audio_appearance, false)
 			audio_sound_pitch(i, 1.5)
-			instance_create_depth(x, y, depth + 1, obj_gun)
+			instance_create_depth(x, y, depth - 1, obj_gun)
 		}
 		summonguntimer += 1
 	}

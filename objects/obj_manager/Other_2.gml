@@ -22,6 +22,11 @@ else {
 	obj_volumecontrol.volume = global.volume
 	var fullscreen = ini_read_real("settings", "fullscreen", true)
 	window_set_fullscreen(fullscreen)
+	
+	if global.intensevis 
+		global.flashcolor = c_white
+	else
+		global.flashcolor = c_black
 }
 
 if !ini_section_exists("game") {

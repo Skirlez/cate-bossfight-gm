@@ -5,6 +5,7 @@ if move > 0
 else if immortal {
 	dir = -point_direction(x, y, mouse_x, mouse_y)
 	play_sound(snd_low_boing2, false)
+	shakeScreen(2, 1, 0)
 	move = random_range(8, 10)
 }
 

@@ -12,3 +12,4 @@ else
 	
 
 rotdir = 1
+arrowangle = -30

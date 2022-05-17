@@ -17,12 +17,11 @@ if global.intensevis {
 	shader_reset()
 }
 else {
-	draw_set_color(make_color_hsv(color, 255, 255))
 	repeat(global.execute) {
-		color = irandom_range(0, 255)
 		var i = 0
 		refresh -= 1
-		if refresh == 0 {
+		if refresh <= 0 {
+			color = irandom_range(0, 255)
 			points_x[0] = irandom_range(x - 100, x + 100)
 			points_y[0] = 0
 			while (points_y[i] < room_height) {
@@ -36,15 +35,14 @@ else {
 				points_y[i] = points_y[i - 1] + vert
 			}
 			steps = i
-			refresh = irandom_range(3, 4)
+			refresh = 5
 		}
 	}
-
+	draw_set_color(make_color_hsv(color, 255, 255))
 	for (i = 0; i <= steps - 1; i++) {
-		draw_line_width(points_x[i], points_y[i], points_x[i + 1], points_y[i + 1], 2)
+		draw_line_width(points_x[i] + drawoffset, points_y[i], points_x[i + 1] + drawoffset, points_y[i + 1], 2)
 	}
 }
 
 
-
-
+drawoffset = sin(global.timer / 2) * 200

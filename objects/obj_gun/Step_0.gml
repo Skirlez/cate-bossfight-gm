@@ -7,6 +7,10 @@ else
 x = obj_jinx3.x + (dist - distoffset) * dcos(image_angle) - 1
 y = obj_jinx3.y - (dist - distoffset) * dsin(image_angle) - 1
 repeat (global.execute) {
+	if image_xscale < 0.1 {
+		image_xscale += 0.0025
+		image_yscale += 0.0025
+	}
 	if dist < 50
 		dist += 0.5
 		

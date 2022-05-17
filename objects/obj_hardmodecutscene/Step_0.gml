@@ -85,6 +85,8 @@ repeat(global.execute) {
 			flash = 10
 			drawalpha = 1
 			drawgreybackground = true
+			break;
+		case 1210:
 			depth = -9998
 			break;
 		case 1300:

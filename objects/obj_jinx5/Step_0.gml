@@ -68,6 +68,7 @@ if hp > 0 {
 	
 			if timer == 19 {
 				i = instance_create_depth(x, y,  -10000, obj_jinx5attack)
+				shakeScreen(12, 2, 0)
 				i.image_angle = image_angle
 				play_sound(snd_bomb, false)	
 				play_sound(snd_cymbal_crash, false)	
@@ -117,7 +118,7 @@ else {
 	}
 	else if deathtimer > 312 {
 		if shooktwo == false {
-			shakeScreen(80, 7, 0.1)
+			shakeScreen(80, 10, 0.1)
 			shooktwo = true	
 		}
 		image_speed = 0

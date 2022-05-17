@@ -182,7 +182,7 @@ if paused == false {
 						instance_create_depth(320, 180, -9999, obj_jinx5)
 						currentjinx = 5
 						if global.hard
-							award_reset_score(2900, 6)
+							award_reset_score(3000, 6)
 						else
 							award_reset_score(2200, 7)
 						obj_mousebox.image_blend = global.cursorpink
@@ -242,6 +242,7 @@ if paused == false {
 					
 						if finaletimer == 178 {
 							whitescreen = 1.5
+							whitescreencolor = global.flashcolor
 							play_sound(snd_appear, false)
 							audio_stop_sound(snd_music_phase2)
 							audio_stop_sound(snd_music_phase3)
@@ -251,8 +252,10 @@ if paused == false {
 							instance_create_depth(320, -32, -9998, obj_jinx7_bg)
 							instance_create_depth(320, 70, -9999, obj_jinx7)
 						}
-						if finaletimer == 182
+						if finaletimer == 188 {
 							whitescreen = 0
+							whitescreencolor = c_white	
+						}
 						else if finaletimer == 222 {
 							obj_jinx7.go = true		
 							change_progress(3)
@@ -325,8 +328,8 @@ if paused == false {
 			
 				if scripttimer == 478 {
 					whitescreen = 1.5
-					shakeScreen(80, 7, 0.1)
 					whitescreencolor = global.flashcolor
+					shakeScreen(80, 7, 0.1)
 				}
 
 				

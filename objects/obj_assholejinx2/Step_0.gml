@@ -29,6 +29,7 @@ repeat (global.execute) {
 			if timer % 15 == 0 and timer >= 30 {
 				var i = instance_create_depth(x, y, -10000, obj_jinx2attack)	
 				i.immortal = true
+				shakeScreen(6, 1, 0)
 				play_sound(snd_low_boing2, false)
 			}
 			break

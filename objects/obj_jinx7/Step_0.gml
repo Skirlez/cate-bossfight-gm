@@ -115,7 +115,7 @@ repeat(global.execute) {
 		case 1:
 			if timer == 90 {
 				play_sound(snd_higher_pitch_alert, false)
-				whitetimer = 30	
+				whitetimer = 40	
 			}
 			if global.hard {
 				if timer == 100 {

@@ -40,7 +40,6 @@ if !variable_global_exists("soundemitter")
 
 global.cursorblue = #0000FF
 global.cursorpink = #FF00FF
-global.flashcolor = c_white
 whitescreencolor = c_white
 
 global.score = 0
@@ -49,4 +48,4 @@ cattime = 0
 stoptiming = false
 global.hp = 1
 currentjinx = -1
-global.version = "1.6"
+global.version = "v1.6.0"
