@@ -22,8 +22,8 @@ if hp == 1 and global.hard == false and image_yscale == 0.1 {
 		audio_emitter_pitch(global.soundemitter, 1)
 	}
 }
-
-if clicked() and global.attackcooldown == 0 and go == true {
+var click = clicked()
+if click == true and global.attackcooldown == 0 and go == true {
 	play_sound(snd_punchstrong, false)
 	play_sound(snd_saber3, false)
 	play_sound(snd_attack_hit, false)
@@ -36,7 +36,10 @@ if clicked() and global.attackcooldown == 0 and go == true {
 		instance_create_depth(320, 180, -9999, obj_healingjinx)
 	hp -= 1
 }
-
+else if click == 2 and global.scoretoggle {
+	global.misses += 1
+	play_sound(snd_miss, false)	
+}
 repeat(global.execute) {
 	
 	if timer % 5 == 0 and whitetimer == 0

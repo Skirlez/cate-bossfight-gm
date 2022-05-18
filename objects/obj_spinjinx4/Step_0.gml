@@ -7,7 +7,7 @@ else
 y = 180 + dcos(global.timer * mult + 4 * 60) * global.distance + dsin(global.timer * 2000) * bounce
 x = 320 + dsin(global.timer * mult + 4 * 60) * global.distance 
 
-if clicked() and global.timer <= 15 {
+if clicked() == true and global.timer <= 15 {
 	bounce = 1
 	play_sound(snd_big_boing_reversed, false)
 }

@@ -3,7 +3,7 @@ if global.intensevis == true
 else
 	image_index = 1
 	
-if clicked()
+if clicked() == true {
 	if global.intensevis == true {
 		global.intensevis = false
 		global.flashcolor = c_black
@@ -14,3 +14,4 @@ if clicked()
 		global.flashcolor = c_white
 		play_sound(snd_pluck, false)	
 	}
+}

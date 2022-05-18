@@ -3,12 +3,16 @@ draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
 //draw_sprite(spr_varframe, 0, 320, 70)
 //draw_text(320, 70, fps)
+if room == firstlaunchintro
+	exit
+	
 if global.scoretoggle and obj_mousebox.visible {
 	var drawscore = string_format(global.score, 6, 0)
 	drawscore = string_replace_all(drawscore, " ", "0")
 	draw_set_color(obj_mousebox.image_blend)
 	draw_text(30, 15, drawscore)
 	//draw_text(30, 30, cattime)
+	draw_text(30, 45, global.misses)
 }
 draw_set_color(c_white)
 if paused == false {
@@ -44,11 +48,13 @@ if paused == false {
 				}
 				*/
 
+
+				/*
 				if keyboard_check_pressed(ord("Q"))
 					object.hp = 0
 				if keyboard_check(ord("E")) 
 					room_goto(ending)
-				
+				*/
 				
 				if global.attackcooldown > 0 {
 					draw_sprite(spr_varframe, 0, 320, 50)
@@ -100,7 +106,7 @@ else {
 	
 	draw_set_color(c_black)
 	draw_text(320, 30, "The game is paused!")
-	draw_text(320, 70, "Press Shift to restart the game.")
+	draw_text(320, 70, "Press Middle Click to restart the game.")
 	draw_sprite(spr_redsquare, 0, pausemx, pausemy)
 	if mouse_x < pausemx + 5 and mouse_x > pausemx - 5 and mouse_y < pausemy + 5 and mouse_y > pausemy - 5 {
 		draw_set_color(c_lime)
@@ -113,7 +119,7 @@ else {
 		canunpause = false	
 	}
 
-	if keyboard_check_pressed(vk_shift) 
+	if mouse_check_button_pressed(mb_middle)
 		game_restart()
 	
 }

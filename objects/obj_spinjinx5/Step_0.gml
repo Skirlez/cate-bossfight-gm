@@ -7,7 +7,7 @@ y = 180 + dcos(global.timer * mult + 5 * 60) * global.distance
 x = 320 + dsin(global.timer * mult + 5 * 60) * global.distance
 
 
-if clicked() and global.timer <= 15 {
+if clicked() == true and global.timer <= 15 {
 	spintimer = 0
 	image_angle = 0
 	play_sound(snd_aliencreek, false)

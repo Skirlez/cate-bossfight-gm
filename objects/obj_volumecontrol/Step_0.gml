@@ -1,4 +1,4 @@
-if clicked()
+if clicked() == true
 	adjust = true
 
 if mouse_check_button(mb_left) and adjust == true

@@ -3,7 +3,7 @@ if global.scoretoggle == true
 else
 	image_index = 1
 	
-if clicked()
+if clicked() == true {
 	if global.scoretoggle == true {
 		global.scoretoggle = false
 		play_sound(snd_pluck_reversed, false)	
@@ -12,3 +12,4 @@ if clicked()
 		global.scoretoggle = true
 		play_sound(snd_pluck, false)	
 	}
+}

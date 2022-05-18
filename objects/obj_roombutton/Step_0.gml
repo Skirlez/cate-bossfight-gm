@@ -1,4 +1,4 @@
-if clicked() {
+if clicked() == true {
 	global.shake = 0
 	global.hard = hard
 	obj_manager.whitescreen = 1

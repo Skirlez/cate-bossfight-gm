@@ -1,4 +1,4 @@
-if clicked() {
+if clicked() == true {
 	image_index += 1
 	if global.crosshair == false {
 		global.crosshair = true

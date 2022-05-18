@@ -26,9 +26,7 @@ repeat(global.execute) {
 		}
 	}
 }
-if room == title
-	obj_mousebox.image_blend = global.cursorpink
-	
+
 if (room == mainroom or room == bonuscat) {
 	
 	if keyboard_check_pressed(vk_escape) and paused == false and phase != 0 {
@@ -105,6 +103,7 @@ if paused == false {
 			layer_background_blend(background, c_white)
 			obj_mousebox.image_blend = global.cursorblue	
 			cattime = 0
+			global.misses = 0
 			phase = 2	
 	
 		}
@@ -261,6 +260,7 @@ if paused == false {
 							change_progress(3)
 							stoptiming = false	
 							cattime = 0
+							global.misses = 0
 						}
 						
 					}
@@ -304,6 +304,7 @@ if paused == false {
 				obj_jinx7.go = true
 				stoptiming = false	
 				cattime = 0
+				global.misses = 0
 				instance_destroy(obj_pluck)
 				layer_background_blend(background, c_black)
 				scripttimer = 451
@@ -352,6 +353,7 @@ if paused == false {
 					change_progress(1)
 					stoptiming = false	
 					cattime = 0
+					global.misses = 0
 					phase = 1 // thought I would have more phases smh
 				}
 			}

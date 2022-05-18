@@ -67,8 +67,8 @@ repeat(global.execute) {
 		summonguntimer += 1
 	}
 }
-
-if clicked() and obj_bus.image_speed == 0 { // very accurate
+var click = clicked()
+if click == true and obj_bus.image_speed == 0 { // very accurate
 	
 	if global.attackcooldown == 0 and hp > 0 {
 		hp -= 1
@@ -87,7 +87,9 @@ if clicked() and obj_bus.image_speed == 0 { // very accurate
 	}
 	
 }
-	
-
+else if click == 2 and global.scoretoggle {
+	global.misses += 1
+	play_sound(snd_miss, false)	
+}
 
 

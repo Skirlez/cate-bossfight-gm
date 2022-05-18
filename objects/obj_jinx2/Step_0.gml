@@ -4,14 +4,18 @@ if hp > 0 {
 	y = 180 + dcos(global.timer * 200) * 110 + dsin(global.timer * 2000) * bounce
 	
 	
-
-	if clicked() and global.attackcooldown == 0 {
+	var click = clicked()
+	if clicked() == true and global.attackcooldown == 0 {
 		play_sound(snd_big_boing_reversed, false)
 		play_sound(snd_attack_hit, false)
 		play_sound(snd_bigcut, false)
 		bounce = 1
 		hp -= 1
 		global.attackcooldown = 61
+	}
+	else if click == 2 and global.scoretoggle {
+		global.misses += 1
+		play_sound(snd_miss, false)	
 	}
 	repeat(global.execute) {
 		if image_alpha < 1

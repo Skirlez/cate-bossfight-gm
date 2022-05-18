@@ -7,7 +7,7 @@ y = 180 + dcos(global.timer * mult + place * 60) * global.distance + dsin(global
 x = 320 + dsin(global.timer * mult + place * 60) * global.distance 
 
 
-if clicked() and global.timer <= 15 {
+if clicked() == true and global.timer <= 15 {
 	if place == 1 {
 		if obj_bus.image_speed == 0 {
 			play_sound(snd_car_horn, false)	

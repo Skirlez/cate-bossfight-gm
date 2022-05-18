@@ -30,7 +30,8 @@ else { // hardcoded instance id!!! cringe!!!
 
 
 if intro == true or obj_jinx4.hp > 0 {
-	if clicked() and !audio_is_playing(snd_head_shake) {
+	var click = clicked()
+	if click == true and !audio_is_playing(snd_head_shake) {
 		if intro == false and obj_jinx4.starttimer == 0 {
 			obj_jinx4.switchguitar *= -1
 			obj_jinx4.hp -= 1
@@ -43,10 +44,12 @@ if intro == true or obj_jinx4.hp > 0 {
 			if intro == false and obj_jinx4.starttimer == 0   
 				play_sound(snd_attack_hit, false)
 			play_sound(snd_minecraft_hit, false)
-		}
-			
+		}			
 	}
-
+	else if click == 2 and global.scoretoggle and intro == false {
+		global.misses += 1
+		play_sound(snd_miss, false)	
+	}
 
 	repeat(global.execute) {
 		if intro == false or intro == true and move == true {

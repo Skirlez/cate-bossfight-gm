@@ -1,6 +1,7 @@
 if hp > 0 {
 	// this is a nightmare
-	if clicked() and global.attackcooldown == 0 and clickcooldown = false { 
+	var click = clicked()
+	if click == true and global.attackcooldown == 0 and clickcooldown = false { 
 		spintimer = 0
 		image_angle = 0	
 		global.attackcooldown = 61
@@ -8,6 +9,10 @@ if hp > 0 {
 		play_sound(snd_attack_hit, false)
 		play_sound(snd_bigcut, false)
 		hp -= 1
+	}
+	else if click == 2 and global.scoretoggle {
+		global.misses += 1
+		play_sound(snd_miss, false)	
 	}
 	if spintimer <= 60
 		image_angle += animcurve_channel_evaluate(spincurvechannel, spintimer / 60) * 30 * global.fm

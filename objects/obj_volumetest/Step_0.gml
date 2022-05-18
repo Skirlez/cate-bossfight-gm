@@ -1,4 +1,4 @@
-if clicked() {
+if clicked() == true {
 	play_sound(snd_music_phase3, false)
 	image_index = 1
 	notettimer = 0

@@ -37,6 +37,11 @@ if room == bonuscat {
 }
 
 if room == title {
+	obj_mousebox.image_blend = global.cursorpink
 	global.score = 0
 	save_game()
 }
+
+if room == firstlaunchintro
+	obj_mousebox.image_blend = global.cursorpink
+

@@ -21,7 +21,7 @@ if hp <= 0 {
 	}
 	else {
 		obj_hurt.phase = 1	
-		award_reset_score()
+		award_reset_score(3300)
 		room_goto(ending)
 	}
 }
@@ -30,8 +30,8 @@ else {
 	x = 320 + dsin(global.timer * 50) * 110
 	y = 180 + dcos(global.timer * 100) * 110
 
-
-	if clicked() {
+	var click = clicked()
+	if click == true {
 		audio_stop_sound(snd_gloopboing)
 		play_sound(snd_gloopboing, false)
 		if global.attackcooldown == 0 {
@@ -40,9 +40,11 @@ else {
 			play_sound(snd_bigcut, false)
 			global.attackcooldown = 91
 		}
-
 	}
-
+	else if click == 2 and global.scoretoggle {
+		global.misses += 1
+		play_sound(snd_miss, false)	
+	}
 	repeat(global.execute) {
 		attacktimer += 1
 

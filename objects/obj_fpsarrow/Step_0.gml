@@ -1,6 +1,6 @@
 
 if image_yscale == 1 {
-	if clicked() {
+	if clicked() == true {
 		
 		play_sound(snd_big_boing, false)
 		bounce = 40	
@@ -48,7 +48,7 @@ if image_yscale == 1 {
 	
 }
 else {
-	if clicked() {
+	if clicked() == true {
 		
 		bounce = 1
 		play_sound(snd_big_boing_reversed, false)

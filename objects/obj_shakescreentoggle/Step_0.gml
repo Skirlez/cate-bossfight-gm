@@ -1,6 +1,6 @@
 image_index = global.allowshake
 
-if clicked() {
+if clicked() == true {
 	if global.allowshake == true {
 		play_sound(snd_b_sax, false)	
 		audio_stop_sound(snd_explosion)
