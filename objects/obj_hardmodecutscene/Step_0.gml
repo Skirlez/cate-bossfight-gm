@@ -94,5 +94,8 @@ repeat(global.execute) {
 			room_goto(mainroom)
 			break;
 	}
-			
+}
+if mouse_check_button_pressed(mb_middle) {
+	change_progress(2)
+	room_goto(mainroom)
 }

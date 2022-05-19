@@ -35,7 +35,7 @@ else {
 				points_y[i] = points_y[i - 1] + vert
 			}
 			steps = i
-			refresh = 5
+			refresh = 8
 		}
 	}
 	draw_set_color(make_color_hsv(color, 255, 255))

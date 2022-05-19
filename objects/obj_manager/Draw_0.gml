@@ -12,7 +12,7 @@ if global.scoretoggle and obj_mousebox.visible {
 	draw_set_color(obj_mousebox.image_blend)
 	draw_text(30, 15, drawscore)
 	//draw_text(30, 30, cattime)
-	draw_text(30, 45, global.misses)
+	//draw_text(30, 45, global.misses)
 }
 draw_set_color(c_white)
 if paused == false {

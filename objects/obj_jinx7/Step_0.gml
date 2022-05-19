@@ -330,11 +330,11 @@ repeat(global.execute) {
 if hp <= 0 {
 	if global.hard = false {
 		room_goto(hardmodecutscene)
-		award_reset_score(4200, 6)	
+		award_reset_score(4200, 6, 12)	
 	}
 	else {
 		instance_create_depth(x, y, -9999, obj_bonusend)
 		room_goto(bonusend)
-		award_reset_score(6000, 8)
+		award_reset_score(6000, 8, 12)
 	}
 }

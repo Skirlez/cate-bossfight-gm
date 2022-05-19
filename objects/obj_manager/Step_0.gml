@@ -88,7 +88,7 @@ if paused == false {
 				phase = 1
 		}
 	
-		if phase == 1 and !audio_is_playing(snd_music_phase1) or phase == 0 and keyboard_check_pressed(vk_enter) {
+		if phase == 1 and !audio_is_playing(snd_music_phase1) or phase == 0 and mouse_check_button_pressed(mb_middle) {
 			audio_stop_sound(snd_music_phase1) 
 			global.music = play_sound(snd_music_phase2, false)
 			instance_create_depth(320, 180, -10000, obj_jinx1)
@@ -198,9 +198,9 @@ if paused == false {
 					if !instance_exists(obj_jinx5)  {
 						currentjinx = 6
 						if global.hard
-							award_reset_score(2600, 6)
+							award_reset_score(2600, 6, 13)
 						else
-							award_reset_score(2500, 4)
+							award_reset_score(2500, 4, 13)
 						stoptiming = true
 						obj_mousebox.image_blend = global.cursorblue
 
@@ -220,7 +220,7 @@ if paused == false {
 					}
 					if !instance_exists(obj_jinx6)  {
 						currentjinx = 7
-						award_reset_score(3300)
+						award_reset_score(2500) // this is for hard mode
 						stoptiming = true
 						obj_mousebox.image_blend = global.cursorpink
 						audio_sound_gain(snd_music_phase2, 0, 1000)
@@ -234,6 +234,10 @@ if paused == false {
 					if finaletimer >= 60 {
 						if finaletimer == 60
 							play_sound(snd_music_finalehardmodeintro, false)
+							
+						if !audio_is_playing(snd_music_finalehardmodeintro) and !audio_is_playing(snd_finale)
+							global.music = play_sound(snd_finale, true)	
+							
 						if whitecolor > 0 {
 							whitecolor -= 5
 							layer_background_blend(background, make_color_rgb(whitecolor, whitecolor, whitecolor))	
@@ -288,7 +292,8 @@ if paused == false {
 		}
 		
 			
-			
+		if mouse_check_button_pressed(mb_middle) and phase == 0
+			quickentrance = true
 		repeat(global.execute) {
 			if stoptiming == false or paused == true
 				cattime += 1
@@ -307,15 +312,14 @@ if paused == false {
 				global.misses = 0
 				instance_destroy(obj_pluck)
 				layer_background_blend(background, c_black)
-				scripttimer = 451
+				scripttimer = 541
 				phase = 1
 				quickentrance = false
+				obj_mousebox.image_blend = c_white
+				obj_mousebox.visible = true
 			
 			}
 			if phase == 0 {
-		
-
-		
 				if scripttimer == 240 {
 					play_sound(snd_pluck_reversed, false)	
 					instance_destroy(obj_pluck)
@@ -337,10 +341,9 @@ if paused == false {
 				if scripttimer == 488 {
 					whitescreen = 0
 					whitescreencolor = c_white
-					obj_mousebox.image_blend = c_white
 					instance_create_depth(320, -32, -9998, obj_jinx7_bg)
 					instance_create_depth(320, 70, -9999, obj_jinx7)
-					image_index = 1
+					obj_mousebox.image_blend = c_white
 					obj_mousebox.visible = true
 					window_set_cursor(cr_none)
 				}

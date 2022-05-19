@@ -8,7 +8,7 @@ else {
 	if bomb == true {
 		if nobouncetimer_x != 0
 			nobouncetimer_x -= global.execute
-		if x + 20 > room_width or x - 20 < 0  {
+		else if x + 20 > room_width or x - 20 < 0  {
 			flip_x *= -1	
 			nobouncetimer_x = 10	
 		}

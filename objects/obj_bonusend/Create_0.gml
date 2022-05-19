@@ -9,4 +9,3 @@ image_yscale = 0.1
 timer = 0
 image_speed = 0
 sizetimer = 160
-startmoving = false

@@ -61,10 +61,10 @@ repeat (global.execute) {
 			
 			
 		}
-		if timer > 1200 {
+		if timer > 1300 {
 			alpha[3] -= 0.1
 				
-			if timer == 1300 {
+			if timer == 1400 {
 				play_sound(snd_pluck, false)
 				instance_destroy(all, false)
 				room_goto(title)
@@ -94,7 +94,7 @@ if timer > 60 {
 			
 			if timer > 850 {
 				draw_set_alpha(alpha[3])
-				draw_text(320, 160 + up[3], "This game contains flashing colors.\nPlease tune the settings in the\nmain menu to your liking.")
+				draw_text(320, 160 + up[3], "This game contains flashing colors and screen shake.\nPlease tune the settings in the main menu\nto your liking.\n\nAlso, you can press the middle mouse button\nto skip any cutscene.")
 			
 			}
 		}

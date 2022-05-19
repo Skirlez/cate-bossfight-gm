@@ -1,4 +1,4 @@
-function award_reset_score(goodtime = 1800, goodhits = 3, goodmiss = 3) {
+function award_reset_score(goodtime = 1800, goodhits = 3, goodmiss = 4) {
 	if global.scoretoggle {
 		var hitsmultiplier, timemultiplier, missmultiplier;
 		var hits = global.hplost
@@ -8,7 +8,7 @@ function award_reset_score(goodtime = 1800, goodhits = 3, goodmiss = 3) {
 			hitsmultiplier = 1
 	
 		var time = obj_manager.cattime
-		if time < goodtime 
+		if time < goodtime + 60
 			timemultiplier = 1
 		else
 			timemultiplier = 0.8

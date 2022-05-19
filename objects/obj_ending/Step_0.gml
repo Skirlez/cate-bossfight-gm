@@ -83,3 +83,10 @@ repeat(global.execute) {
 	
 }
 
+if mouse_check_button_pressed(mb_middle) {
+	instance_create_depth(x, y, -9999, obj_explosion)
+	audio_stop_sound(snd_boom_cloud)
+	sound = play_sound(snd_boom_cloud, false)
+	audio_sound_pitch(sound, 0.5555)
+	instance_destroy(id)	
+}
