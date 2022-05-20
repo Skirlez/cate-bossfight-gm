@@ -1,5 +1,5 @@
 # cate-bossfight
-A remake of https://scratch.mit.edu/projects/579835309/ in GameMaker.
+A remake of https://scratch.mit.edu/projects/579835309/ in GameMaker, with a lot of extra content.
 Honestly I don't really know why I did this. It was pretty fun.
 I tried to be accurate to the original, as long as it was fun to play and as long as it was even possible.
 Due to the way scratch operates, It's very hard to faithfully recreate things 1:1 in GameMaker.
@@ -14,9 +14,8 @@ plus Vity6 (https://scratch.mit.edu/users/vity6/) and Bloccjo (https://scratch.m
 
 The same goes for sound files, most are from Undertale/Deltarune, and one from Sonic & Knuckles, obviously those are not mine.
 
-
 Full playthrough:
-https://youtu.be/F_kS8bTDCac
+https://youtu.be/189Yw5-oVtk
 
 
 Feel free to PR any fixes, improvements, additions, whatever
