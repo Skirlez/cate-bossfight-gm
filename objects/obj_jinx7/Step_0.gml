@@ -36,7 +36,7 @@ if click == true and global.attackcooldown == 0 and go == true {
 		instance_create_depth(320, 180, -9999, obj_healingjinx)
 	hp -= 1
 }
-else if click == 2 and global.scoretoggle {
+else if click == 2 and global.scoretoggle and image_yscale == 0.1 {
 	global.misses += 1
 	play_sound(snd_miss, false)	
 }
