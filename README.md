@@ -1,4 +1,5 @@
 # cate-bossfight
+![cate bossfight](https://user-images.githubusercontent.com/17904548/177398166-59409e58-cd25-4da0-a156-4b53dcca58da.gif)
 A remake of https://scratch.mit.edu/projects/579835309/ in GameMaker, with a lot of extra content.
 Honestly I don't really know why I did this. It was pretty fun.
 I tried to be accurate to the original, as long as it was fun to play and as long as it was even possible.
@@ -23,4 +24,5 @@ Most of the sound files are not mine either, most are from Undertale/Deltarune, 
 Feel free to PR any fixes, improvements, additions, whatever
 
 I don't know how licenses work or if this should even be licensed, but you can do whatever the hell you want, I don't care
+
 
