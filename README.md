@@ -1,6 +1,6 @@
 # cate-bossfight
 
-![cate_bossfight](https://user-images.githubusercontent.com/17904548/177398572-af6c568c-f78f-411d-8ab1-3f363a85b088.gif)
+
 
 A remake of https://scratch.mit.edu/projects/579835309/ in GameMaker, with a lot of extra content.
 Honestly I don't really know why I did this. It was pretty fun.
@@ -28,4 +28,10 @@ Feel free to PR any fixes, improvements, additions, whatever
 I don't know how licenses work or if this should even be licensed, but you can do whatever the hell you want, I don't care
 
 
+![cate_bossfight](https://user-images.githubusercontent.com/17904548/177398572-af6c568c-f78f-411d-8ab1-3f363a85b088.gif)
 
+(people playing this game)
+
+![jinx-baloongis](https://user-images.githubusercontent.com/17904548/177399357-ed0bfe32-6f30-4f2b-b4a9-7d13b28d8997.gif)
+
+(jinx)
