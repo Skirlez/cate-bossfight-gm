@@ -122,7 +122,7 @@ if paused == false {
 				cattime += 1
 			switch (currentjinx) {
 				case 1:	
-					if !instance_exists(obj_jinx1) {
+					if obj_jinx1.image_alpha < 0.5 and obj_jinx1.hp <= 0 {
 						currentjinx = 2
 						if global.hard
 							award_reset_score(1500)

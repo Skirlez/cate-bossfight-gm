@@ -101,9 +101,10 @@ if hp > 0 {
 else {
 	
 	if deathtimer == 0 {
-		if global.hard
+		if global.hard {
 			i = play_sound(snd_squeaky_toy, false)
-		audio_sound_gain(i, 0.4, 0)
+			audio_sound_gain(i, 0.4, 0)
+		}
 		obj_hurt.phase = 1
 		instance_destroy(obj_assholejinx2)
 		instance_destroy(obj_jinx2attack)

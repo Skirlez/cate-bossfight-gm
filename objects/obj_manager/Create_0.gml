@@ -49,5 +49,5 @@ cattime = 0
 stoptiming = false
 global.hp = 1
 currentjinx = -1
-global.version = "v1.6.0"
+global.version = "v1.7.0"
 global.misses = 0
