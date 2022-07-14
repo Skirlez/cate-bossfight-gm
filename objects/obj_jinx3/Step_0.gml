@@ -68,7 +68,7 @@ repeat(global.execute) {
 	}
 }
 var click = clicked()
-if click == true and obj_bus.image_speed == 0 { // very accurate
+if click == true and obj_bus.move = false { // very accurate
 	
 	if global.attackcooldown == 0 and hp > 0 {
 		hp -= 1
