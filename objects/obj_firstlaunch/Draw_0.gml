@@ -94,7 +94,7 @@ if timer > 60 {
 			
 			if timer > 850 {
 				draw_set_alpha(alpha[3])
-				draw_text(320, 160 + up[3], "This game contains flashing colors and screen shake.\nPlease tune the settings in the main menu\nto your liking.\n\nAlso, you can press the middle mouse button\nto skip any cutscene.")
+				draw_text(320, 160 + up[3], laststr)
 			
 			}
 		}

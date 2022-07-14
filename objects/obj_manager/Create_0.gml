@@ -5,6 +5,13 @@ global.screenHeight = display_get_height()
 draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
 
+if os_type == os_android {
+	global.screenWidth = display_get_width()
+	global.screenHeight = display_get_height()
+	global.screenWidth -= global.screenWidth % 640
+	global.screenHeight -= global.screenWidth % 640
+}
+
 
 /* unused as of 1.6
 if !variable_global_exists("fps")

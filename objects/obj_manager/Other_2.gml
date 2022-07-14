@@ -8,14 +8,18 @@ if !ini_section_exists("settings") {
 	global.allowshake = true
 	global.volume = 60
 	window_set_fullscreen(true)
-	ini_write_real("settings", "scoretoggle", true) 
+	if os_type != os_android
+		ini_write_real("settings", "scoretoggle", true) 
 	ini_write_real("settings", "intensevis", true) 
 	ini_write_real("settings", "allowshake", true) 
 	ini_write_real("settings", "volume", 60)
 	ini_write_real("settings", "fullscreen", true)
 }
 else {
-	global.scoretoggle = ini_read_real("settings", "scoretoggle", true)
+	if os_type == os_android
+		global.scoretoggle = false
+	else
+		global.scoretoggle = ini_read_real("settings", "scoretoggle", true)
 	global.intensevis = ini_read_real("settings", "intensevis", true)
 	global.allowshake = ini_read_real("settings", "allowshake", true)
 	global.volume = ini_read_real("settings", "volume", 60)
