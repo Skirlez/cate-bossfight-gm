@@ -2,7 +2,11 @@ repeat(global.execute) {
 	if os_browser != browser_not_a_browser {
 		global.screenWidth = display_get_width()
 		global.screenHeight = display_get_height()
-		window_set_size(global.screenWidth, global.screenHeight)
+			
+		if global.screenWidth != window_get_width() or global.screenHeight != window_get_height() {
+			window_set_size(global.screenWidth, global.screenHeight)
+			surface_resize(application_surface, global.screenWidth, global.screenHeight)
+		}
 	}
 	camera_set_view_pos(view_camera[0], 0, 0)	
 	if global.shake > 0 {
@@ -265,7 +269,7 @@ if paused == false {
 							whitescreencolor = c_white	
 						}
 						else if finaletimer == 222 {
-							obj_jinx7.go = true		
+							obj_jinx7.go = true
 							change_progress(3)
 							stoptiming = false	
 							cattime = 0

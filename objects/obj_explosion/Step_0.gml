@@ -6,7 +6,8 @@ repeat(global.execute) {
 		room_goto(bonuscat)
 	}
 }
-if mouse_check_button_pressed(mb_middle) {
+if mouse_check_button_pressed(mb_middle) and timer > 1 {
+	audio_stop_sound(snd_boom_cloud)
 	play_sound(snd_pluck, false)
 	room_goto(bonuscat)	
 }

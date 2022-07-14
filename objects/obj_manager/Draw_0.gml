@@ -48,7 +48,6 @@ if paused == false {
 				}
 				*/
 
-
 				/*
 				if keyboard_check_pressed(ord("Q"))
 					object.hp = 0
@@ -78,7 +77,7 @@ if paused == false {
 			if global.attackcooldown > 0 {
 				draw_sprite(spr_varframe, 0, 320, 50)
 				if instance_exists(obj_jinx7.summon)
-						draw_text(320, 50, obj_jinx7.summon.hp)
+					draw_text(320, 50, obj_jinx7.summon.hp)
 				else
 					draw_text(320, 50, obj_jinx7.hp)
 			}	

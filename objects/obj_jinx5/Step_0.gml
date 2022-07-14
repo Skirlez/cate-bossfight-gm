@@ -115,6 +115,7 @@ else {
 		}
 		image_index = 0
 		image_angle = 0
+		deathtimer = 1
 	}
 
 	if deathtimer < 312 and deathtimer > 30 {

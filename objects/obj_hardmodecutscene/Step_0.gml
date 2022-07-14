@@ -96,6 +96,7 @@ repeat(global.execute) {
 	}
 }
 if mouse_check_button_pressed(mb_middle) {
+	global.hard = true
 	change_progress(2)
 	room_goto(mainroom)
 }

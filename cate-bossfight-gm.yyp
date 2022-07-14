@@ -122,7 +122,7 @@
     {"id":{"name":"spr_gun","path":"sprites/spr_gun/spr_gun.yy",},"order":46,},
     {"id":{"name":"spr_COOL","path":"sprites/spr_COOL/spr_COOL.yy",},"order":27,},
     {"id":{"name":"snd_glass_breaking","path":"sounds/snd_glass_breaking/snd_glass_breaking.yy",},"order":26,},
-    {"id":{"name":"obj_scrolltoggle","path":"objects/obj_scrolltoggle/obj_scrolltoggle.yy",},"order":46,},
+    {"id":{"name":"obj_scoretoggle","path":"objects/obj_scoretoggle/obj_scoretoggle.yy",},"order":46,},
     {"id":{"name":"obj_jinx4","path":"objects/obj_jinx4/obj_jinx4.yy",},"order":5,},
     {"id":{"name":"snd_music_phase1","path":"sounds/snd_music_phase1/snd_music_phase1.yy",},"order":21,},
     {"id":{"name":"snd_firstlaunch","path":"sounds/snd_firstlaunch/snd_firstlaunch.yy",},"order":64,},
