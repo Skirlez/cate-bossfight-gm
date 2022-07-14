@@ -96,11 +96,11 @@ if paused == false {
 	
 
 	
-			if !audio_is_playing(snd_music_phase1) 
+			if !audio_is_playing_real(snd_music_phase1) 
 				phase = 1
 		}
 	
-		if phase == 1 and !audio_is_playing(snd_music_phase1) or phase == 0 and mouse_check_button_pressed(mb_middle) {
+		if phase == 1 and !audio_is_playing_real(snd_music_phase1) or phase == 0 and mouse_check_button_pressed(mb_middle) {
 			audio_stop_sound(snd_music_phase1) 
 			global.music = play_sound(snd_music_phase2, false)
 			instance_create_depth(320, 180, -10000, obj_jinx1)
@@ -120,7 +120,7 @@ if paused == false {
 	
 		}
 	
-		if phase == 2 and !audio_is_playing(snd_music_phase2) {
+		if phase == 2 and !audio_is_playing_real(snd_music_phase2) {
 			global.music = play_sound(snd_music_phase3, true)
 			phase = 3	
 		}
@@ -245,9 +245,9 @@ if paused == false {
 					
 					if finaletimer >= 60 {
 						if finaletimer == 60
-							play_sound(snd_music_finalehardmodeintro, false)
+							global.music = play_sound(snd_music_finalehardmodeintro, false)
 							
-						if !audio_is_playing(snd_music_finalehardmodeintro) and !audio_is_playing(snd_finale)
+						if !audio_is_playing_real(snd_music_finalehardmodeintro) and !audio_is_playing_real(snd_finale)
 							global.music = play_sound(snd_finale, true)	
 							
 						if whitecolor > 0 {
@@ -373,7 +373,7 @@ if paused == false {
 				}
 			}
 			else {
-				if !audio_is_playing(snd_music_finalehardmodeintro) and !audio_is_playing(snd_finale)
+				if !audio_is_playing_real(snd_music_finalehardmodeintro) and !audio_is_playing_real(snd_finale)
 					global.music = play_sound(snd_finale, true)	
 			}
 		}

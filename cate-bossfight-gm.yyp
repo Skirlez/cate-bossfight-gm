@@ -134,6 +134,7 @@
     {"id":{"name":"obj_enablecrosshair","path":"objects/obj_enablecrosshair/obj_enablecrosshair.yy",},"order":41,},
     {"id":{"name":"obj_bonusend","path":"objects/obj_bonusend/obj_bonusend.yy",},"order":35,},
     {"id":{"name":"obj_fullscreen","path":"objects/obj_fullscreen/obj_fullscreen.yy",},"order":43,},
+    {"id":{"name":"audio_is_playing_real","path":"scripts/audio_is_playing_real/audio_is_playing_real.yy",},"order":9,},
     {"id":{"name":"spr_scoretoggle","path":"sprites/spr_scoretoggle/spr_scoretoggle.yy",},"order":40,},
     {"id":{"name":"snd_brrr","path":"sounds/snd_brrr/snd_brrr.yy",},"order":31,},
     {"id":{"name":"spr_volumecontrolknob","path":"sprites/spr_volumecontrolknob/spr_volumecontrolknob.yy",},"order":48,},

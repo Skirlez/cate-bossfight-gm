@@ -4,6 +4,7 @@ repeat(global.execute) {
 
 	if timer == 0 {
 		hspeed = 0
+		x = -80
 		if bomb {
 			shakeScreen(40, 5, 0.2)
 			repeat(45) {
