@@ -1,0 +1,2 @@
+keyboard_key_press(vk_escape)
+keyboard_key_release(vk_escape)

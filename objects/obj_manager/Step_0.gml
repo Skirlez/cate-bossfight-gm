@@ -38,7 +38,7 @@ repeat(global.execute) {
 
 if (room == mainroom or room == bonuscat) {
 	
-	if keyboard_check_pressed(vk_escape) and paused == false and phase != 0 {
+	if (keyboard_check_pressed(vk_escape) and paused == false and phase != 0) or os_is_paused() {
 		instance_deactivate_all(true)
 		instance_activate_object(obj_mousebox)
 		audio_pause_all()
@@ -46,13 +46,16 @@ if (room == mainroom or room == bonuscat) {
 		pausemx = mouse_x
 		pausemy = mouse_y
 		paused = true	
+		if os_type == os_android
+			os_powersave_enable(true)
 		
 	}
-	
-	if mouse_check_button_pressed(mb_left) and paused == true and canunpause == true {
+	else if (os_type != os_android and mouse_check_button_pressed(mb_left) and paused == true and canunpause == true) or (os_type == os_android and keyboard_check_pressed(vk_escape)) {
 		instance_activate_all()
 		audio_resume_all()
 		paused = false
+		if os_type == os_android
+			os_powersave_enable(false)
 	}
 }
 

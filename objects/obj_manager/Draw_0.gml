@@ -105,17 +105,22 @@ else {
 	
 	draw_set_color(c_black)
 	draw_text(320, 30, "The game is paused!")
-	draw_text(320, 70, "Press Middle Click to restart the game.")
-	draw_sprite(spr_redsquare, 0, pausemx, pausemy)
-	if mouse_x < pausemx + 5 and mouse_x > pausemx - 5 and mouse_y < pausemy + 5 and mouse_y > pausemy - 5 {
-		draw_set_color(c_lime)
-		draw_text(320, 50, "Left Click to unpause.")
-		canunpause = true	
+	if os_type != os_android {
+		draw_text(320, 70, "Press Middle Click to restart the game.")
+		draw_sprite(spr_redsquare, 0, pausemx, pausemy)
+		if mouse_x < pausemx + 5 and mouse_x > pausemx - 5 and mouse_y < pausemy + 5 and mouse_y > pausemy - 5 {
+			draw_set_color(c_lime)
+			draw_text(320, 50, "Left Click to unpause.")
+			canunpause = true	
+		}
+		else {
+			draw_set_color(c_red)
+			draw_text(320, 50, "You must place your mouse on the red square to unpause.")
+			canunpause = false	
+		}
 	}
 	else {
-		draw_set_color(c_red)
-		draw_text(320, 50, "You must place your mouse on the red square to unpause.")
-		canunpause = false	
+		draw_text(320, 70, "Press the Back button to unpause the game.")
 	}
 
 	if mouse_check_button_pressed(mb_middle)

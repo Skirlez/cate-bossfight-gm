@@ -2,7 +2,10 @@
 
 ini_open("cate.jinx") // this is my format. I invented  it
 if !ini_section_exists("settings") {
-	global.scoretoggle = true
+	if os_type == os_android
+		global.scoretoggle = false
+	else
+		global.scoretoggle = true
 	global.intensevis = true
 	global.flashcolor = c_white
 	global.allowshake = true

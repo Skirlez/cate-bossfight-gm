@@ -19,6 +19,8 @@ if room == mainroom {
 
 	whitecolor = 255
 	currentjinx = 0	
+	if os_type == os_android
+		os_powersave_enable(false)
 }
 
 if room == bonuscat {
@@ -34,14 +36,20 @@ if room == bonuscat {
 	backgroundlayer = layer_get_id("Background")
 	background = layer_background_get_id(backgroundlayer)
 	whitecolor = 255
+	if os_type == os_android
+		os_powersave_enable(false)
 }
 
 if room == title {
 	obj_mousebox.image_blend = global.cursorpink
 	global.score = 0
+	if os_type == os_android
+		os_powersave_enable(true)
 	save_game()
 }
 
-if room == firstlaunchintro
+if room == firstlaunchintro {
 	obj_mousebox.image_blend = global.cursorpink
-
+	if os_type == os_android
+		os_powersave_enable(false)
+}
