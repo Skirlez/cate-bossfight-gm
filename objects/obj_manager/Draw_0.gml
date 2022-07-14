@@ -49,12 +49,12 @@ if paused == false {
 				*/
 
 
-				/*
+			
 				if keyboard_check_pressed(ord("Q"))
 					object.hp = 0
 				if keyboard_check(ord("E")) 
 					room_goto(ending)
-				*/
+				
 				
 				if global.attackcooldown > 0 {
 					draw_sprite(spr_varframe, 0, 320, 50)

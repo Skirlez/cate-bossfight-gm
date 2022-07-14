@@ -1,11 +1,13 @@
 repeat(global.execute) {
-	vspeed += 0.2 * global.fm
-	image_angle -= 7 * dir
+	vsp += 0.3
+	image_angle += 7 * dir
 }
 
-hspeed = 2 * global.fm * dir 
+x += hsp * global.fm
+y += vsp * global.fm
 
-if y > room_height + 200
+if y > room_height + 200 
 	instance_destroy(id)
+
 	
 

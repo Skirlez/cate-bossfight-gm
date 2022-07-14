@@ -237,7 +237,8 @@ repeat(global.execute) {
 			}
 		
 			if timer == 130 {
-				obj_jinx6attack.go = true
+				with obj_jinx6attack
+					go = true
 				play_sound(snd_scytheburst, false)
 			}
 		

@@ -1,4 +1,4 @@
-image_speed = 0
+hsp = dir
+vsp = -5
 image_xscale = 0.06
 image_yscale = 0.05
-vspeed = -3 * global.fm // i know this is inconsistent shut up

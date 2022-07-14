@@ -64,7 +64,8 @@ else {
 
 
 		if attacktimer == 308 {
-			obj_jinx6attack.go = true	
+			with obj_jinx6attack
+				go = true
 			play_sound(snd_scytheburst, false)
 			shakeScreen(20, 3, 0.2)
 			if repeatattack != 0 {

@@ -44,7 +44,8 @@ else repeat(global.execute) {
 	if global.hard {
 		offset = 90
 		if deathtimer == 180 {
-			obj_decoyjinx4.die = true
+			with obj_decoyjinx4
+				die = true
 			shakeScreen(90, 12, 0.1)
 			image_alpha = 1
 			play_sound(snd_boom_cloud, false)

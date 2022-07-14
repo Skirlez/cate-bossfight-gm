@@ -6,9 +6,11 @@ if hp > 0 {
 	
 	var click = clicked()
 	if clicked() == true and global.attackcooldown == 0 {
-		play_sound(snd_big_boing_reversed, false)
-		play_sound(snd_attack_hit, false)
-		play_sound(snd_bigcut, false)
+		if !(global.hard) or (global.hard and hp != 1) {
+			play_sound(snd_big_boing_reversed, false)
+			play_sound(snd_attack_hit, false)
+			play_sound(snd_bigcut, false)
+		}
 		bounce = 1
 		hp -= 1
 		global.attackcooldown = 61
@@ -66,15 +68,22 @@ if hp > 0 {
 }
 else {
 	if deathsound == false {
-		shakeScreen(80, 7, 0.1)
 		instance_destroy(obj_sillyjinx)
 		instance_destroy(obj_sillyjinxlaser)
 		instance_destroy(obj_note)
 		instance_destroy(obj_jinx2attack)
-		sprite_index = spr_jinx2dead
-		play_sound(snd_boom_cloud, false)
-		play_sound(snd_squeaky_toy, false)
-		obj_hurt.phase = 1
+		if global.hard {
+			visible = false
+			instance_create_depth(x, y, depth, obj_jinx2falloff)
+		}
+		else {
+			shakeScreen(80, 7, 0.1)
+			obj_hurt.phase = 1
+			sprite_index = spr_jinx2dead
+			play_sound(snd_squeaky_toy, false)
+			play_sound(snd_boom_cloud, false)
+		}
+		
 		invertcatvar = 200
 		deathtimer = 75
 		obj_manager.hptrack = 0

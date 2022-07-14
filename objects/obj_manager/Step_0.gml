@@ -1,4 +1,9 @@
 repeat(global.execute) {
+	if os_browser != browser_not_a_browser {
+		global.screenWidth = display_get_width()
+		global.screenHeight = display_get_height()
+		window_set_size(global.screenWidth, global.screenHeight)
+	}
 	camera_set_view_pos(view_camera[0], 0, 0)	
 	if global.shake > 0 {
 		global.shake -= 1
@@ -117,7 +122,7 @@ if paused == false {
 				cattime += 1
 			switch (currentjinx) {
 				case 1:	
-					if obj_jinx1.image_alpha < 0.5 and obj_jinx1.image_speed == 0 {
+					if !instance_exists(obj_jinx1) {
 						currentjinx = 2
 						if global.hard
 							award_reset_score(1500)
