@@ -99,8 +99,8 @@ if hp > 0 {
 
 }
 else {
-	
 	if deathtimer == 0 {
+		var i
 		if global.hard {
 			i = play_sound(snd_squeaky_toy, false)
 			audio_sound_gain(i, 0.4, 0)
@@ -108,14 +108,16 @@ else {
 		obj_hurt.phase = 1
 		instance_destroy(obj_assholejinx2)
 		instance_destroy(obj_jinx2attack)
-		var i = play_sound(snd_jinx5death, false)
+		i = play_sound(snd_jinx5death, false)
 		if instance_exists(obj_jinx7) {
 			audio_sound_set_track_position(i, 5.3)
 			deathtimer = 312	
 		}
+		else
+			deathtimer = 1
 		image_index = 0
 		image_angle = 0
-		deathtimer = 1
+		
 	}
 
 	if deathtimer < 312 and deathtimer > 30 {

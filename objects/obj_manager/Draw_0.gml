@@ -47,7 +47,6 @@ if paused == false {
 					audio_emitter_pitch(global.soundemitter, 1)
 				}
 				*/
-
 				/*
 				if keyboard_check_pressed(ord("Q"))
 					object.hp = 0

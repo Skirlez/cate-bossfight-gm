@@ -1,6 +1,6 @@
 repeat(global.execute) {
 	vsp += 0.3
-	image_angle += 7 * dir
+	image_angle += 3 * dir
 }
 
 x += hsp * global.fm

@@ -19,17 +19,16 @@ if global.hard {
 	if timer != -1
 		timer += global.execute
 	else {
-		if image_xscale < 0 {
+		if image_xscale < 0 
 			instance_destroy(id)
-			shakeScreen(40, 4, 0.05, false)
-		}
+		
 		repeat (global.execute) {
 			if flip != -1
 				flip -= 0.05
 		}	
 	}
 	if timer >= 100 {
-		shakeScreen(135, 0.1, -0.1)
+		shakeScreen(135, 0.1, -0.05)
 		play_sound(snd_explosion_reversed, false)
 		timer = -1
 	}
